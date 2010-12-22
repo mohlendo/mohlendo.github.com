@@ -32,10 +32,10 @@ function paragraphPermalinks(){
 }
 
 function twitterSidebar(){
-  $j("#blogofile_tweets").tweet({
+  $j("#mohlendo_tweets").tweet({
       avatar_size: 32,
         count: 5,
-        query: "blogofile",
+        query: "mohlendo",
         loading_text: "searching twitter..."
         });
 }
