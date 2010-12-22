@@ -1,0 +1,260 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+  <title>Manuel Ohlendorf</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0"
+href="/blog/feed/atom" />
+
+<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link rel='stylesheet' href='/css/pygments_monokai.css' type='text/css' />
+<link rel='stylesheet' href='/css/site.css' type='text/css' />
+<link rel='stylesheet' href='/css/jquery.tweet.css' type='text/css' />
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="/js/googleRSSWidget.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+
+  </head>
+  <body>
+    <div id="content">
+      
+  
+<div id="header" onclick="location.href='/';" style="cursor: pointer;">
+  <div id="plugbanner"></div>
+  <div id="blog_logo"></div>
+  <h1><a href="/">
+      <span id="blog_name">
+        Manuel Ohlendorf
+      </span>
+    </a>
+  </h1>
+</div>
+<a href="http://github.com/EnigmaCurry/blogofile"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div id="top_bar">
+  <div class="ButtonBar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/documentation">Documentation</a></li>
+      <li><a href="/community">Community</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </div>
+  <div id="search">    
+    <form id="searchform" method="get" action="http://www.google.com/search">
+      <input type="hidden" name="ie" value="UTF-8">
+      <input type="hidden" name="oe" value="UTF-8">
+      <input type="hidden" name="domains" value="www.manuel-ohlendorf.de">
+      <input type="hidden" name="sitesearch" value="www.manuel-ohlendorf.de">
+      <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
+    </form>
+  </div>
+</div>
+
+
+      <div id="main_block">
+        <div id="prose_block">
+          
+<div class="blog_post">
+  <span class="post_prose">
+    <h1>Using Blogofile</h1>
+    <h3>Getting a sample site</h3>
+    <p>The easiest way to start using Blogofile is to checkout an existing blogofile based blog, compile it to see how it works, create your own posts, and then eventually start customizing it for yourself. This website, in fact, is entirely generated via Blogofile, so let's checkout the source for this website using git:</p>
+
+    <pre>git clone git://github.com/EnigmaCurry/blogofile.com.git</pre>
+    <small>(alternatively, here's <a href="http://github.com/EnigmaCurry/blogofile.com/zipball/master">the latest zipped version</a>)</small>
+
+    <p>The blogofile.com directory is our "source" directory. This directory contains all of the files that will make up our website, as well as some special files that will help blogofile along the way. A point of clarification is in order though, the source directory is <b><em>not</em></b> the website, we will generate the website <b><em>from</em></b> the source directory to create a new directory called "_site" which will then contain the raw HTML source for the website.</p>
+
+    <h3>Directory structure</h3>
+    <p>
+    The blogofile.com directory looks like this:
+<pre>blogofile.com/
+|-- _config.cfg
+|-- _posts
+|   `-- 001. Blogofile 0.1.textile
+|-- _site
+|-- _templates
+|   |-- atom.mako
+|   |-- base.mako
+|   |-- chronological.mako
+|   |-- footer.mako
+|   |-- head.mako
+|   |-- header.mako
+|   |-- permapage.mako
+|   |-- post.mako
+|   |-- rss.mako
+|   |-- sidebar.mako
+|   `-- site.mako
+|-- css
+|   `-- site.css
+|-- index.html.mako
+|-- js
+`-- site_img
+    |-- bg.gif
+    |-- blockquote.png
+    `-- dot.gif</pre>
+    </p>
+    Blogofile uses a few simple rules in determining what ends up on the website:
+    <ul>
+      <li>Any file or directory starting with an underscore ("_") is considered special by blogofile and is not copied to "_site". By convention, this includes _templates and _posts.</li>
+      <li>Any file ending in ".mako" outside of an underscored directory, is processed by mako before being copied to "_site". The file in "_site" is then stripped of the ".mako" extension.</li>
+      <li>Special folders used by revision control systems, such as ".git", ".svn", ".hg", ".bzr", and "CVS" are ignored.</li>
+      <li>Any other file or directory is considered to be part of the regular website, and is copied over to "_site" directly.</li>
+    </ul>
+
+    <h3>Building the site</h3>
+    Go to the root of the blogofile.com directory and build the site:
+    <pre>blogofile -b</pre>
+    
+    If everything went well, you won't see any output on the screen, but you'll see that the "_site" directory contains the completely built website. If you now copy the "_site"  directory to a webserver, you'll be hosting an exact copy of the site you're reading now.
+
+    <h3>_posts</h3>
+    By convention, the _posts directory is where all your posts go, one post per file. Posts can currently be written in plain HTML, <a href="http://daringfireball.net/projects/markdown/">Markdown</a> or <a href="http://textile.thresholdstate.com/">Textile</a>. Each post also has some metadata that blogofile uses when it renders your posts. This Metadata is placed at the top of the file in YAML syntax, for example:
+<pre>---
+title: This is the title of the post
+categories: Cool Stuff, Random Stuff
+date: 2009/03/02 13:09:00
+format: html
+permalink: http://www.blogofile.com/2009/03/02/this-is-the-title-of-the-post
+tags: random, cool
+---
+This is the text of the post.</pre>
+
+    You can use any of the following metadata values:
+    <ul>
+      <li><b>title</b></li>
+      <ul><li>This is the title of the post</li></ul>
+      <li><b>categories</b></li>
+      <ul><li>This is a list of the categories the post is a part of, seperated by commas</li></ul>
+      <li><b>tags</b></li>
+      <ul><li>This is a list of the tags for the post, seperated by commas</li></ul>
+      <li><b>date</b></li>
+      <ul><li>The date of the post</li></ul>
+      <li><b>updated</b></li>
+      <ul><li>The date the post was last updated</li></ul>
+      <li><b>format</b></li>
+      <ul><li>the format of the post, 'html', 'markdown', or 'textile'. </li></ul>
+      <li><b>permalink</b></li>
+      <ul><li>The full permalink to the post</li></ul>
+      <li><b>guid</b></li>
+      <ul><li>An optional guid to use in RSS/Atom feeds. The permalink is used by default.</li></ul>
+    </ul>
+
+    <h3>_config.cfg</h3>
+    The _config.cfg file is the main configuartion file for your blogofile based site. It has a number of options you'll want to specify:
+    <ul>
+      <li><b>blog_name</b></li>
+      <ul>
+        <li>This is the name of your blog, by default it appears in the title as well as the top of your website</li>
+      </ul>
+      <li><b>blog_url</b></li>
+      <ul><li>The full URL of your website homepage</li></ul>
+      <li><b>blog_description</b></li>
+      <ul><li>A short one line description of your site, this goes into RSS feeds</li></ul>
+      <li><b>timezone</b></li>
+      <ul><li>Specify the timezone you wish your posts to appear as, this makes it so you don't have to type it in your posts everytime</li></ul>
+      <li><b>disqus_name</b></li>
+      <ul><li>If you have setup a <a href="http://www.disqus.com">Disqus</a> account for comments on your site, this is the name of the account</li></ul>
+      <li><b>pretty_html</b></li>
+      <ul><li>With this enabled, you can make your site's source code really pretty using <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>, but it's slow, and it also messes up &lt;pre&gt; tags, so it's turned off by default.</li></ul>
+    </ul>
+
+    <h3>_templates</h3>
+    The "_templates" directory contains many of the templates used for the site, although unlike templates outside of this directroy, none of these templates correspond to a specific page. These are reusable templates to render many pages. Here's a description of each:
+
+    <ul>
+      <li>base.mako - the base template that establishes the general look of the entire site.</li>
+      <li>site.mako - an optional template that further extends base.mako</li>
+      <li>head.mako - the &lt;head&gt; tag area of the site.</li>
+      <li>header.mako - the top portion of the site, that's on every page.</li>
+      <li>footer.mako - the bottom portion of the site, that's on every page.</li>
+      <li>post.mako - defines what a single blog post looks like</li>
+      <li>permapage.mako - defines the permalink page for a post, including comments section</li>
+      <li>chronological.mako - the template that renders a chronological rendering of blog entries</li>
+      <li>sidebar.mako - defines the sidebar on the site</li>
+      <li>atom.mako - Atom feed</li>
+      <li>rss.mako - RSS feed</li>
+    </ul>
+    <p>You can read more about <a href="/documentation/templates.html">creating your own templates here</a>.</p>
+    <h3>Autodeployment with Git</h3>
+    Git can do <a href="/documentation/usage_with_git.html">automatic deployment</a> to your webserver.
+  </span>
+</div>
+
+        </div><!-- End Prose Block -->
+        
+  <div class="right_sidebar">
+    <div id="right_sidebar">
+  <div id="download">
+    <h3>Download</h3>
+    <p>Latest stable Blogofile release is <b>0.6</b></p>
+    <pre>easy_install -U blogofile</pre> 
+    <p>or <a href="http://pypi.python.org/packages/source/B/Blogofile/blogofile-0.6.tar.gz">download a tarball</a></p>
+  </div>
+  <div id="contact">
+  <h3>Contact</h3>
+  Blogofile is written by <a href="http://www.enigmacurry.com" rel="external" target="_blank">Ryan McGuire</a>
+  <br/><br/> 
+  Please send technical questions to the <br/><a href="http://groups.google.com/group/blogofile-discuss">mailing list</a>. Or, if you need to contact me privately, you can <a href="http://mailhide.recaptcha.net/d?k=01VHGYFI7WE9jB_dHebD-0JQ==&c=3qCKNvkRgZtCa5B5PJcptJVgaDI5-xiMjUjHgQi3vIw=">send email</a>.
+  </div>
+  <div id="blog_post_list">
+  <h3>Latest blog posts</h3>
+  <ul>
+  </ul>
+  </div>
+  <div id="on_twitter">
+    <h3>On Twitter <small>the good, the bad, and the ugly</small></h3>
+    <div id="blogofile_tweets"></div>
+    <a href="http://search.twitter.com/search?q=blogofile" style="float: right">See more tweets</a>
+  </div>
+  <div id="commits">
+    <h3>Latest Commits</h3>
+    <div id="commitsRSS">&nbsp;</div>
+    <script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/08579104000195997276/label/Blogofile Commits?n=5&callback=commitsRSSRender"></script>
+    <a href="http://github.com/EnigmaCurry/blogofile/commits/master" style="float: right">See more commits</a><br/>
+  </div>
+  <div id="categories">
+    <h3>Categories</h3>
+    <ul>
+    </ul>
+  </div> 
+  <div id="archives">			
+    <h3>Archives</h3>
+    <ul>
+    </ul>
+  </div>
+
+</div>
+
+  </div>
+
+      </div><!-- End Main Block -->
+      <div id="footer">
+        
+  <p id="credits">
+Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
+<br/>
+RSS feeds for <a href="/blog/feed">Entries</a>
+<br>
+</p>
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+
