@@ -77,11 +77,12 @@ href="/blog/feed/atom" />
   <div id="contact">
     <h3>About Me</h3>
     <br/>
-    <img src="site_img/me.jpg"/>
+    <img src="/site_img/me.jpg"/>
   </div>
   <div id="blog_post_list">
   <h3>Latest blog posts</h3>
   <ul>
+    <li><a href="/blog/test.html">Testing Markdown</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -99,11 +100,13 @@ href="/blog/feed/atom" />
   <div id="categories">
     <h3>Categories</h3>
     <ul>
+     <li><a href="/blog/category/test">Test</a> (<a href="/blog/category/test/feed">rss</a>) (1)</li>
     </ul>
   </div> 
   <div id="archives">			
     <h3>Archives</h3>
     <ul>
+      <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010</a>&nbsp;(1)</li>
     </ul>
   </div>
 
@@ -118,8 +121,24 @@ href="/blog/feed/atom" />
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
 RSS feeds for <a href="/blog/feed">Entries</a>
+ and <a
+href="http://manuelohlendorf.disqus.com/latest.rss">Comments</a>.
 <br>
 </p>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/manuelohlendorf/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
 
 
       </div> <!-- End Footer -->

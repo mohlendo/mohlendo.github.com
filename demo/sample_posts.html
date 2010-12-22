@@ -65,6 +65,52 @@ href="/blog/feed/atom" />
   <span class="post_prose">
     <h1>Sample Posts</h1>
     This page shows many of the features that blogofile supports on the post level. For each example, the HTML rendering is shown first and secondly the source used to render it.
+  
+  
+
+
+
+<div class="blog_post" id="html-test">
+  <a class="blog_post_title" name="HTML test" />
+  <h2 class="blog_post_title"><a href="/demo/sample_posts.html" rel="bookmark" title="Permanent Link to HTML test">HTML test</a></h2>
+  <small>March 09, 2009 at 01:09 PM | categories: 
+
+Test
+ | <a href="http://www.manuel-ohlendorf.de/demo/sample_posts.html#disqus_thread">View Comments</a>
+  </small>
+  <span class="post_prose">
+    
+  
+<h3>HTML test</h3>
+<p id="p1">
+  This is just <i>plain HTML</i>
+</p>
+<p id="p2">
+  How <b>boring</b> is that?
+</p>
+
+
+  </span>
+</div>
+
+
+
+    <h3>Source:</h3>
+    <pre>---
+categories: Test
+date: 2009/03/09 13:09:00
+permalink: http://www.manuel-ohlendorf.de/demo/sample_posts.html
+tags: &apos;&apos;
+title: HTML test
+---
+&lt;h3&gt;HTML test&lt;/h3&gt;
+&lt;p&gt;
+  This is just &lt;i&gt;plain HTML&lt;/i&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  How &lt;b&gt;boring&lt;/b&gt; is that?
+&lt;/p&gt;
+</pre>
   </span>
 </div>
 
@@ -75,11 +121,12 @@ href="/blog/feed/atom" />
   <div id="contact">
     <h3>About Me</h3>
     <br/>
-    <img src="site_img/me.jpg"/>
+    <img src="/site_img/me.jpg"/>
   </div>
   <div id="blog_post_list">
   <h3>Latest blog posts</h3>
   <ul>
+    <li><a href="/blog/test.html">Testing Markdown</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -97,11 +144,13 @@ href="/blog/feed/atom" />
   <div id="categories">
     <h3>Categories</h3>
     <ul>
+     <li><a href="/blog/category/test">Test</a> (<a href="/blog/category/test/feed">rss</a>) (1)</li>
     </ul>
   </div> 
   <div id="archives">			
     <h3>Archives</h3>
     <ul>
+      <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010</a>&nbsp;(1)</li>
     </ul>
   </div>
 
@@ -116,8 +165,24 @@ href="/blog/feed/atom" />
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
 RSS feeds for <a href="/blog/feed">Entries</a>
+ and <a
+href="http://manuelohlendorf.disqus.com/latest.rss">Comments</a>.
 <br>
 </p>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/manuelohlendorf/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
 
 
       </div> <!-- End Footer -->

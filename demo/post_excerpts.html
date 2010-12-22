@@ -65,6 +65,27 @@ href="/blog/feed/atom" />
   <span class="post_prose">
     <h1>Post excerpts</h1>
     <p>The blog on this site shows the full content of posts in chronological order, but many prefer to only show an excerpt of the post in the chronological listing and show the full post only on the permalink page. Here's a demonstration of showing the last 3 posts with only an excerpt showing:</p>
+        
+
+
+
+<div class="blog_post" id="testing-markdown">
+  <a class="blog_post_title" name="Testing Markdown" />
+  <h2 class="blog_post_title"><a href="/blog/test.html" rel="bookmark" title="Permanent Link to Testing Markdown">Testing Markdown</a></h2>
+  <small>December 22, 2010 at 01:09 PM | categories: 
+
+<a href='/blog/category/test'>Test</a>
+ | <a href="http://www.manuel-ohlendorf.de/blog/test.html#disqus_thread">View Comments</a>
+  </small>
+  <span class="post_prose">
+    
+  It even works in blogofileThis is a list:     one      two      three...
+
+  </span>
+</div>
+
+
+
 
     <h2>Howto</h2>
     <ol>
@@ -124,11 +145,12 @@ def post_excerpt(content, num_words):
   <div id="contact">
     <h3>About Me</h3>
     <br/>
-    <img src="site_img/me.jpg"/>
+    <img src="/site_img/me.jpg"/>
   </div>
   <div id="blog_post_list">
   <h3>Latest blog posts</h3>
   <ul>
+    <li><a href="/blog/test.html">Testing Markdown</a></li>
   </ul>
   </div>
   <div id="on_twitter">
@@ -146,11 +168,13 @@ def post_excerpt(content, num_words):
   <div id="categories">
     <h3>Categories</h3>
     <ul>
+     <li><a href="/blog/category/test">Test</a> (<a href="/blog/category/test/feed">rss</a>) (1)</li>
     </ul>
   </div> 
   <div id="archives">			
     <h3>Archives</h3>
     <ul>
+      <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010</a>&nbsp;(1)</li>
     </ul>
   </div>
 
@@ -165,8 +189,24 @@ def post_excerpt(content, num_words):
 Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
 <br/>
 RSS feeds for <a href="/blog/feed">Entries</a>
+ and <a
+href="http://manuelohlendorf.disqus.com/latest.rss">Comments</a>.
 <br>
 </p>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/manuelohlendorf/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
 
 
       </div> <!-- End Footer -->
