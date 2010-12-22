@@ -1,12 +1,3 @@
-//Blogofile should use $j for jQuery, not jQuery as that might be used by sphinx (if loaded)
-var $j = jQuery;
-try{
-  //If sphinx was loaded, it needs to reference 'jQuery'
-  var jQuery = sphinxJQuery;
-  var $ = sphinxJQuery;
-} catch(err) {}
-
-
 function paragraphPermalinks(){
   $("div.blog_post span.post_prose").each(
        function(j) {
@@ -32,7 +23,7 @@ function paragraphPermalinks(){
 }
 
 function twitterSidebar(){
-  $j("#mohlendo_tweets").tweet({
+  $("#mohlendo_tweets").tweet({
       avatar_size: 32,
         count: 5,
         query: "mohlendo",
@@ -40,7 +31,7 @@ function twitterSidebar(){
         });
 }
 
-$j(document).ready(function(){
+$(document).ready(function(){
     twitterSidebar();
     paragraphPermalinks();
   });
