@@ -32,7 +32,6 @@ div#header {
 div#header h1 {
     background-color:transparent;
     color:white;
-    font-family:monospace;
     font-size:32px;
     letter-spacing:0.1em;
     padding:20px 0 20px 0;
@@ -43,8 +42,9 @@ div#header a{
 }
 #blog_name {
     color:orange;
-    font-family:monospace;
-    font-size:32px;
+    font-family:Ubuntu, sans-serif;
+    font-size:36px;
+    font-weight:normal;
     letter-spacing:0.1em;
     padding:20px 0 20px 0;
     text-decoration:none;
@@ -86,7 +86,7 @@ div#header a{
     padding:0;
     position:relative;
     right:10px;
-    top:-22px;
+    top:-26px;
 }
 #search input {
     border:1px solid #66A8CC;
