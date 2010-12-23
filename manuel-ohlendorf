@@ -1,0 +1,35 @@
+
+[indentation]
+indent_width=4
+indent_type=0
+indent_hard_tab_width=8
+detect_indent=false
+indent_mode=2
+
+[project]
+name=manuel-ohlendorf
+base_path=/home/mohlendo/manuel-ohlendorf.de/
+description=
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=72
+
+[files]
+current_page=0
+FILE_NAME_0=1570;Markdown;0;16;0;1;0;/home/mohlendo/manuel-ohlendorf.de/_posts/001 Blogofile on github.markdown;0
+FILE_NAME_1=3023;Python;0;16;0;1;0;/home/mohlendo/manuel-ohlendorf.de/_config.py;0
+
+[build-menu]
+NF_00_LB=_Make
+NF_00_CM=blogofile build
+NF_00_WD=%p
+NF_01_LB=Make Custom _Target
+NF_01_CM=make 
+NF_01_WD=%p
+NF_02_LB=Make _Object
+NF_02_CM=make %e.o
+NF_02_WD=%p
+NF_03_LB=
+NF_03_CM=
+NF_03_WD=%p
