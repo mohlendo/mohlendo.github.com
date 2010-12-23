@@ -9,9 +9,9 @@ a {
 /********** Body **********/
 html {overflow-y: scroll;}
 body {
-    background-color:#666666;
+    background-color:#332D33;
     color:#333333;
-    font-family: "Bitstream Vera Sans", "helvetica", "arial", sans-serif;
+    font-family: "Ubuntu", "arial", sans-serif;
     margin:0;
     padding: 0px;
 }
@@ -24,7 +24,7 @@ div#content {
 
 /********** Header **********/
 div#header {
-    background-color:#666666;
+    background-color:#332D33;
     height:75px;
     margin:0;
     padding:0;
@@ -41,7 +41,7 @@ div#header a{
     text-decoration: none;
 }
 #blog_name {
-    color:orange;
+    color:#91A100;
     font-family:Ubuntu, sans-serif;
     font-size:36px;
     font-weight:normal;
@@ -75,7 +75,7 @@ div#header a{
     cursor: pointer;
 }
 #top_bar {
-    background:#303030 none repeat scroll 0 0;
+    background:#4D5950 none repeat scroll 0 0;
     font-size:12px;
     margin:0;
     padding:15px 0 6px 0;
