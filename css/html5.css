@@ -37,7 +37,9 @@ h3 {
 p {
 	padding-bottom: 22px;
 }
-
+a {
+    color: #000000;
+}
 /*------------------------------
 =Title
 ------------------------------*/
@@ -128,6 +130,10 @@ nav {
 		padding: 0;
 		color: #d9f499;
 	}
+    
+    #intro p#tweet {
+        font-style:italic;
+    }
 	
 	#intro img {
 		position: absolute;
@@ -191,7 +197,7 @@ nav {
 	-webkit-column-gap: 22px;
 }
 
-.blogPost ul{
+.blogPost ul {
     list-style: square inside none;
 }
 	
@@ -245,8 +251,25 @@ aside section {
 			aside section ul li a:hover {
 				text-decoration: underline;
 			}
-
-
+            
+    aside section#contact div#about{
+            display: table; 
+    }
+    
+    aside section#contact div#me{
+            display: table-cell;
+            width: 100px; 
+            height: 150px;
+            background: url("/site_img/me.jpg") no-repeat;
+            padding-right:22px;
+    }
+    
+    aside section#contact div#text{
+        display: table-cell;        
+    }
+    aside section#contact ul {
+        list-style: square inside none;
+    }
 
 /*------------------------------
 =FOOTER

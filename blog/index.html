@@ -1,6 +1,5 @@
 
 
-
 <!doctype html> 
 <html lang="en">
   <head>
@@ -46,9 +45,10 @@ href="/blog/feed/atom" />
 </header>
 <nav>
     <ul>
-      <li class="selected"><a href="/">Home</a></li>
-      <li class="selected"><a href="/blog">Blog</a></li>
-      <li class="selected"><a href="/cv.html">CV</a></li>
+            <li class="selected"><a href="/">Home</a></li>
+            <li class="selected"><a href="/blog">Blog</a></li>
+            <li class="selected"><a href="/cv.html">CV</a></li>
+     
     </ul>
     <!--div id="search">    
         <form id="searchform" method="get" action="http://www.google.com/search">
@@ -74,7 +74,7 @@ href="/blog/feed/atom" />
 		<header>
 			<a class="blogPostTitle" name="Hosting a Blogofile Blog on GitHub with GitHub Pages" />
             <h2 class="blogPostTitle"><a href="/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages" rel="bookmark" title="Permanent Link to Hosting a Blogofile Blog on GitHub with GitHub Pages">Hosting a Blogofile Blog on GitHub with GitHub Pages</a></h2>
-			<p><time datetime="2010-12-23T13:09:03-0500">December 23, 2010 at 01:09 PM</time> | categories: 
+			<p><time datetime="2010-12-23T13:09:03+0100">December 23, 2010 at 01:09 PM</time> | categories: 
 
 <a href='/blog/category/software'>software</a>
  | <a href="http://www.manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages#disqus_thread">View Comments</a>
@@ -173,8 +173,18 @@ href="/blog/feed/atom" />
     <header>
         <h3>About Me</h3>
     </header>
-    <br/>
-    <img src="/site_img/me.jpg"/>
+    <div id="about">
+        <div id="me">
+        </div>
+        <div id="text">
+            If you want to contact me, send an <a href="mailto:mail@manuel.ohlendorf.de">email</a> or use one of my social networking profiles:
+            <ul>
+                <li><a href="http://twitter.com/mohlendo"/>twitter</a></li>
+                <li><a href="http://www.flickr.com/photos/14257612@N02/"/>flickr</a></li>
+                <li><a href="http://www.facebook.com/mohlendo"/>facebook</a></li>
+            </ul>
+        </div>
+    </div>    
 </section>
 <section>
     <header>
@@ -184,13 +194,13 @@ href="/blog/feed/atom" />
         <li><a href="/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages">Hosting a Blogofile Blog on GitHub with GitHub Pages</a></li>
     </ul>
 </section>
-<section id="on_twitter">
+<!--section id="on_twitter">
     <header>
         <h3>On Twitter <small>the good, the bad, and the ugly</small></h3>
     </header>
     <div id="mohlendo_tweets"></div>
     <a href="http://search.twitter.com/search?q=mohlendo" style="float: right">See more tweets</a>
-</section>
+</section-->
 
     <section id="github">
 <header><h3>Github Projects</h3></header>

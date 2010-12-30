@@ -31,7 +31,9 @@ function twitterSidebar(){
         });
 }
 
+
+
 $(document).ready(function(){
-    twitterSidebar();
+    //twitterSidebar();
     paragraphPermalinks();
   });
