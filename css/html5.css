@@ -198,7 +198,8 @@ nav {
 }
 
 .blogPost ul {
-    list-style: square inside none;
+    list-style: square outside none;
+    margin-left: 22px;
 }
 	
 .blogPost img {
@@ -259,7 +260,7 @@ aside section {
     aside section#contact div#me{
             display: table-cell;
             width: 100px; 
-            height: 150px;
+            /*height: 150px;*/
             background: url("/site_img/me.jpg") no-repeat;
             padding-right:22px;
     }
@@ -268,9 +269,9 @@ aside section {
         display: table-cell;        
     }
     aside section#contact ul {
-        list-style: square inside none;
+        list-style: square outside none;
+        margin-left: 22px;
     }
-
 /*------------------------------
 =FOOTER
 ------------------------------*/
