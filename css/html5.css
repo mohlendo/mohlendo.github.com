@@ -91,15 +91,6 @@ nav {
 				color: #fff;
 			}
 			
-			nav ul li.subscribe a {
-				margin-left: 22px;
-				padding-left: 33px;
-				text-align: left;
-				background: url("/site_img/rss.png") left center no-repeat;
-			}
-
-
-
 /*------------------------------
 =INTRODUCTION
 ------------------------------*/
@@ -108,7 +99,7 @@ nav {
 	position: relative;
 	margin-top: 22px;
 	padding: 44px;
-	background: #467612 url("/site_img/intro_background.png") repeat-x;
+	background: #467612;
 	
 	/* Background-size not implemented yet */
 	-webkit-background-size: 100%;
