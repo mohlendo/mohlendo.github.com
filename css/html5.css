@@ -1,0 +1,308 @@
+/*------------------------------
+=BASIC SETUP
+------------------------------*/
+
+/* Makeshift CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Tell the browser to render HTML 5 elements as block */
+header, footer, section, aside, nav, article {
+	display: block;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 1000px;
+	font: 13px/22px Helvetica, Arial, sans-serif;
+	background: #F0F0F0;
+}
+
+h1, h2 {
+	font-size: 28px;
+	line-height: 44px;
+	padding: 22px 0;
+    text-decoration:none;
+}
+
+h3 {
+	font-size: 18px;
+	line-height: 22px;
+	padding: 11px 0;
+}
+
+p {
+	padding-bottom: 22px;
+}
+
+/*------------------------------
+=Title
+------------------------------*/
+body header h1 {
+    font-size: 46px;
+    font-weight: normal;
+    font-family: "Reenie Beanie", "arial", sans-serif;
+}
+body header a {
+    color: #000000;
+    text-decoration:none;
+}
+
+/*------------------------------
+=NAVIGATION
+------------------------------*/
+
+nav {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: url("/site_img/nav_background.png");
+}
+
+	nav ul {
+		margin: 0 auto;
+		width: 1000px;
+		list-style: none;
+	}
+
+		nav ul li {
+			float: left;
+		}
+		
+			nav ul li a {
+				display: block;
+				margin-right: 20px;
+				width: 140px;
+				font-size: 14px;
+				line-height: 44px;
+				text-align: center;
+				text-decoration: none;
+				color: #777;
+			}
+			
+				nav ul li a:hover {
+					color: #fff;
+				}
+			
+			nav ul li.selected a {
+				color: #fff;
+			}
+			
+			nav ul li.subscribe a {
+				margin-left: 22px;
+				padding-left: 33px;
+				text-align: left;
+				background: url("/site_img/rss.png") left center no-repeat;
+			}
+
+
+
+/*------------------------------
+=INTRODUCTION
+------------------------------*/
+
+#intro {
+	position: relative;
+	margin-top: 22px;
+	padding: 44px;
+	background: #467612 url("/site_img/intro_background.png") repeat-x;
+	
+	/* Background-size not implemented yet */
+	-webkit-background-size: 100%;
+	-o-background-size: 100%;
+	-khtml-background-size: 100%;
+
+	
+	/* Border-radius not implemented yet */
+	-moz-border-radius: 22px;
+	-webkit-border-radius: 22px;
+}
+
+	#intro h2, #intro p {
+		position: relative;
+		z-index: 9999;
+		width: 336px;
+	}
+	
+	#intro h2 {
+		padding: 0 0 22px 0;
+		font-weight: normal;
+		color: #fff;
+	}
+	
+	#intro p {
+		padding: 0;
+		color: #d9f499;
+	}
+	
+	#intro img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 653px;
+		height: 100%;
+	
+		/* Border-radius not implemented yet */
+		-moz-border-radius: 22px;
+		-webkit-border-radius: 22px;
+	}
+
+
+
+/*------------------------------
+=CONTENT AREA AND SIDEBAR LAYOUT
+------------------------------*/
+
+#content {
+	display: table;
+    padding-top: 44px;
+}
+
+	#mainContent {
+		display: table-cell;
+		width: 680px;
+		padding-right: 22px;
+        padding-bottom: 22px;
+	}
+	
+	aside {
+		display: table-cell;
+		width: 300px;
+		background: url("/site_img/sidebar_background.png") top left;
+	}
+
+
+
+/*------------------------------
+=BLOG POST
+------------------------------*/
+.blogPost header p, .blogPost header p a {
+		font-size: 14px;
+		font-style: italic;
+		color: #777;
+	}
+	
+		.blogPost header p a:hover {
+			text-decoration: none;
+			color: #000;
+		}
+
+.blogPost div#columns {
+	/* Column-count not implemented yet */
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	
+	/* Column-gap not implemented yet */
+	-moz-column-gap: 22px;
+	-webkit-column-gap: 22px;
+}
+
+.blogPost ul{
+    list-style: square inside none;
+}
+	
+.blogPost img {
+	margin: 22px 0;
+	-webkit-box-shadow: 3px 3px 7px #777;
+}
+
+.blogPost p a.paragraphPermalink {
+    color: red;
+    visibility : hidden;
+}
+.blogPost p:hover a.paragraphPermalink {
+    visibility : visible;
+}
+.blogPost p a.paragraphPermalink:hover {
+    background: #ffffff none repeat scroll 0 0;
+}
+
+div.afterPost {
+    text-align: center;
+}
+hr.interblog {
+}
+
+
+/*------------------------------
+=SIDEBAR
+------------------------------*/
+aside section {
+	margin: 22px 0 0 22px;
+	padding: 11px 22px;
+	background: url("/site_img/sidebar_section_background.png") repeat-x;
+	
+	/* Border-radius not implemented yet */
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+}
+
+	aside section ul {
+		margin: 0 0 0 0;
+		list-style: none;
+        list-style-type: none;
+	}
+        aside section ul li a {
+			display: block;
+			text-decoration: none;
+			color: #000;
+        }
+		
+			aside section ul li a:hover {
+				text-decoration: underline;
+			}
+
+
+
+/*------------------------------
+=FOOTER
+------------------------------*/
+footer {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: #222;
+}
+
+	footer div {
+		display: table;
+		margin: 0 auto;
+		padding: 44px 0;
+		width: 1000px;
+		color: #777;
+	}
+	
+		footer div section {
+			display: table-cell;
+			width: 300px;
+		}
+		
+		footer div #about, footer div #blogroll {
+			padding-right: 20px;
+		}
+		
+	footer h3 {
+		color: #FFF;
+	}
+	
+	footer a {
+		color: #999;
+	}
+	
+		footer a:hover {
+			color: #FFF;
+			text-decoration: none;
+		}
+	
+	footer ul {
+		margin: 0 0 0 40px;
+		list-style: square;
+		color: #565656;
+	}
+	
+		footer ul li a {
+			display: block;
+		}

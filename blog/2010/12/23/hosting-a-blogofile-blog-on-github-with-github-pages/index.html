@@ -1,26 +1,25 @@
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!doctype html> 
+<html lang="en">
   <head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
-  <title>Manuel Ohlendorf</title>
+    <title>Manuel Ohlendorf</title>
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed" />
 <link rel="alternate" type="application/atom+xml" title="Atom 1.0"
 href="/blog/feed/atom" />
 
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
 <link rel='stylesheet' href='/css/pygments_monokai.css' type='text/css' />
-<link rel='stylesheet' href='/css/site.css' type='text/css' />
+<link rel='stylesheet' href='/css/html5.css' type='text/css' />
 <link rel='stylesheet' href='/css/jquery.tweet.css' type='text/css' />
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery.tweet.js"></script>
-<script type="text/javascript" src="/js/googleRSSWidget.js"></script>
 <script type="text/javascript" src="/js/site.js"></script>
 
 <script type="text/javascript">
@@ -40,56 +39,49 @@ href="/blog/feed/atom" />
 
   </head>
   <body>
-    <div id="content">
       
-  
-<div id="header" onclick="location.href='/';" style="cursor: pointer;">
-  <div id="plugbanner"></div>
-  <div id="blog_logo"></div>
-  <h1><a href="/">
-      <span id="blog_name">
-        Manuel Ohlendorf
-      </span>
-    </a>
-  </h1>
-</div>
-<div id="top_bar">
-  <div class="ButtonBar">
+    
+<header>
+    <h1><a href="/">Manuel Ohlendorf</a></h1>
+</header>
+<nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/cv.html">CV</a></li>
+      <li class="selected"><a href="/">Home</a></li>
+      <li class="selected"><a href="/blog">Blog</a></li>
+      <li class="selected"><a href="/cv.html">CV</a></li>
     </ul>
-  </div>
-  <div id="search">    
-    <form id="searchform" method="get" action="http://www.google.com/search">
-      <input type="hidden" name="ie" value="UTF-8">
-      <input type="hidden" name="oe" value="UTF-8">
-      <input type="hidden" name="domains" value="www.manuel-ohlendorf.de">
-      <input type="hidden" name="sitesearch" value="www.manuel-ohlendorf.de">
-      <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
-    </form>
-  </div>
-</div>
+    <!--div id="search">    
+        <form id="searchform" method="get" action="http://www.google.com/search">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="hidden" name="oe" value="UTF-8">
+          <input type="hidden" name="domains" value="www.manuel-ohlendorf.de">
+          <input type="hidden" name="sitesearch" value="www.manuel-ohlendorf.de">
+          <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
+        </form>
+    </div-->
+</nav>
 
 
-      <div id="main_block">
-        <div id="prose_block">
-          
+      <div id="content">
+        <div id="mainContent">
+            
 
 
 
 
-<div class="blog_post" id="hosting-a-blogofile-blog-on-github-with-github-pages">
-  <a class="blog_post_title" name="Hosting a Blogofile Blog on GitHub with GitHub Pages" />
-  <h2 class="blog_post_title"><a href="/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages" rel="bookmark" title="Permanent Link to Hosting a Blogofile Blog on GitHub with GitHub Pages">Hosting a Blogofile Blog on GitHub with GitHub Pages</a></h2>
-  <small>December 23, 2010 at 01:09 PM | categories: 
+<section>
+	<article class="blogPost" id="hosting-a-blogofile-blog-on-github-with-github-pages">
+		<header>
+			<a class="blogPostTitle" name="Hosting a Blogofile Blog on GitHub with GitHub Pages" />
+            <h2 class="blogPostTitle"><a href="/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages" rel="bookmark" title="Permanent Link to Hosting a Blogofile Blog on GitHub with GitHub Pages">Hosting a Blogofile Blog on GitHub with GitHub Pages</a></h2>
+			<p><time datetime="2010-12-23T13:09:03-0500">December 23, 2010 at 01:09 PM</time> | categories: 
 
 <a href='/blog/category/software'>software</a>
  | <a href="http://www.manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages#disqus_thread">View Comments</a>
-  </small>
-  <span class="post_prose">
-    
+  </p>
+  </header>
+    <div>
+        
   <p id="p1">So, in my first blog post I will describe howto use <a href="http://www.github.com">GitHub</a> to serve a <a href="http://www.blogofile.com">Blogofile</a> Blog, which I have done with this blog.
 </p>
 
@@ -165,8 +157,9 @@ href="/blog/feed/atom" />
    As a start you can also fork my two github repos.
 </p>
 
-  </span>
-</div>
+	</div>
+    </article>
+</section>
 
 
 
@@ -177,61 +170,89 @@ href="/blog/feed/atom" />
 <script type="text/javascript" src="http://disqus.com/forums/manuelohlendorf/embed.js"></script>
 <noscript><a href="http://manuelohlendorf.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
-        </div><!-- End Prose Block -->
-        
-  <div class="right_sidebar">
-    <div id="right_sidebar">
-  <div id="contact">
-    <h3>About Me</h3>
+        </div>
+        <aside>
+            
+    <section id="contact">
+    <header>
+        <h3>About Me</h3>
+    </header>
     <br/>
     <img src="/site_img/me.jpg"/>
-  </div>
-  <div id="blog_post_list">
-  <h3>Latest blog posts</h3>
-  <ul>
-    <li><a href="/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages">Hosting a Blogofile Blog on GitHub with GitHub Pages</a></li>
-  </ul>
-  </div>
-  <div id="on_twitter">
-    <h3>On Twitter <small>the good, the bad, and the ugly</small></h3>
+</section>
+<section>
+    <header>
+        <h3>Latest blog posts</h3>
+    </header>
+    <ul>
+        <li><a href="/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages">Hosting a Blogofile Blog on GitHub with GitHub Pages</a></li>
+    </ul>
+</section>
+<section id="on_twitter">
+    <header>
+        <h3>On Twitter <small>the good, the bad, and the ugly</small></h3>
+    </header>
     <div id="mohlendo_tweets"></div>
     <a href="http://search.twitter.com/search?q=mohlendo" style="float: right">See more tweets</a>
-  </div>
-  <div id="commits">
-    <h3>Latest Commits</h3>
-    <div id="commitsRSS">&nbsp;</div>
-    <script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/05822478891877038698/label/github?n=5&callback=commitsRSSRender"></script>
-    <a href="http://github.com/mohlendo/" style="float: right">See more commits</a><br/>
-  </div>
-  <div id="categories">
-    <h3>Categories</h3>
+</section>
+
+    <section id="github">
+<header><h3>Github Projects</h3></header>
+<ul>
+    <li><a href="https://github.com/mohlendo/mohr" title="mohr">mohr</a></li>
+    <li><a href="https://github.com/mohlendo/lsystem" title="lsystem">lsystem</a></li>
+    <li><a href="https://github.com/mohlendo/tomcatpolicyprotocol" title="tomcatpolicyprotocol">tomcatpolicyprotocol</a></li>
+    <li><a href="https://github.com/mohlendo/mohlendo.github.com" title="mohlendo.github.com">mohlendo.github.com</a></li>
+    <li><a href="https://github.com/mohlendo/dughh" title="dughh">dughh</a></li>
+    <li><a href="https://github.com/mohlendo/brainy" title="brainy">brainy</a></li>
+    <li><a href="https://github.com/mohlendo/tornado_chat" title="tornado_chat">tornado_chat</a></li>
+    <li><a href="https://github.com/mohlendo/Flickroid" title="Flickroid">Flickroid</a></li>
+    <li><a href="https://github.com/mohlendo/flickrj" title="flickrj">flickrj</a></li>
+    <li><a href="https://github.com/mohlendo/manuel-ohlendorf.de" title="manuel-ohlendorf.de">manuel-ohlendorf.de</a></li>
+</ul>
+</section>
+
+
+<section id="categories">
+    <header><h3>Categories</h3></header>
     <ul>
-     <li><a href="/blog/category/software">software</a> (<a href="/blog/category/software/feed">rss</a>) (1)</li>
+        <li>
+            <a href="/blog/category/software">software&nbsp;(1)</a><!--a href="/blog/category/software/feed">rss</a-->
+        </li>
     </ul>
-  </div> 
-  <div id="archives">			
-    <h3>Archives</h3>
+</section> 
+<section id="archives">			
+    <header><h3>Archives</h3></header>
     <ul>
-      <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010</a>&nbsp;(1)</li>
+        <li><a href="/blog/archive/2010/12/1" title="December 2010">December 2010&nbsp;(1)</a></li>
     </ul>
-  </div>
+</section>
 
-</div>
 
-  </div>
-
-      </div><!-- End Main Block -->
-      <div id="footer">
+        </aside>
+      </div>
+      <footer>
         
-  <p id="credits">
-Powered by <a href="http://www.blogofile.com">Blogofile</a>.<br/>
-<br/>
-RSS feeds for <a href="/blog/feed">Entries</a>
+    <div>
+<section id="about">
+    <header><h3>About</h3></header>
+    <p>Powered by <a href="http://www.blogofile.com">Blogofile</a>.</p>
+</section>
+<section>
+    <header><h3>Feeds</h3></header>
+<p>RSS feeds for <a href="/blog/feed">Entries</a>
  and <a
 href="http://manuelohlendorf.disqus.com/latest.rss">Comments</a>.
-<br>
 </p>
+</section>
+<section>
+    <header>
+        <h3>Latest blog posts</h3>
+    </header>
+    <ul>
+        <li><a href="/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages">Hosting a Blogofile Blog on GitHub with GitHub Pages</a></li>
+    </ul>
+</section>
 <script type="text/javascript">
 //<![CDATA[
 (function() {
@@ -246,10 +267,10 @@ href="http://manuelohlendorf.disqus.com/latest.rss">Comments</a>.
 	})();
 //]]>
 </script>
+</div>
 
 
-      </div> <!-- End Footer -->
-    </div> <!-- End Content -->
+      </footer>
   </body>
 </html>
 
