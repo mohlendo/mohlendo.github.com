@@ -259,8 +259,8 @@ aside section {
             
     
     aside section#contact img{
-        float:left;
-        margin: 0 22px 22px 0;
+        float:right;
+        margin: 0 0 22px 22px;
     }
     aside section#contact ul {
         list-style: square outside none;
