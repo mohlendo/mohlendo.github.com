@@ -61,7 +61,8 @@ nav {
 	position: absolute;
 	left: 0;
 	width: 100%;
-	background: url("/site_img/nav_background.png");
+    background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#222222));
+    background: -moz-linear-gradient(top, #333333, #222222);
 }
 
 	nav ul {
@@ -168,7 +169,8 @@ nav {
 	aside {
 		display: table-cell;
 		width: 300px;
-		background: url("/site_img/sidebar_background.png") top left;
+        background: -webkit-gradient(linear, left top, right top, from(#d7d7d7), to(#f0f0f0));
+        background: -moz-linear-gradient(left center, #d7d7d7, #f0f0f0);
 	}
 
 
@@ -231,7 +233,9 @@ hr.interblog {
 aside section {
 	margin: 22px 0 0 22px;
 	padding: 11px 22px;
-	background: url("/site_img/sidebar_section_background.png") repeat-x;
+    
+    background: -webkit-gradient(linear, left top, left bottom, from(#d7d7d7), to(#f0f0f0));
+    background: -moz-linear-gradient(top, #d7d7d7, #f0f0f0);
 	
 	/* Border-radius not implemented yet */
 	-moz-border-radius: 11px;
@@ -253,20 +257,10 @@ aside section {
 				text-decoration: underline;
 			}
             
-    aside section#contact div#about{
-            display: table; 
-    }
     
-    aside section#contact div#me{
-            display: table-cell;
-            width: 100px; 
-            /*height: 150px;*/
-            background: url("/site_img/me.jpg") no-repeat;
-            padding-right:22px;
-    }
-    
-    aside section#contact div#text{
-        display: table-cell;        
+    aside section#contact img{
+        float:left;
+        margin: 0 22px 22px 0;
     }
     aside section#contact ul {
         list-style: square outside none;
