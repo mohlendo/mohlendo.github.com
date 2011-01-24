@@ -24,7 +24,7 @@ body {
 h1, h2 {
 	font-size: 2em;
 	line-height: 44px;
-    text-decoration:none;
+  text-decoration:none;
 }
 
 h3 {
@@ -58,6 +58,7 @@ ul, ol, dl {
 ------------------------------*/
 body header h1 {
     font-size: 46px;
+    padding: 22px 0;
     font-weight: normal;
     font-family: "Reenie Beanie", "arial", sans-serif;
 }
