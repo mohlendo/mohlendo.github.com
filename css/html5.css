@@ -51,7 +51,14 @@ ul, ol, dl {
     margin-left: 22px;
 }
 
-
+/*-----------------------------
+=Mobile devices
+-----------------------------*/
+@media only screen and (max-device-width: 480px) {
+  #mainContent {
+    padding-left: 11px;  
+  }
+}
 
 /*------------------------------
 =Title
