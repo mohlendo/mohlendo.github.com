@@ -7,12 +7,53 @@
   <title type="text">Manuel Ohlendorf</title>
   <subtitle type="text">Manuel Ohlendorf writing about something</subtitle>
 
-  <updated>2011-12-03T15:02:41Z</updated>
+  <updated>2011-12-03T18:45:53Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://www.manuel-ohlendorf.de/blog" />
   <id>http://www.manuel-ohlendorf.de/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://www.manuel-ohlendorf.de/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://www.manuel-ohlendorf.de/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Lsystem parser with Jangaroo]]></title>
+    <link rel="alternate" type="text/html" href="http://www.manuel-ohlendorf.de/blog/2011/12/03/lsystem-parser-with-jangaroo" />
+    <id>http://www.manuel-ohlendorf.de/blog/2011/12/03/lsystem-parser-with-jangaroo</id>
+    <updated>2011-12-03T16:44:21Z</updated>
+    <published>2011-12-03T16:44:21Z</published>
+    <category scheme="http://www.manuel-ohlendorf.de/blog" term="software" />
+    <summary type="html"><![CDATA[Lsystem parser with Jangaroo]]></summary>
+    <content type="html" xml:base="http://www.manuel-ohlendorf.de/blog/2011/12/03/lsystem-parser-with-jangaroo"><![CDATA[
+<p>Have you ever heard of <a href="http://www.jangaroo.net">Jangaroo</a>? It is an ActionScript&reg;-to-Javascript compiler. It's an open-source project with an implementation of the Flash&reg; API and the whole toolchain every programmer likes: Maven dependency management, good IDE support, TDD with JooUnit (a port of FlexUnit) and a lot more. It even comes with a declarative UI language EXML (well, it is quite similar to MXML), that can be used to generate <a href="http://www.sencha.com/products/extjs/">ExtJS</a> applications. For about a year I am now also helping to evolve Jangaroo and its toolchain.</p>
+<p>Once upon the time when Adobe&reg; Flex was the next big thing, I was very much impressed by this cool technology. I developed an UI during a professional project with Flex 3 and was a beta tester for Adobe&reg; Flex 4 and all the tools that came with it like FlexBuilder and Thermo. Back then I wrote a little <a href="http://en.wikipedia.org/wiki/L-system">Lindenmayer system</a> parser with a Flex 4 UI: <a href="https://github.com/mohlendo/lsystem">lsystem</a>.</p>
+<p>Below you see some <a href="http://en.wikipedia.org/wiki/L-system">Lindenmayer systems</a> that are generated with the Jangaroo version of the original Flash&reg; lsystem parser. It is still the same code, but the program now completely runs in the browser &ndash; without any plugin and only with HTML5. The code can be found here: <a href="https://github.com/mohlendo/lsystem-jangaroo">lsystem-jangaroo</a>.</p>
+
+<iframe id="lsystem1" src="/jangaroo/lsystem/lsystem.html?lsystem=1" frameborder="0" width="640" height="480">
+    no frames
+</iframe>
+<iframe id="lsystem2" src="/jangaroo/lsystem/lsystem.html?lsystem=2" frameborder="0" width="640" height="480">
+    no frames
+</iframe>
+<p>All in all there are 10 Lsystem presets that can be viewed with my litte program:
+  <ul>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=0" target="_blank">Lsystema vulgaris</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=1" target="_blank">Tree 1</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=2" target="_blank">Tree 2</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=3" target="_blank">Tree 3</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=4" target="_blank">Koch curve</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=5" target="_blank">Quad Koch island</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=6" target="_blank">Hilber curve</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=7" target="_blank">Sierpinski Arrowhead</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=8" target="_blank">Dragon curve</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=9" target="_blank">Lévy C curve</a></li>
+    <li><a href="/jangaroo/lsystem/lsystem.html?lsystem=10" target="_blank">Penrose Tiling P3</a> Warning! This may crash your browser!</li>
+  </ul>
+</p>
+
+]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
