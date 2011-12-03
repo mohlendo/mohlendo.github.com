@@ -4,18 +4,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"> 
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1;"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
     <meta name="description" content="Manuel Ohlendorf writing about something"/> 
 
 <title>Manuel Ohlendorf</title>
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/index.xml" />
 <link rel="alternate" type="application/atom+xml" title="Atom 1.0"
-href="/blog/feed/atom" />
+href="/blog/feed/atom/index.xml" />
 
 <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='/css/pygments_monokai.css' type='text/css' />
+<link rel='stylesheet' href='/pygments_monokai.css' type='text/css' />
 <link rel='stylesheet' href='/css/html5.css' type='text/css' />
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
@@ -44,21 +44,16 @@ href="/blog/feed/atom" />
     <h1><a href="/">Manuel Ohlendorf</a></h1>
 </header>
 <nav>
+
     <ul>
-            <li class="selected"><a href="/">Home</a></li>
-            <li class="selected"><a href="/blog">Blog</a></li>
-            <li class="selected"><a href="/cv.html">CV</a></li>
+            <li><a href="/" 
+                   class="">Home</a></li>
+            <li><a href="/blog" 
+                   class="">Blog</a></li>
+            <li><a href="/cv" 
+                   class="">CV</a></li>
      
     </ul>
-    <!--div id="search">    
-        <form id="searchform" method="get" action="http://www.google.com/search">
-          <input type="hidden" name="ie" value="UTF-8">
-          <input type="hidden" name="oe" value="UTF-8">
-          <input type="hidden" name="domains" value="www.manuel-ohlendorf.de">
-          <input type="hidden" name="sitesearch" value="www.manuel-ohlendorf.de">
-          <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';" type="text">
-        </form>
-    </div-->
 </nav>
 
 
@@ -82,80 +77,60 @@ href="/blog/feed/atom" />
   </header>
     <div>
         
-  <p id="p1">So, in my first blog post I will describe howto use <a href="http://www.github.com">GitHub</a> to serve a <a href="http://www.blogofile.com">Blogofile</a> Blog, which I have done with this blog.
-</p>
-
+  <p>So, in my first blog post I will describe howto use <a href="http://www.github.com">GitHub</a> to serve a <a href="http://www.blogofile.com">Blogofile</a> Blog, which I have done with this blog.</p>
 <h3>First, what is <a href="http://www.blogofile.com">Blogofile</a>?</h3>
-<p id="p2">Blogofile is a framework for static websites. You don't need a webserver and no database, only webspace. 
-   Blogofile provides templates, controllers and filters, almost like any other dynamic web frameworks and compiles them to a static website.
-   Right now it is more or less a blogging engine but you can actually create any website you want.
-   Have a look at the website for details.
-</p>
-<p id="p3">And there comes <a href="http://www.github.com">GitHub</a> into the play. <a href="http://www.github.com">GitHub</a>
-   provides with <a href="http://pages.github.com/">GitHub Pages</a> a very simple way of publishing content to the web. 
-   So why not using <a href="http://www.github.com">GitHub</a> for serving your blogofile website.
-</p>
-
+<p>Blogofile is a framework for static websites. You don't need a webserver and no database, only webspace. 
+Blogofile provides templates, controllers and filters, almost like any other dynamic web frameworks and compiles them to a static website.
+Right now it is more or less a blogging engine but you can actually create any website you want.
+Have a look at the website for details.</p>
+<p>And there comes <a href="http://www.github.com">GitHub</a> into the play. <a href="http://www.github.com">GitHub</a>
+provides with <a href="http://pages.github.com/">GitHub Pages</a> a very simple way of publishing content to the web. 
+So why not using <a href="http://www.github.com">GitHub</a> for serving your blogofile website.</p>
 <h3>Github setup</h3>
-<p id="p4">You need 2 public repositories for that, the source code repository and the website repository that contains the compiled pages. My two repos are:
-</p>
+<p>You need 2 public repositories for that, the source code repository and the website repository that contains the compiled pages. My two repos are:</p>
 <ul>
- <li>
-     <a href="http://github.com/mohlendo/manuel-ohlendorf.de">http://github.com/mohlendo/manuel-ohlendorf.de</a> with the source code
- </li>
-
- <li>
-     <a href="http://github.com/mohlendo/mohlendo.github.com">http://github.com/mohlendo/mohlendo.github.com</a> with the compiled HTML files
- </li>
+<li><a href="http://github.com/mohlendo/manuel-ohlendorf.de">http://github.com/mohlendo/manuel-ohlendorf.de</a> with the source code</li>
+<li><a href="http://github.com/mohlendo/mohlendo.github.com">http://github.com/mohlendo/mohlendo.github.com</a> with the compiled HTML files</li>
 </ul>
-<p id="p5">The later one is a special repository for user pages published with <a href="http://pages.github.com/">GitHub Pages</a>.
-</p>
-
+<p>The later one is a special repository for user pages published with <a href="http://pages.github.com/">GitHub Pages</a>.</p>
 <h3>Git setup</h3>
-<p id="p6">The whole source code of your website with the Mako templates etc. will be pushed to the source code repository.
-   The command <code>blogofile build</code> compiles the website into the sub-folder <code>_site</code>. 
-   The contents of this directory is what we want to push to the website repository which GitHub will publish to the web. In order to do that we 
-   need to create a git <a href="http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html">submodule</a> with the command:
-</p>
+<p>The whole source code of your website with the Mako templates etc. will be pushed to the source code repository.
+The command <code>blogofile build</code> compiles the website into the sub-folder <code>_site</code>. 
+The contents of this directory is what we want to push to the website repository which GitHub will publish to the web. In order to do that we 
+need to create a git <a href="http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html">submodule</a> with the command:</p>
 <pre><code>git submodule add http://github.com/mohlendo/mohlendo.github.com _site
-</code></pre><p id="p7">That creates a new submodule <code>_site</code>. Now everytime the site is rebuild, you can commit and push the changes to the website repository and github 
-   will automatically publish them - in my case to <a href="http://mohlendo.github.com">http://mohlendo.github.com</a>
-</p>
-
+</code></pre>
+<p>That creates a new submodule <code>_site</code>. Now everytime the site is rebuild, you can commit and push the changes to the website repository and github 
+will automatically publish them - in my case to <a href="http://mohlendo.github.com">http://mohlendo.github.com</a></p>
 <h3>_config.py changes</h3>
-<p id="p8">Every time blogofile recreates the website it completely clears the <code>_site</code> directory 
-   and therefor also the <code>.git</code> directory of the submodule. 
-   This leads to a confusion of git and it cannot track changes on the compiled website anymore.
-</p>
-<p id="p9">I wrote some small custom <code>pre_build()</code> and <code>post_build()</code> hooks that moves the 
-   <code>.git</code> directory to a temp folder and restores it after a successfull build.
-</p>
+<p>Every time blogofile recreates the website it completely clears the <code>_site</code> directory 
+and therefor also the <code>.git</code> directory of the submodule. 
+This leads to a confusion of git and it cannot track changes on the compiled website anymore.</p>
+<p>I wrote some small custom <code>pre_build()</code> and <code>post_build()</code> hooks that moves the 
+<code>.git</code> directory to a temp folder and restores it after a successfull build.</p>
 <div class="pygments_monokai"><pre><span class="c">### Pre/Post build hooks:</span>
 <span class="k">def</span> <span class="nf">pre_build</span><span class="p">():</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s">"_tmp"</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">"_tmp"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s">&quot;_tmp&quot;</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;_tmp&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="s">"_tmp"</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">"_tmp"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"_site"</span><span class="p">,</span><span class="s">".git"</span><span class="p">)):</span>
-        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"_site"</span><span class="p">,</span><span class="s">".git"</span><span class="p">),</span><span class="s">"_tmp"</span><span class="p">)</span>    
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="s">&quot;_tmp&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s">&quot;_tmp&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;_site&quot;</span><span class="p">,</span><span class="s">&quot;.git&quot;</span><span class="p">)):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;_site&quot;</span><span class="p">,</span><span class="s">&quot;.git&quot;</span><span class="p">),</span><span class="s">&quot;_tmp&quot;</span><span class="p">)</span>    
     <span class="c">#Do whatever you want before the _site is built</span>
     <span class="k">pass</span>
 <span class="k">def</span> <span class="nf">post_build</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"_tmp"</span><span class="p">,</span><span class="s">".git"</span><span class="p">)):</span>
-        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">"_tmp"</span><span class="p">,</span><span class="s">".git"</span><span class="p">),</span><span class="s">"_site"</span><span class="p">)</span>    
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;_tmp&quot;</span><span class="p">,</span><span class="s">&quot;.git&quot;</span><span class="p">)):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&quot;_tmp&quot;</span><span class="p">,</span><span class="s">&quot;.git&quot;</span><span class="p">),</span><span class="s">&quot;_site&quot;</span><span class="p">)</span>    
     <span class="c">#Do whatever you want after the _site is built</span>
 </pre></div>
 
-<p id="p10">Sadly, blogofile only invokes the <code>post_build()</code> hook when everything works fine. When you have an error 
-   in your templates blogofile only invokes the <code>pre_build()</code> hook. But destroying your submodule is no problem since you have it 
-   on GitHub! Just delete the <code>_site</code> folder and update the submodule with <code>git submodule update</code> in the root folder of your blogofile project.
-</p>
-
+<p>Sadly, blogofile only invokes the <code>post_build()</code> hook when everything works fine. When you have an error 
+in your templates blogofile only invokes the <code>pre_build()</code> hook. But destroying your submodule is no problem since you have it 
+on GitHub! Just delete the <code>_site</code> folder and update the submodule with <code>git submodule update</code> in the root folder of your blogofile project.</p>
 <h3>That's it!</h3>
-<p id="p11">Quite cool, I think, because you don't need any webserver or webspace and still have quite a nice blog! 
-   As a start you can also fork my two github repos.
-</p>
+<p>Quite cool, I think, because you don't need any webserver or webspace and still have quite a nice blog! 
+As a start you can also fork my two github repos.</p>
 
 	</div>
     </article>
@@ -204,6 +179,7 @@ href="/blog/feed/atom" />
     <li><a href="https://github.com/mohlendo/Flickroid" title="Flickroid">Flickroid</a></li>
     <li><a href="https://github.com/mohlendo/flickrj" title="flickrj">flickrj</a></li>
     <li><a href="https://github.com/mohlendo/manuel-ohlendorf.de" title="manuel-ohlendorf.de">manuel-ohlendorf.de</a></li>
+    <li><a href="https://github.com/mohlendo/lsystem-jangaroo" title="lsystem-jangaroo">lsystem-jangaroo</a></li>
 </ul>
 </section>
 
@@ -242,7 +218,7 @@ href="/blog/feed/atom" />
 </section>
 <section>
     <header><h3>Feeds</h3></header>
-<p>RSS feeds for <a href="/blog/feed">Entries</a>
+<p>RSS feeds for <a href="/blog/feed/index.xml">Entries</a>
  and <a
 href="http://manuelohlendorf.disqus.com/latest.rss">Comments</a>.
 </p>

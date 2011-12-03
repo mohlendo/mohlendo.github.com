@@ -111,7 +111,7 @@ nav {
 					color: #fff;
 				}
 			
-			nav ul li.selected a {
+			nav ul li a.selected {
 				color: #fff;
 			}
 			
