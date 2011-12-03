@@ -206,14 +206,20 @@ nav {
   padding-bottom: 15px;
   border-bottom: 1px solid #DDD;
 }
-.blogPost header p, .blogPost header p a {
+.blogPost hgroup {
+  padding-bottom: 15px;
+}
+.blogPost h2 a {
+  text-decoration: none;
+}
+.blogPost h4, .blogPost h4 a {
+    font-weight: normal;
 		font-size: 14px;
 		font-style: italic;
 		color: #777;
 	}
 	
-		.blogPost header p a:hover {
-			text-decoration: none;
+		.blogPost hgroup  a:hover {
 			color: #000;
 		}
 
