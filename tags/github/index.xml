@@ -3,7 +3,7 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/tags/github/</link>
+    <link>http://manuel-ohlendorf.de/tags/github/</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>Hosting a Blogofile Blog on GitHub with GitHub Pages</title>
-      <link>http://localhost:1313/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</link>
+      <link>http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</link>
       <pubDate>Thu, 23 Dec 2010 13:09:03 UTC</pubDate>
       <author>Manuel Ohlendorf</author>
-      <guid>http://localhost:1313/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</guid>
+      <guid>http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</guid>
       <description>
 
 &lt;p&gt;So, in my first blog post I will describe howto use &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; to serve a &lt;a href=&#34;http://www.blogofile.com&#34;&gt;Blogofile&lt;/a&gt; Blog, which I have done with this blog.&lt;/p&gt;
