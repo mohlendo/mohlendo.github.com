@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Manuel Ohlendorf</title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://manuel-ohlendorf.de/tags/hosting/</link>
+    <language>en-us</language>
+    <author>Manuel Ohlendorf</author>
+    
+    <updated>Thu, 23 Dec 2010 13:09:03 UTC</updated>
+    
+    
+    <item>
+      <title>Hosting a Blogofile Blog on GitHub with GitHub Pages</title>
+      <link>http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</link>
+      <pubDate>Thu, 23 Dec 2010 13:09:03 UTC</pubDate>
+      <author>Manuel Ohlendorf</author>
+      <guid>http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</guid>
+      <description>
+
+&lt;p&gt;So, in my first blog post I will describe howto use &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; to serve a &lt;a href=&#34;http://www.blogofile.com&#34;&gt;Blogofile&lt;/a&gt; Blog, which I have done with this blog.&lt;/p&gt;
+
+&lt;h3 id=&#34;first-what-is-blogofile-http-www-blogofile-com:1e5a439a674e6273b2b26fe741d14769&#34;&gt;First, what is &lt;a href=&#34;http://www.blogofile.com&#34;&gt;Blogofile&lt;/a&gt;?&lt;/h3&gt;
+
+&lt;p&gt;Blogofile is a framework for static websites. You don&amp;rsquo;t need a webserver and no database, only webspace.
+Blogofile provides templates, controllers and filters, almost like any other dynamic web frameworks and compiles them to a static website.
+Right now it is more or less a blogging engine but you can actually create any website you want.
+Have a look at the website for details.&lt;/p&gt;
+
+&lt;p&gt;And there comes &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; into the play. &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt;
+provides with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; a very simple way of publishing content to the web.
+So why not using &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; for serving your blogofile website.&lt;/p&gt;
+
+&lt;h3 id=&#34;github-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Github setup&lt;/h3&gt;
+
+&lt;p&gt;You need 2 public repositories for that, the source code repository and the website repository that contains the compiled pages. My two repos are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/mohlendo/manuel-ohlendorf.de&#34;&gt;http://github.com/mohlendo/manuel-ohlendorf.de&lt;/a&gt; with the source code&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com/mohlendo/mohlendo.github.com&#34;&gt;http://github.com/mohlendo/mohlendo.github.com&lt;/a&gt; with the compiled HTML files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The later one is a special repository for user pages published with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;git-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Git setup&lt;/h3&gt;
+
+&lt;p&gt;The whole source code of your website with the Mako templates etc. will be pushed to the source code repository.
+The command &lt;code&gt;blogofile build&lt;/code&gt; compiles the website into the sub-folder &lt;code&gt;_site&lt;/code&gt;.
+The contents of this directory is what we want to push to the website repository which GitHub will publish to the web. In order to do that we
+need to create a git &lt;a href=&#34;http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html&#34;&gt;submodule&lt;/a&gt; with the command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git submodule add http://github.com/mohlendo/mohlendo.github.com _site
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That creates a new submodule &lt;code&gt;_site&lt;/code&gt;. Now everytime the site is rebuild, you can commit and push the changes to the website repository and github
+will automatically publish them - in my case to &lt;a href=&#34;http://mohlendo.github.com&#34;&gt;http://mohlendo.github.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;config-py-changes:1e5a439a674e6273b2b26fe741d14769&#34;&gt;_config.py changes&lt;/h3&gt;
+
+&lt;p&gt;Every time blogofile recreates the website it completely clears the &lt;code&gt;_site&lt;/code&gt; directory
+and therefor also the &lt;code&gt;.git&lt;/code&gt; directory of the submodule.
+This leads to a confusion of git and it cannot track changes on the compiled website anymore.&lt;/p&gt;
+
+&lt;p&gt;I wrote some small custom &lt;code&gt;pre_build()&lt;/code&gt; and &lt;code&gt;post_build()&lt;/code&gt; hooks that moves the
+&lt;code&gt;.git&lt;/code&gt; directory to a temp folder and restores it after a successfull build.&lt;/p&gt;
+
+&lt;h3 id=&#34;pre-post-build-hooks:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Pre/Post build hooks:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def pre_build():
+    if not os.path.isdir(&amp;quot;_tmp&amp;quot;):
+        os.mkdir(&amp;quot;_tmp&amp;quot;)
+    else:
+        shutil.rmtree(&amp;quot;_tmp&amp;quot;)
+        os.mkdir(&amp;quot;_tmp&amp;quot;)
+    if os.path.isdir(os.path.join(&amp;quot;_site&amp;quot;,&amp;quot;.git&amp;quot;)):
+        shutil.move(os.path.join(&amp;quot;_site&amp;quot;,&amp;quot;.git&amp;quot;),&amp;quot;_tmp&amp;quot;)
+    #Do whatever you want before the _site is built
+    pass
+def post_build():
+    if os.path.isdir(os.path.join(&amp;quot;_tmp&amp;quot;,&amp;quot;.git&amp;quot;)):
+        shutil.move(os.path.join(&amp;quot;_tmp&amp;quot;,&amp;quot;.git&amp;quot;),&amp;quot;_site&amp;quot;)
+    #Do whatever you want after the _site is built
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sadly, blogofile only invokes the &lt;code&gt;post_build()&lt;/code&gt; hook when everything works fine. When you have an error
+in your templates blogofile only invokes the &lt;code&gt;pre_build()&lt;/code&gt; hook. But destroying your submodule is no problem since you have it
+on GitHub! Just delete the &lt;code&gt;_site&lt;/code&gt; folder and update the submodule with &lt;code&gt;git submodule update&lt;/code&gt; in the root folder of your blogofile project.&lt;/p&gt;
+
+&lt;h3 id=&#34;that-s-it:1e5a439a674e6273b2b26fe741d14769&#34;&gt;That&amp;rsquo;s it!&lt;/h3&gt;
+
+&lt;p&gt;Quite cool, I think, because you don&amp;rsquo;t need any webserver or webspace and still have quite a nice blog!
+As a start you can also fork my two github repos.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>

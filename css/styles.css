@@ -1,0 +1,24 @@
+html {
+  font-family: "Raleway", sans-serif;
+}
+.sidebar-about h1 {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  margin-top: 0;
+  font-weight:300;
+  font-size: 3.0em;
+ }
+
+.footnote {
+  font-size: 0.7em;
+  margin-top: 0.5rem;
+}
+
+/* Dark green */
+.theme-dark-green .sidebar {
+  background-color: #467612;
+}
+.theme-dark-green .content a,
+.theme-dark-green .related-posts li a:hover {
+  color: #467612;
+}
