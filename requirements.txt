@@ -1,3 +1,0 @@
--e git+http://github.com/EnigmaCurry/blogofile.git#egg=Package
-pyquery
-github2
