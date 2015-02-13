@@ -22,3 +22,8 @@ html {
 .theme-dark-green .related-posts li a:hover {
   color: #467612;
 }
+
+/* title */
+.brand a {
+  text-decoration: none;
+}
