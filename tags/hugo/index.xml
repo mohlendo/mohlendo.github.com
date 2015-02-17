@@ -27,8 +27,8 @@ programming language or the features of the generator are important to me, but
 the available themes!&lt;/p&gt;
 
 &lt;p&gt;So more googling was necessary to come up with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; and the
-theme Hyde and not 10 minutes later the new site was online - yes, it was that
-fast!&lt;/p&gt;
+theme &lt;a href=&#34;https://github.com/spf13/hyde&#34;&gt;Hyde&lt;/a&gt; and not 10 minutes later the new
+site was online - yes, it was that fast!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; has every feature you would expect from a static site
 generator: sitemap generation, RSS generation, serving and life-reloading during
