@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Manuel Ohlendorf</title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost:1313/categories/software/</link>
+    <language>en-us</language>
+    <author>Manuel Ohlendorf</author>
+    
+    <updated>Mon, 14 Mar 2011 16:44:03 UTC</updated>
+    
+    
+    <item>
+      <title>L-System parser with Jangaroo</title>
+      <link>http://localhost:1313/blog/2011/03/14/l-system-parser-with-jangaroo/</link>
+      <pubDate>Mon, 14 Mar 2011 16:44:03 UTC</pubDate>
+      <author>Manuel Ohlendorf</author>
+      <guid>http://localhost:1313/blog/2011/03/14/l-system-parser-with-jangaroo/</guid>
+      <description>&lt;p&gt;Have you ever heard of &lt;a href=&#34;http://www.jangaroo.net&#34;&gt;Jangaroo&lt;/a&gt;? It is an ActionScript&amp;reg;-to-Javascript compiler. It&#39;s an open-source project with an implementation of the Flash&amp;reg; API and the whole toolchain every programmer likes: Maven dependency management, good IDE support, TDD with JooUnit (a port of FlexUnit) and a lot more. It even comes with a declarative UI language EXML (well, it is quite similar to MXML), that can be used to generate &lt;a href=&#34;http://www.sencha.com/products/extjs/&#34;&gt;ExtJS&lt;/a&gt; applications. For about a year I am now also helping to evolve Jangaroo and its toolchain.&lt;/p&gt;
+&lt;p&gt;Once upon the time when Adobe&amp;reg; Flex was the next big thing, I was very much impressed by this cool technology. I developed an UI during a professional project with Flex 3 and was a beta tester for Adobe&amp;reg; Flex 4 and all the tools that came with it like FlexBuilder and Thermo. Back then I wrote a little &lt;a href=&#34;http://en.wikipedia.org/wiki/L-system&#34;&gt;Lindenmayer system&lt;/a&gt; parser with a Flex 4 UI: &lt;a href=&#34;https://github.com/mohlendo/lsystem&#34;&gt;lsystem&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Below you see some &lt;a href=&#34;http://en.wikipedia.org/wiki/L-system&#34;&gt;Lindenmayer systems&lt;/a&gt; that are generated with the Jangaroo version of the original Flash&amp;reg; lsystem parser. It is still the same code, but the program now completely runs in the browser &amp;ndash; without any plugin and only with HTML5. The code can be found here: &lt;a href=&#34;https://github.com/mohlendo/lsystem-jangaroo&#34;&gt;lsystem-jangaroo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe id=&#34;lsystem1&#34; src=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=1&#34; frameborder=&#34;0&#34; width=&#34;640&#34; height=&#34;480&#34;&gt;
+    no frames
+&lt;/iframe&gt;
+&lt;iframe id=&#34;lsystem2&#34; src=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=2&#34; frameborder=&#34;0&#34; width=&#34;640&#34; height=&#34;480&#34;&gt;
+    no frames
+&lt;/iframe&gt;
+&lt;p&gt;All in all there are 10 Lsystem presets that can be viewed with my litte program:
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=0&#34; target=&#34;_blank&#34;&gt;Lsystema vulgaris&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=1&#34; target=&#34;_blank&#34;&gt;Tree 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=2&#34; target=&#34;_blank&#34;&gt;Tree 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=3&#34; target=&#34;_blank&#34;&gt;Tree 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=4&#34; target=&#34;_blank&#34;&gt;Koch curve&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=5&#34; target=&#34;_blank&#34;&gt;Quad Koch island&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=6&#34; target=&#34;_blank&#34;&gt;Hilber curve&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=7&#34; target=&#34;_blank&#34;&gt;Sierpinski Arrowhead&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=8&#34; target=&#34;_blank&#34;&gt;Dragon curve&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=9&#34; target=&#34;_blank&#34;&gt;Lévy C curve&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/jangaroo/lsystem/lsystem.html?lsystem=10&#34; target=&#34;_blank&#34;&gt;Penrose Tiling P3&lt;/a&gt; Warning! This may crash your browser!&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>
