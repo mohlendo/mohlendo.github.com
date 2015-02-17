@@ -74,51 +74,61 @@
   <span class="post-date">Thu, Dec 23, 2010</span>
       
 
-<p>So, in my first blog post I will describe howto use <a href="http://www.github.com">GitHub</a> to serve a <a href="http://www.blogofile.com">Blogofile</a> Blog, which I have done with this blog.</p>
+<p>So, in my first blog post I will describe howto use
+<a href="http://www.github.com">GitHub</a> to serve a <a href="http://www.blogofile.com">Blogofile</a>
+Blog, which I have done with this blog. ### First, what is
+<a href="http://www.blogofile.com">Blogofile</a>? Blogofile is a framework for static
+websites. You don&rsquo;t need a webserver and no database, only webspace. Blogofile
+provides templates, controllers and filters, almost like any other dynamic web
+frameworks and compiles them to a static website. Right now it is more or less a
+blogging engine but you can actually create any website you want. Have a look at
+the website for details.</p>
 
-<h3 id="first-what-is-blogofile-http-www-blogofile-com:1e5a439a674e6273b2b26fe741d14769">First, what is <a href="http://www.blogofile.com">Blogofile</a>?</h3>
-
-<p>Blogofile is a framework for static websites. You don&rsquo;t need a webserver and no database, only webspace.
-Blogofile provides templates, controllers and filters, almost like any other dynamic web frameworks and compiles them to a static website.
-Right now it is more or less a blogging engine but you can actually create any website you want.
-Have a look at the website for details.</p>
-
-<p>And there comes <a href="http://www.github.com">GitHub</a> into the play. <a href="http://www.github.com">GitHub</a>
-provides with <a href="http://pages.github.com/">GitHub Pages</a> a very simple way of publishing content to the web.
-So why not using <a href="http://www.github.com">GitHub</a> for serving your blogofile website.</p>
+<p>And there comes <a href="http://www.github.com">GitHub</a> into the play.
+<a href="http://www.github.com">GitHub</a> provides with <a href="http://pages.github.com/">GitHub
+Pages</a> a very simple way of publishing content to the
+web. So why not using <a href="http://www.github.com">GitHub</a> for serving your blogofile
+website.</p>
 
 <h3 id="github-setup:1e5a439a674e6273b2b26fe741d14769">Github setup</h3>
 
-<p>You need 2 public repositories for that, the source code repository and the website repository that contains the compiled pages. My two repos are:</p>
+<p>You need 2 public repositories for that, the source code repository and the
+website repository that contains the compiled pages. My two repos are:</p>
 
 <ul>
 <li><a href="http://github.com/mohlendo/manuel-ohlendorf.de">http://github.com/mohlendo/manuel-ohlendorf.de</a> with the source code</li>
 <li><a href="http://github.com/mohlendo/mohlendo.github.com">http://github.com/mohlendo/mohlendo.github.com</a> with the compiled HTML files</li>
 </ul>
 
-<p>The later one is a special repository for user pages published with <a href="http://pages.github.com/">GitHub Pages</a>.</p>
+<p>The later one is a special repository for user pages published with <a href="http://pages.github.com/">GitHub
+Pages</a>.</p>
 
 <h3 id="git-setup:1e5a439a674e6273b2b26fe741d14769">Git setup</h3>
 
-<p>The whole source code of your website with the Mako templates etc. will be pushed to the source code repository.
-The command <code>blogofile build</code> compiles the website into the sub-folder <code>_site</code>.
-The contents of this directory is what we want to push to the website repository which GitHub will publish to the web. In order to do that we
-need to create a git <a href="http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html">submodule</a> with the command:</p>
+<p>The whole source code of your website with the Mako templates etc. will be
+pushed to the source code repository. The command <code>blogofile build</code> compiles the
+website into the sub-folder <code>_site</code>. The contents of this directory is what we
+want to push to the website repository which GitHub will publish to the web. In
+order to do that we need to create a git
+<a href="http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html">submodule</a>
+with the command:</p>
 
 <pre><code>git submodule add http://github.com/mohlendo/mohlendo.github.com _site
 </code></pre>
 
-<p>That creates a new submodule <code>_site</code>. Now everytime the site is rebuild, you can commit and push the changes to the website repository and github
-will automatically publish them - in my case to <a href="http://mohlendo.github.com">http://mohlendo.github.com</a></p>
+<p>That creates a new submodule <code>_site</code>. Now every time the site is rebuild, you
+can commit and push the changes to the website repository and github will
+automatically publish them - in my case to
+<a href="http://mohlendo.github.com">http://mohlendo.github.com</a></p>
 
 <h3 id="config-py-changes:1e5a439a674e6273b2b26fe741d14769">_config.py changes</h3>
 
-<p>Every time blogofile recreates the website it completely clears the <code>_site</code> directory
-and therefor also the <code>.git</code> directory of the submodule.
-This leads to a confusion of git and it cannot track changes on the compiled website anymore.</p>
+<p>Every time blogofile recreates the website it completely clears the <code>_site</code>
+directory and therefor also the <code>.git</code> directory of the submodule. This leads to
+a confusion of git and it cannot track changes on the compiled website anymore.</p>
 
 <p>I wrote some small custom <code>pre_build()</code> and <code>post_build()</code> hooks that moves the
-<code>.git</code> directory to a temp folder and restores it after a successfull build.</p>
+<code>.git</code> directory to a temp folder and restores it after a successful build.</p>
 
 <h3 id="pre-post-build-hooks:1e5a439a674e6273b2b26fe741d14769">Pre/Post build hooks:</h3>
 
@@ -138,14 +148,16 @@ def post_build():
     #Do whatever you want after the _site is built
 </code></pre>
 
-<p>Sadly, blogofile only invokes the <code>post_build()</code> hook when everything works fine. When you have an error
-in your templates blogofile only invokes the <code>pre_build()</code> hook. But destroying your submodule is no problem since you have it
-on GitHub! Just delete the <code>_site</code> folder and update the submodule with <code>git submodule update</code> in the root folder of your blogofile project.</p>
+<p>Sadly, blogofile only invokes the <code>post_build()</code> hook when everything works
+fine. When you have an error in your templates blogofile only invokes the
+<code>pre_build()</code> hook. But destroying your submodule is no problem since you have
+it on GitHub! Just delete the <code>_site</code> folder and update the submodule with <code>git
+submodule update</code> in the root folder of your blogofile project.</p>
 
 <h3 id="that-s-it:1e5a439a674e6273b2b26fe741d14769">That&rsquo;s it!</h3>
 
-<p>Quite cool, I think, because you don&rsquo;t need any webserver or webspace and still have quite a nice blog!
-As a start you can also fork my two github repos.</p>
+<p>Quite cool, I think, because you don&rsquo;t need any webserver or webspace and still
+have quite a nice blog! As a start you can also fork my two github repos.</p>
 
 
       <div id="disqus_thread"></div>

@@ -7,7 +7,64 @@
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
     
-    <updated>Mon, 14 Mar 2011 16:44:03 UTC</updated>
+    <updated>Tue, 17 Feb 2015 08:45:58 CET</updated>
+    
+    
+    <item>
+      <title>Using Hugo as the new static site generator</title>
+      <link>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</link>
+      <pubDate>Tue, 17 Feb 2015 08:45:58 CET</pubDate>
+      <author>Manuel Ohlendorf</author>
+      <guid>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</guid>
+      <description>&lt;p&gt;Four years since my last
+&lt;a href=&#34;http://manuel-ohlendorf.de/blog/2011/03/14/l-system-parser-with-jangaroo/&#34;&gt;blogpost&lt;/a&gt; and a very crappy
+old style of the site, I have decided completely revamp this site.&lt;/p&gt;
+
+&lt;p&gt;My first thoughts were: You need a new static site generator and it has to be
+written in your favourite programming language (for now, this is JavaScript).
+After some googling and tinkering I came to a very different conclusion: Not the
+programming language or the features of the generator are important to me, but
+the available themes!&lt;/p&gt;
+
+&lt;p&gt;So more googling was necessary to come up with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; and the
+theme Hyde and not 10 minutes later the new site was online - yes, it was that
+fast!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; has every feature you would expect from a static site
+generator: sitemap generation, RSS generation, serving and life-reloading during
+development and a good documentation.&lt;/p&gt;
+
+&lt;p&gt;But the most important feature for me is the very good theming mechanism that
+allows you to use a theme as a git submodule in your project, without changing
+any code in it. It is always possible to update the theme to the latest version
+or even change it to a different one. Every style specific changes that you want
+to make happen in your own templates.&lt;/p&gt;
+
+&lt;p&gt;Another property of &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; that convinced me, is its
+performance - Hug is &lt;em&gt;blazing&lt;/em&gt; fast! Generating this site takes about 25
+milliseconds.&lt;/p&gt;
+
+&lt;p&gt;One thing, that bothered me was, that the Hugo&amp;rsquo;s documentation describes a very
+complicated way of hosting the blog on &lt;a href=&#34;http://github.com&#34;&gt;Github&lt;/a&gt;. Therefor I
+have chosen the submodule-way, again.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; generates the final site into the &lt;code&gt;public&lt;/code&gt; folder. That
+is where you want to init the
+&lt;a href=&#34;http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html&#34;&gt;submodule&lt;/a&gt;
+into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git submodule add http://github.com/mohlendo/mohlendo.github.com public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now every time the site is rebuild, you can commit and push the changes to the
+website repository and github will automatically publish them - in my case to
+&lt;a href=&#34;http://mohlendo.github.com&#34;&gt;http://mohlendo.github.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it again - a new site generator and a new blogpost! Probably the last,
+though, until I change the site generator again&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
     
     
     <item>
@@ -54,21 +111,35 @@
       <guid>http://manuel-ohlendorf.de/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</guid>
       <description>
 
-&lt;p&gt;Dies ist der erste Teil eines Bauberichts des Bausatzes &lt;a href=&#34;http://de.wikipedia.org/wiki/Shamrock_V&#34;&gt;Shamrock&lt;/a&gt; von Amati im Maßstab von 1:80. Da ich ein blutiger Anfänger bin, was Schiffsmodellbau angeht, ist dieser Bausatz
-genau das Richtige, denn der Rumpf ist ein vorgefertigtes Resinteil. So fängt das echte Modellbauen erst bei dem Deck an. Der Bausatz ist eigentlich auf italienisch, es liegt aber ein Zettel mit
-den wichtigsten Übersetzungen bei - so lernt man auch gleich noch etwas Fremdsprache, z.B. &lt;em&gt;non Incollare&lt;/em&gt; - nicht festkleben ;-)&lt;/p&gt;
+&lt;p&gt;Dies ist der erste Teil eines Bauberichts des Bausatzes
+&lt;a href=&#34;http://de.wikipedia.org/wiki/Shamrock_V&#34;&gt;Shamrock&lt;/a&gt; von Amati im Maßstab von
+1:80. Da ich ein blutiger Anfänger bin, was Schiffsmodellbau angeht, ist dieser
+Bausatz genau das Richtige, denn der Rumpf ist ein vorgefertigtes Resinteil. So
+fängt das echte Modellbauen erst bei dem Deck an. Der Bausatz ist eigentlich auf
+italienisch, es liegt aber ein Zettel mit den wichtigsten Übersetzungen bei - so
+lernt man auch gleich noch etwas Fremdsprache, z.B. &lt;em&gt;non Incollare&lt;/em&gt; - nicht
+festkleben ;-)&lt;/p&gt;
 
 &lt;h3 id=&#34;das-deck:3226d2f44ae028109dcc977bcfbb32c2&#34;&gt;Das Deck&lt;/h3&gt;
 
-&lt;p&gt;Der erste Schritt ist, das Deck - ein lasergeschnittenes Holzteil - auf den Resinrumpf zu kleben. Natürlich ist davor etwas Schleifarbeit nötig, das Decksholzteil ist nämlich etwas zu lang und breit, was bedeutet, dass das Modell nach dem Schleifen leider nicht mehr maßstabsgetreu ist. Egal.
+&lt;p&gt;Der erste Schritt ist, das Deck - ein lasergeschnittenes Holzteil - auf den
+Resinrumpf zu kleben. Natürlich ist davor etwas Schleifarbeit nötig, das
+Decksholzteil ist nämlich etwas zu lang und breit, was bedeutet, dass das Modell
+nach dem Schleifen leider nicht mehr maßstabsgetreu ist. Egal.
 &lt;a href=&#34;http://www.flickr.com/photos/mohlendo/5355083592/&#34;&gt;&lt;img src=&#34;http://farm6.static.flickr.com/5127/5355083592_9bb04e3809.jpg&#34; alt=&#34;Deck - Schritt 1&#34; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Als nächstes werden die 4mm starken Decksplanken aufgeleimt. Die Leisten müssen gebogen werden, weil sie sonst brechen würden. Ich habe das einfach in einem mit heißem Wasser gefüllten Waschbecken gemacht: Die Leiste für ein paar Minuten im Wasser baden und dann immer stärker biegen. Das Ergebnis sieht so aus:
+&lt;p&gt;Als nächstes werden die 4mm starken Decksplanken aufgeleimt. Die Leisten müssen
+gebogen werden, weil sie sonst brechen würden. Ich habe das einfach in einem mit
+heißem Wasser gefüllten Waschbecken gemacht: Die Leiste für ein paar Minuten im
+Wasser baden und dann immer stärker biegen. Das Ergebnis sieht so aus:
 &lt;a href=&#34;http://www.flickr.com/photos/mohlendo/5355091696/&#34;&gt;&lt;img src=&#34;http://farm6.static.flickr.com/5164/5355091696_f547170430.jpg&#34; alt=&#34;Decksplanken&#34; /&gt;
 &lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Ich bin bisher doch ziemlich überrascht, dass alles ohne große Probleme geklappt hat. Hier gibt noch weitere &lt;a href=&#34;http://www.flickr.com/photos/mohlendo/sets/72157625822875866/&#34;&gt;Bilder&lt;/a&gt; des ersten Tages. Fortsetzung folgt!&lt;/p&gt;
+&lt;p&gt;Ich bin bisher doch ziemlich überrascht, dass alles ohne große Probleme geklappt
+hat. Hier gibt noch weitere
+&lt;a href=&#34;http://www.flickr.com/photos/mohlendo/sets/72157625822875866/&#34;&gt;Bilder&lt;/a&gt; des
+ersten Tages. Fortsetzung folgt!&lt;/p&gt;
 </description>
     </item>
     
@@ -82,51 +153,61 @@ den wichtigsten Übersetzungen bei - so lernt man auch gleich noch etwas Fremdsp
       <guid>http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</guid>
       <description>
 
-&lt;p&gt;So, in my first blog post I will describe howto use &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; to serve a &lt;a href=&#34;http://www.blogofile.com&#34;&gt;Blogofile&lt;/a&gt; Blog, which I have done with this blog.&lt;/p&gt;
+&lt;p&gt;So, in my first blog post I will describe howto use
+&lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; to serve a &lt;a href=&#34;http://www.blogofile.com&#34;&gt;Blogofile&lt;/a&gt;
+Blog, which I have done with this blog. ### First, what is
+&lt;a href=&#34;http://www.blogofile.com&#34;&gt;Blogofile&lt;/a&gt;? Blogofile is a framework for static
+websites. You don&amp;rsquo;t need a webserver and no database, only webspace. Blogofile
+provides templates, controllers and filters, almost like any other dynamic web
+frameworks and compiles them to a static website. Right now it is more or less a
+blogging engine but you can actually create any website you want. Have a look at
+the website for details.&lt;/p&gt;
 
-&lt;h3 id=&#34;first-what-is-blogofile-http-www-blogofile-com:1e5a439a674e6273b2b26fe741d14769&#34;&gt;First, what is &lt;a href=&#34;http://www.blogofile.com&#34;&gt;Blogofile&lt;/a&gt;?&lt;/h3&gt;
-
-&lt;p&gt;Blogofile is a framework for static websites. You don&amp;rsquo;t need a webserver and no database, only webspace.
-Blogofile provides templates, controllers and filters, almost like any other dynamic web frameworks and compiles them to a static website.
-Right now it is more or less a blogging engine but you can actually create any website you want.
-Have a look at the website for details.&lt;/p&gt;
-
-&lt;p&gt;And there comes &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; into the play. &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt;
-provides with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; a very simple way of publishing content to the web.
-So why not using &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; for serving your blogofile website.&lt;/p&gt;
+&lt;p&gt;And there comes &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; into the play.
+&lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; provides with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub
+Pages&lt;/a&gt; a very simple way of publishing content to the
+web. So why not using &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; for serving your blogofile
+website.&lt;/p&gt;
 
 &lt;h3 id=&#34;github-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Github setup&lt;/h3&gt;
 
-&lt;p&gt;You need 2 public repositories for that, the source code repository and the website repository that contains the compiled pages. My two repos are:&lt;/p&gt;
+&lt;p&gt;You need 2 public repositories for that, the source code repository and the
+website repository that contains the compiled pages. My two repos are:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/mohlendo/manuel-ohlendorf.de&#34;&gt;http://github.com/mohlendo/manuel-ohlendorf.de&lt;/a&gt; with the source code&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com/mohlendo/mohlendo.github.com&#34;&gt;http://github.com/mohlendo/mohlendo.github.com&lt;/a&gt; with the compiled HTML files&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The later one is a special repository for user pages published with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The later one is a special repository for user pages published with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub
+Pages&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;git-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Git setup&lt;/h3&gt;
 
-&lt;p&gt;The whole source code of your website with the Mako templates etc. will be pushed to the source code repository.
-The command &lt;code&gt;blogofile build&lt;/code&gt; compiles the website into the sub-folder &lt;code&gt;_site&lt;/code&gt;.
-The contents of this directory is what we want to push to the website repository which GitHub will publish to the web. In order to do that we
-need to create a git &lt;a href=&#34;http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html&#34;&gt;submodule&lt;/a&gt; with the command:&lt;/p&gt;
+&lt;p&gt;The whole source code of your website with the Mako templates etc. will be
+pushed to the source code repository. The command &lt;code&gt;blogofile build&lt;/code&gt; compiles the
+website into the sub-folder &lt;code&gt;_site&lt;/code&gt;. The contents of this directory is what we
+want to push to the website repository which GitHub will publish to the web. In
+order to do that we need to create a git
+&lt;a href=&#34;http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html&#34;&gt;submodule&lt;/a&gt;
+with the command:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git submodule add http://github.com/mohlendo/mohlendo.github.com _site
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;That creates a new submodule &lt;code&gt;_site&lt;/code&gt;. Now everytime the site is rebuild, you can commit and push the changes to the website repository and github
-will automatically publish them - in my case to &lt;a href=&#34;http://mohlendo.github.com&#34;&gt;http://mohlendo.github.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That creates a new submodule &lt;code&gt;_site&lt;/code&gt;. Now every time the site is rebuild, you
+can commit and push the changes to the website repository and github will
+automatically publish them - in my case to
+&lt;a href=&#34;http://mohlendo.github.com&#34;&gt;http://mohlendo.github.com&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;config-py-changes:1e5a439a674e6273b2b26fe741d14769&#34;&gt;_config.py changes&lt;/h3&gt;
 
-&lt;p&gt;Every time blogofile recreates the website it completely clears the &lt;code&gt;_site&lt;/code&gt; directory
-and therefor also the &lt;code&gt;.git&lt;/code&gt; directory of the submodule.
-This leads to a confusion of git and it cannot track changes on the compiled website anymore.&lt;/p&gt;
+&lt;p&gt;Every time blogofile recreates the website it completely clears the &lt;code&gt;_site&lt;/code&gt;
+directory and therefor also the &lt;code&gt;.git&lt;/code&gt; directory of the submodule. This leads to
+a confusion of git and it cannot track changes on the compiled website anymore.&lt;/p&gt;
 
 &lt;p&gt;I wrote some small custom &lt;code&gt;pre_build()&lt;/code&gt; and &lt;code&gt;post_build()&lt;/code&gt; hooks that moves the
-&lt;code&gt;.git&lt;/code&gt; directory to a temp folder and restores it after a successfull build.&lt;/p&gt;
+&lt;code&gt;.git&lt;/code&gt; directory to a temp folder and restores it after a successful build.&lt;/p&gt;
 
 &lt;h3 id=&#34;pre-post-build-hooks:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Pre/Post build hooks:&lt;/h3&gt;
 
@@ -146,14 +227,16 @@ def post_build():
     #Do whatever you want after the _site is built
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Sadly, blogofile only invokes the &lt;code&gt;post_build()&lt;/code&gt; hook when everything works fine. When you have an error
-in your templates blogofile only invokes the &lt;code&gt;pre_build()&lt;/code&gt; hook. But destroying your submodule is no problem since you have it
-on GitHub! Just delete the &lt;code&gt;_site&lt;/code&gt; folder and update the submodule with &lt;code&gt;git submodule update&lt;/code&gt; in the root folder of your blogofile project.&lt;/p&gt;
+&lt;p&gt;Sadly, blogofile only invokes the &lt;code&gt;post_build()&lt;/code&gt; hook when everything works
+fine. When you have an error in your templates blogofile only invokes the
+&lt;code&gt;pre_build()&lt;/code&gt; hook. But destroying your submodule is no problem since you have
+it on GitHub! Just delete the &lt;code&gt;_site&lt;/code&gt; folder and update the submodule with &lt;code&gt;git
+submodule update&lt;/code&gt; in the root folder of your blogofile project.&lt;/p&gt;
 
 &lt;h3 id=&#34;that-s-it:1e5a439a674e6273b2b26fe741d14769&#34;&gt;That&amp;rsquo;s it!&lt;/h3&gt;
 
-&lt;p&gt;Quite cool, I think, because you don&amp;rsquo;t need any webserver or webspace and still have quite a nice blog!
-As a start you can also fork my two github repos.&lt;/p&gt;
+&lt;p&gt;Quite cool, I think, because you don&amp;rsquo;t need any webserver or webspace and still
+have quite a nice blog! As a start you can also fork my two github repos.&lt;/p&gt;
 </description>
     </item>
     

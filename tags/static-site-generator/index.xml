@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Manuel Ohlendorf</title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://manuel-ohlendorf.de/tags/static-site-generator/</link>
+    <language>en-us</language>
+    <author>Manuel Ohlendorf</author>
+    
+    <updated>Tue, 17 Feb 2015 08:45:58 CET</updated>
+    
+    
+    <item>
+      <title>Using Hugo as the new static site generator</title>
+      <link>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</link>
+      <pubDate>Tue, 17 Feb 2015 08:45:58 CET</pubDate>
+      <author>Manuel Ohlendorf</author>
+      <guid>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</guid>
+      <description>&lt;p&gt;Four years since my last
+&lt;a href=&#34;http://manuel-ohlendorf.de/blog/2011/03/14/l-system-parser-with-jangaroo/&#34;&gt;blogpost&lt;/a&gt; and a very crappy
+old style of the site, I have decided completely revamp this site.&lt;/p&gt;
+
+&lt;p&gt;My first thoughts were: You need a new static site generator and it has to be
+written in your favourite programming language (for now, this is JavaScript).
+After some googling and tinkering I came to a very different conclusion: Not the
+programming language or the features of the generator are important to me, but
+the available themes!&lt;/p&gt;
+
+&lt;p&gt;So more googling was necessary to come up with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; and the
+theme Hyde and not 10 minutes later the new site was online - yes, it was that
+fast!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; has every feature you would expect from a static site
+generator: sitemap generation, RSS generation, serving and life-reloading during
+development and a good documentation.&lt;/p&gt;
+
+&lt;p&gt;But the most important feature for me is the very good theming mechanism that
+allows you to use a theme as a git submodule in your project, without changing
+any code in it. It is always possible to update the theme to the latest version
+or even change it to a different one. Every style specific changes that you want
+to make happen in your own templates.&lt;/p&gt;
+
+&lt;p&gt;Another property of &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; that convinced me, is its
+performance - Hug is &lt;em&gt;blazing&lt;/em&gt; fast! Generating this site takes about 25
+milliseconds.&lt;/p&gt;
+
+&lt;p&gt;One thing, that bothered me was, that the Hugo&amp;rsquo;s documentation describes a very
+complicated way of hosting the blog on &lt;a href=&#34;http://github.com&#34;&gt;Github&lt;/a&gt;. Therefor I
+have chosen the submodule-way, again.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; generates the final site into the &lt;code&gt;public&lt;/code&gt; folder. That
+is where you want to init the
+&lt;a href=&#34;http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html&#34;&gt;submodule&lt;/a&gt;
+into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git submodule add http://github.com/mohlendo/mohlendo.github.com public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now every time the site is rebuild, you can commit and push the changes to the
+website repository and github will automatically publish them - in my case to
+&lt;a href=&#34;http://mohlendo.github.com&#34;&gt;http://mohlendo.github.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s it again - a new site generator and a new blogpost! Probably the last,
+though, until I change the site generator again&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>
