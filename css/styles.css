@@ -36,3 +36,32 @@
 .tags li {
   display: inline;
 }
+
+/* CV */
+
+#resume h2 {
+  margin-top: 1.5em;
+}
+
+#resume h3 {
+  font-size: 1.2em;
+  font-weight: lighter;
+  margin-top: 1.0em;
+  margin-bottom: 0;
+}
+#resume h3 > a {
+  font-size: 0.8em;
+}
+
+#resume h4 {
+  font-size: 1em;
+  font-weight: lighter;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#resume h5 {
+  font-style: italic;
+  font-size: .8em;
+  font-weight: lighter;
+  margin-top: 0
+}
