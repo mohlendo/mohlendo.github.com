@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="theme-color" content="#467612">
+  <meta name="generator" content="Hugo 0.14" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -13,11 +13,12 @@
   
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
-  <link rel="stylesheet" href="http://manuel-ohlendorf.de/css/poole.css">
-  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/syntax.css">
-  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/hyde.css">
-  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/css/poole.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/syntax.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/hyde.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/styles.css">
 
   
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
@@ -42,9 +43,8 @@
   <link href="" rel="alternate" type="application/rss+xml" title="Manuel Ohlendorf" />
 </head>
 
-<body class="theme-dark-green">
-
-<div class="sidebar">
+  <body class="theme-dark">
+    <div class="sidebar">
   <div class="container">
     <div class="sidebar-about">
       <h1 class="brand"><a href="/">Manuel Ohlendorf</a></h1>
@@ -54,11 +54,11 @@
     </div>
 
     <ul class="sidebar-nav">
-      <li><a href="http://manuel-ohlendorf.de/blog">Blog</a></li>
+      <li><a href="http://localhost:1313/blog">Blog</a></li>
       
         <li><a href="/cv/"> Curriculum Vitae </a></li>
       
-      <li><a href="http://manuel-ohlendorf.de/archive">Archive</a></li>
+      <li><a href="http://localhost:1313/archive">Archive</a></li>
     </ul>
     <a href="https://twitter.com/mohlendo"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
     <a href="https://github.com/mohlendo"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
@@ -70,23 +70,23 @@
 
 
     <div class="content container">
-<div class="post">
-  <h1>Using Hugo as the new static site generator</h1>
-  <div class="tags">
-    <ul>
-      
-        <li><a href="/tags/hugo">hugo</a> </li>
-      
-        <li><a href="/tags/static-site-generator">static-site-generator</a> </li>
-      
-        <li><a href="/tags/github">github</a> </li>
-      
-    </ul>
-  </div>
-  <span class="post-date">Tue, Feb 17, 2015</span>
-      <p>Four years since my last
+      <div class="post">
+        <h1>Using Hugo as the new static site generator</h1>
+        <div class="tags">
+          <ul>
+            
+              <li><a href="/tags/hugo">hugo</a> </li>
+            
+              <li><a href="/tags/static-site-generator">static-site-generator</a> </li>
+            
+              <li><a href="/tags/github">github</a> </li>
+            
+          </ul>
+        </div>
+        <span class="post-date">Tue, Feb 17, 2015</span>
+          <p>Four years since my last
 <a href="/blog/2011/03/14/l-system-parser-with-jangaroo/">blogpost</a> and a very crappy
-old style of the site, I have decided completely revamp this site.</p>
+old style of the site, I have decided completely revamp it.</p>
 
 <p>My first thoughts were: You need a new static site generator and it has to be
 written in your favourite programming language (for now, this is JavaScript).
@@ -109,12 +109,12 @@ or even change it to a different one. Every style specific changes that you want
 to make happen in your own templates.</p>
 
 <p>Another property of <a href="http://gohugo.io">Hugo</a> that convinced me, is its
-performance - Hug is <em>blazing</em> fast! Generating this site takes about 25
+performance - Hugo is <em>blazing</em> fast! Generating this site takes about 25
 milliseconds.</p>
 
 <p>One thing, that bothered me was, that the Hugo&rsquo;s documentation describes a very
 complicated way of hosting the blog on <a href="http://github.com">Github</a>. Therefor I
-have chosen the submodule-way, again.</p>
+have chosen my submodule-way, again.</p>
 
 <p><a href="http://gohugo.io">Hugo</a> generates the final site into the <code>public</code> folder. That
 is where you want to init the
@@ -131,27 +131,29 @@ website repository and github will automatically publish them - in my case to
 <p>That&rsquo;s it again - a new site generator and a new blogpost! Probably the last,
 though, until I change the site generator again&hellip;</p>
 
-
-      <div id="disqus_thread"></div>
+      </div>
+      
+				<h2>Comments</h2>
+				<div id="disqus_thread"></div>
 <script type="text/javascript">
+     
+    var disqus_shortname = 'manuelohlendorf'; 
 
-(function() {
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'manuelohlendorf';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
 </script>
-<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
-
-
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</div>
+			
 
-  </body>
+    </div>
+
+  <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

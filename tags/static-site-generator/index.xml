@@ -3,7 +3,7 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/tags/static-site-generator/</link>
+    <link>http://localhost:1313/tags/static-site-generator/</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
     
@@ -12,13 +12,13 @@
     
     <item>
       <title>Using Hugo as the new static site generator</title>
-      <link>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</link>
+      <link>http://localhost:1313/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</link>
       <pubDate>Tue, 17 Feb 2015 08:45:58 CET</pubDate>
       <author>Manuel Ohlendorf</author>
-      <guid>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</guid>
+      <guid>http://localhost:1313/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</guid>
       <description>&lt;p&gt;Four years since my last
-&lt;a href=&#34;http://manuel-ohlendorf.de/blog/2011/03/14/l-system-parser-with-jangaroo/&#34;&gt;blogpost&lt;/a&gt; and a very crappy
-old style of the site, I have decided completely revamp this site.&lt;/p&gt;
+&lt;a href=&#34;http://localhost:1313/blog/2011/03/14/l-system-parser-with-jangaroo/&#34;&gt;blogpost&lt;/a&gt; and a very crappy
+old style of the site, I have decided completely revamp it.&lt;/p&gt;
 
 &lt;p&gt;My first thoughts were: You need a new static site generator and it has to be
 written in your favourite programming language (for now, this is JavaScript).
@@ -41,12 +41,12 @@ or even change it to a different one. Every style specific changes that you want
 to make happen in your own templates.&lt;/p&gt;
 
 &lt;p&gt;Another property of &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; that convinced me, is its
-performance - Hug is &lt;em&gt;blazing&lt;/em&gt; fast! Generating this site takes about 25
+performance - Hugo is &lt;em&gt;blazing&lt;/em&gt; fast! Generating this site takes about 25
 milliseconds.&lt;/p&gt;
 
 &lt;p&gt;One thing, that bothered me was, that the Hugo&amp;rsquo;s documentation describes a very
 complicated way of hosting the blog on &lt;a href=&#34;http://github.com&#34;&gt;Github&lt;/a&gt;. Therefor I
-have chosen the submodule-way, again.&lt;/p&gt;
+have chosen my submodule-way, again.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; generates the final site into the &lt;code&gt;public&lt;/code&gt; folder. That
 is where you want to init the

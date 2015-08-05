@@ -3,7 +3,7 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/tags/shamrock/</link>
+    <link>http://localhost:1313/tags/shamrock/</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
     
@@ -12,10 +12,10 @@
     
     <item>
       <title>Baubericht Amati Shamrock - Tag 1</title>
-      <link>http://manuel-ohlendorf.de/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</link>
+      <link>http://localhost:1313/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</link>
       <pubDate>Fri, 14 Jan 2011 20:09:03 UTC</pubDate>
       <author>Manuel Ohlendorf</author>
-      <guid>http://manuel-ohlendorf.de/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</guid>
+      <guid>http://localhost:1313/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</guid>
       <description>
 
 &lt;p&gt;Dies ist der erste Teil eines Bauberichts des Bausatzes

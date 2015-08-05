@@ -1,6 +1,3 @@
-html {
-  font-family: "Raleway", sans-serif;
-}
 .sidebar-about h1 {
   font-family: "Raleway", sans-serif;
   color: #fff;
@@ -14,13 +11,13 @@ html {
   margin-top: 0.5rem;
 }
 
-/* Dark green */
-.theme-dark-green .sidebar {
-  background-color: #467612;
+/* Dark theme */
+.theme-dark .sidebar {
+  background-color: #515151;
 }
-.theme-dark-green .content a,
-.theme-dark-green .related-posts li a:hover {
-  color: #467612;
+.theme-dark .content a,
+.theme-dark .related-posts li a:hover {
+  color: #268bd2;
 }
 
 /* title */
