@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://manuel-ohlendorf.de/</loc>
     <lastmod>2015-02-17T08:45:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</loc>
+    <loc>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</loc>
     <lastmod>2015-02-17T08:45:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/cv/</loc>
+    <loc>http://manuel-ohlendorf.de/cv/</loc>
     <lastmod>2014-07-28T11:14:25+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2011/03/14/l-system-parser-with-jangaroo/</loc>
+    <loc>http://manuel-ohlendorf.de/blog/2011/03/14/l-system-parser-with-jangaroo/</loc>
     <lastmod>2011-03-14T16:44:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</loc>
+    <loc>http://manuel-ohlendorf.de/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</loc>
     <lastmod>2011-01-14T20:09:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</loc>
+    <loc>http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</loc>
     <lastmod>2010-12-23T13:09:03+00:00</lastmod>
   </url>
   

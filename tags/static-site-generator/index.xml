@@ -3,7 +3,7 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://localhost:1313/tags/static-site-generator/</link>
+    <link>http://manuel-ohlendorf.de/tags/static-site-generator/</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
     
@@ -12,12 +12,12 @@
     
     <item>
       <title>Using Hugo as the new static site generator</title>
-      <link>http://localhost:1313/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</link>
+      <link>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</link>
       <pubDate>Tue, 17 Feb 2015 08:45:58 CET</pubDate>
       <author>Manuel Ohlendorf</author>
-      <guid>http://localhost:1313/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</guid>
+      <guid>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</guid>
       <description>&lt;p&gt;Four years since my last
-&lt;a href=&#34;http://localhost:1313/blog/2011/03/14/l-system-parser-with-jangaroo/&#34;&gt;blogpost&lt;/a&gt; and a very crappy
+&lt;a href=&#34;http://manuel-ohlendorf.de/blog/2011/03/14/l-system-parser-with-jangaroo/&#34;&gt;blogpost&lt;/a&gt; and a very crappy
 old style of the site, I have decided completely revamp it.&lt;/p&gt;
 
 &lt;p&gt;My first thoughts were: You need a new static site generator and it has to be
