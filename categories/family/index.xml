@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Manuel Ohlendorf</title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost:1313/categories/family/</link>
+    <language>en-us</language>
+    <author>Manuel Ohlendorf</author>
+    
+    <updated>Wed, 12 Aug 2015 09:21:06 CEST</updated>
+    
+    
+    <item>
+      <title>Mein Opa - ein Kriegsverbrecher</title>
+      <link>http://localhost:1313/blog/2015/08/12/mein-opa---ein-kriegsverbrecher/</link>
+      <pubDate>Wed, 12 Aug 2015 09:21:06 CEST</pubDate>
+      <author>Manuel Ohlendorf</author>
+      <guid>http://localhost:1313/blog/2015/08/12/mein-opa---ein-kriegsverbrecher/</guid>
+      <description></description>
+    </item>
+    
+    
+  </channel>
+</rss>

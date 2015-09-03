@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Manuel Ohlendorf</title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost:1313/tags/material/</link>
+    <language>en-us</language>
+    <author>Manuel Ohlendorf</author>
+    
+    <updated>Thu, 03 Sep 2015 10:21:06 CEST</updated>
+    
+    
+    <item>
+      <title>Material Design Buttons with AppCompat</title>
+      <link>http://localhost:1313/blog/2015/09/03/material-design-buttons-with-appcompat/</link>
+      <pubDate>Thu, 03 Sep 2015 10:21:06 CEST</pubDate>
+      <author>Manuel Ohlendorf</author>
+      <guid>http://localhost:1313/blog/2015/09/03/material-design-buttons-with-appcompat/</guid>
+      <description>&lt;p&gt;With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop.&lt;/p&gt;
+
+&lt;p&gt;If you just want to define the color of all Buttons you can now set a special theme property:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;style name=&amp;quot;AppTheme&amp;quot; parent=&amp;quot;Theme.AppCompat.Light&amp;quot;&amp;gt;
+    &amp;lt;item name=&amp;quot;android:windowBackground&amp;quot;&amp;gt;@android:color/white&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&amp;quot;colorPrimary&amp;quot;&amp;gt;@color/primay&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&amp;quot;colorPrimaryDark&amp;quot;&amp;gt;@color/primay_dark&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&amp;quot;colorAccent&amp;quot;&amp;gt;@color/accent&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&amp;quot;colorButtonNormal&amp;quot;&amp;gt;@color/button_normal&amp;lt;/item&amp;gt;
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now every Button has the color &lt;code&gt;@color/button_normal&lt;/code&gt; and looks like a nice Material Design Button.
+But what if you have different Button types with different colors? No problem! Just define a new style for your special button:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;style name=&amp;quot;SpecialButton&amp;quot; parent=&amp;quot;Widget.AppCompat.Button.Colored&amp;quot;&amp;gt;
+    &amp;lt;item name=&amp;quot;colorButtonNormal&amp;quot;&amp;gt;@color/button_special&amp;lt;/item&amp;gt;
+    &amp;lt;item name=&amp;quot;android:textColor&amp;quot;&amp;gt;@color/button_special_text&amp;lt;/item&amp;gt;
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can use this style on a Button element like that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;Button
+    android:theme=&amp;quot;@style/SpecialButton&amp;quot;
+    android:id=&amp;quot;@+id/special&amp;quot;
+    android:layout_width=&amp;quot;wrap_content&amp;quot;
+    android:layout_height=&amp;quot;wrap_content&amp;quot;
+    android:text=&amp;quot;@string/special&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The important part is that you use the new style not as a style on the button but as a theme.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>

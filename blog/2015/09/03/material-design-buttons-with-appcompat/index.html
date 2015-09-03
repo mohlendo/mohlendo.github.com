@@ -1,0 +1,143 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="theme-color" content="#515151">
+
+  <meta name="generator" content="Hugo 0.14" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Material Design Buttons with AppCompat &middot; Manuel Ohlendorf </title>
+
+  
+  <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de/css/poole.css">
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/syntax.css">
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/hyde.css">
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/styles.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1937462-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Manuel Ohlendorf" />
+</head>
+
+  <body class="theme-dark">
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1 class="brand"><a href="/">Manuel Ohlendorf</a></h1>
+      <p class="lead">
+       Things from and about me 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://manuel-ohlendorf.de/blog">Blog</a></li>
+      
+        <li><a href="/cv/"> Curriculum Vitae </a></li>
+      
+      <li><a href="http://manuel-ohlendorf.de/archive">Archive</a></li>
+    </ul>
+    <a href="https://twitter.com/mohlendo"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
+    <a href="https://github.com/mohlendo"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
+    <a href="https://www.xing.com/profile/Manuel_Ohlendorf"><i class="fa fa-xing"></i></a>&nbsp;&nbsp;
+
+    <p class="footnote">&copy; 2015 Manuel Ohlendorf. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+        <h1>Material Design Buttons with AppCompat</h1>
+        <div class="tags">
+          <ul>
+            
+              <li><a href="/tags/android">Android</a> </li>
+            
+              <li><a href="/tags/material-design">Material Design</a> </li>
+            
+          </ul>
+        </div>
+        <span class="post-date">Thu, Sep 3, 2015 &middot; 1 minute read</span>
+          <p>With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop devices.</p>
+
+<p>If you just want to define the color of all Buttons you can set a special theme property called <code>colorButtonNormal</code>:</p>
+
+<pre><code class="language-XML">&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light&quot;&gt;
+    &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/white&lt;/item&gt;
+    &lt;item name=&quot;colorPrimary&quot;&gt;@color/primay&lt;/item&gt;
+    &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/primay_dark&lt;/item&gt;
+    &lt;item name=&quot;colorAccent&quot;&gt;@color/accent&lt;/item&gt;
+    &lt;item name=&quot;colorButtonNormal&quot;&gt;@color/button_normal&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+
+<p>Now every Button has the color <code>@color/button_normal</code> and looks like a nice Material Design Button.
+But what if you have different Button types with different colors? No problem! Just define a new style for your special button:</p>
+
+<pre><code class="language-XML">&lt;style name=&quot;SpecialButton&quot; parent=&quot;Widget.AppCompat.Button.Colored&quot;&gt;
+    &lt;item name=&quot;colorButtonNormal&quot;&gt;@color/button_special&lt;/item&gt;
+    &lt;item name=&quot;android:textColor&quot;&gt;@color/button_special_text&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+
+<p>You can use this style on a Button element like that:</p>
+
+<pre><code class="language-XML">&lt;Button
+    android:theme=&quot;@style/SpecialButton&quot;
+    android:id=&quot;@+id/special&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;@string/special&quot; /&gt;
+</code></pre>
+
+<p>The important part is that you use the new style not as a style on the button but as a theme.</p>
+
+      </div>
+      
+				<h2>Comments</h2>
+				<div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'manuelohlendorf'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+			
+
+    </div>
+
+  </body>
+</html>
