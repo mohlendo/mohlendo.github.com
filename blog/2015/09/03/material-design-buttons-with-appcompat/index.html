@@ -89,11 +89,11 @@
 <p>If you just want to define the color of all Buttons you can set a special theme property called <code>colorButtonNormal</code>:</p>
 
 <pre><code class="language-XML">&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light&quot;&gt;
-    &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/white&lt;/item&gt;
-    &lt;item name=&quot;colorPrimary&quot;&gt;@color/primay&lt;/item&gt;
-    &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/primay_dark&lt;/item&gt;
-    &lt;item name=&quot;colorAccent&quot;&gt;@color/accent&lt;/item&gt;
-    &lt;item name=&quot;colorButtonNormal&quot;&gt;@color/button_normal&lt;/item&gt;
+  &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/white&lt;/item&gt;
+  &lt;item name=&quot;colorPrimary&quot;&gt;@color/primary&lt;/item&gt;
+  &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/primary_dark&lt;/item&gt;
+  &lt;item name=&quot;colorAccent&quot;&gt;@color/accent&lt;/item&gt;
+  &lt;item name=&quot;colorButtonNormal&quot;&gt;@color/button_normal&lt;/item&gt;
 &lt;/style&gt;
 </code></pre>
 
@@ -101,22 +101,24 @@
 But what if you have different Button types with different colors? No problem! Just define a new style for your special button:</p>
 
 <pre><code class="language-XML">&lt;style name=&quot;SpecialButton&quot; parent=&quot;Widget.AppCompat.Button.Colored&quot;&gt;
-    &lt;item name=&quot;colorButtonNormal&quot;&gt;@color/button_special&lt;/item&gt;
-    &lt;item name=&quot;android:textColor&quot;&gt;@color/button_special_text&lt;/item&gt;
+  &lt;item name=&quot;colorButtonNormal&quot;&gt;#555&lt;/item&gt;
+  &lt;item name=&quot;android:textColorPrimary&quot;&gt;#fff&lt;/item&gt;
 &lt;/style&gt;
 </code></pre>
 
 <p>You can use this style on a Button element like that:</p>
 
 <pre><code class="language-XML">&lt;Button
-    android:theme=&quot;@style/SpecialButton&quot;
-    android:id=&quot;@+id/special&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:text=&quot;@string/special&quot; /&gt;
+  android:theme=&quot;@style/SpecialButton&quot;
+  android:id=&quot;@+id/special&quot;
+  android:layout_width=&quot;wrap_content&quot;
+  android:layout_height=&quot;wrap_content&quot;
+  android:text=&quot;@string/special&quot; /&gt;
 </code></pre>
 
-<p>The important part is that you use the new style not as a style on the button but as a theme.</p>
+<p>As you can see, the style is not used as a style but as a theme. This is because the attributes <code>colorButtonNormal</code> and <code>android:textColorPrimary</code> are not properties of the Button. Instead they are applied by the <em>magic</em> theme mechanism from Android. I am not entirely sure how it works but it seems to work&hellip;</p>
+
+<p>For more information on styling and <em>not</em> on theming you should read <a href="http://blog.danlew.net/2014/11/19/styles-on-android/">Styling Views on Android (Without Going Crazy)</a>.</p>
 
       </div>
       

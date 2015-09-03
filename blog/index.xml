@@ -21,11 +21,11 @@
 &lt;p&gt;If you just want to define the color of all Buttons you can set a special theme property called &lt;code&gt;colorButtonNormal&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;style name=&amp;quot;AppTheme&amp;quot; parent=&amp;quot;Theme.AppCompat.Light&amp;quot;&amp;gt;
-    &amp;lt;item name=&amp;quot;android:windowBackground&amp;quot;&amp;gt;@android:color/white&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&amp;quot;colorPrimary&amp;quot;&amp;gt;@color/primay&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&amp;quot;colorPrimaryDark&amp;quot;&amp;gt;@color/primay_dark&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&amp;quot;colorAccent&amp;quot;&amp;gt;@color/accent&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&amp;quot;colorButtonNormal&amp;quot;&amp;gt;@color/button_normal&amp;lt;/item&amp;gt;
+  &amp;lt;item name=&amp;quot;android:windowBackground&amp;quot;&amp;gt;@android:color/white&amp;lt;/item&amp;gt;
+  &amp;lt;item name=&amp;quot;colorPrimary&amp;quot;&amp;gt;@color/primary&amp;lt;/item&amp;gt;
+  &amp;lt;item name=&amp;quot;colorPrimaryDark&amp;quot;&amp;gt;@color/primary_dark&amp;lt;/item&amp;gt;
+  &amp;lt;item name=&amp;quot;colorAccent&amp;quot;&amp;gt;@color/accent&amp;lt;/item&amp;gt;
+  &amp;lt;item name=&amp;quot;colorButtonNormal&amp;quot;&amp;gt;@color/button_normal&amp;lt;/item&amp;gt;
 &amp;lt;/style&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -33,22 +33,24 @@
 But what if you have different Button types with different colors? No problem! Just define a new style for your special button:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;style name=&amp;quot;SpecialButton&amp;quot; parent=&amp;quot;Widget.AppCompat.Button.Colored&amp;quot;&amp;gt;
-    &amp;lt;item name=&amp;quot;colorButtonNormal&amp;quot;&amp;gt;@color/button_special&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&amp;quot;android:textColor&amp;quot;&amp;gt;@color/button_special_text&amp;lt;/item&amp;gt;
+  &amp;lt;item name=&amp;quot;colorButtonNormal&amp;quot;&amp;gt;#555&amp;lt;/item&amp;gt;
+  &amp;lt;item name=&amp;quot;android:textColorPrimary&amp;quot;&amp;gt;#fff&amp;lt;/item&amp;gt;
 &amp;lt;/style&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You can use this style on a Button element like that:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;Button
-    android:theme=&amp;quot;@style/SpecialButton&amp;quot;
-    android:id=&amp;quot;@+id/special&amp;quot;
-    android:layout_width=&amp;quot;wrap_content&amp;quot;
-    android:layout_height=&amp;quot;wrap_content&amp;quot;
-    android:text=&amp;quot;@string/special&amp;quot; /&amp;gt;
+  android:theme=&amp;quot;@style/SpecialButton&amp;quot;
+  android:id=&amp;quot;@+id/special&amp;quot;
+  android:layout_width=&amp;quot;wrap_content&amp;quot;
+  android:layout_height=&amp;quot;wrap_content&amp;quot;
+  android:text=&amp;quot;@string/special&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The important part is that you use the new style not as a style on the button but as a theme.&lt;/p&gt;
+&lt;p&gt;As you can see, the style is not used as a style but as a theme. This is because the attributes &lt;code&gt;colorButtonNormal&lt;/code&gt; and &lt;code&gt;android:textColorPrimary&lt;/code&gt; are not properties of the Button. Instead they are applied by the &lt;em&gt;magic&lt;/em&gt; theme mechanism from Android. I am not entirely sure how it works but it seems to work&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;For more information on styling and &lt;em&gt;not&lt;/em&gt; on theming you should read &lt;a href=&#34;http://blog.danlew.net/2014/11/19/styles-on-android/&#34;&gt;Styling Views on Android (Without Going Crazy)&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
