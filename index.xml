@@ -16,7 +16,9 @@
       <pubDate>Tue, 29 Sep 2015 09:34:00 CEST</pubDate>
       <author>Manuel Ohlendorf</author>
       <guid>http://manuel-ohlendorf.de/blog/2015/09/29/the-crazy-date/time-formatting-in-go/</guid>
-      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes. A typical format string in Java for an english date would be&lt;/p&gt;
+      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.&lt;/p&gt;
+
+&lt;p&gt;A typical format string in Java for an english date would be&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;    EEE, MM/dd hh:mm:ssa yyyy ZZZ
 &lt;/code&gt;&lt;/pre&gt;
