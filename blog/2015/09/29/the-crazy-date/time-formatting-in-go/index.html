@@ -1,0 +1,153 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="theme-color" content="#515151">
+
+  <meta name="generator" content="Hugo 0.14" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> The crazy date/time formatting in Go &middot; Manuel Ohlendorf </title>
+
+  
+  <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de/css/poole.css">
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/syntax.css">
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/hyde.css">
+  <link rel="stylesheet" href="http://manuel-ohlendorf.de//css/styles.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1937462-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Manuel Ohlendorf" />
+</head>
+
+  <body class="theme-dark">
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1 class="brand"><a href="/">Manuel Ohlendorf</a></h1>
+      <p class="lead">
+       Things from and about me 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="http://manuel-ohlendorf.de/blog">Blog</a></li>
+      
+        <li><a href="/cv/"> Curriculum Vitae </a></li>
+      
+      <li><a href="http://manuel-ohlendorf.de/archive">Archive</a></li>
+    </ul>
+    <a href="https://twitter.com/mohlendo"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;
+    <a href="https://github.com/mohlendo"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
+    <a href="https://www.xing.com/profile/Manuel_Ohlendorf"><i class="fa fa-xing"></i></a>&nbsp;&nbsp;
+
+    <p class="footnote">&copy; 2015 Manuel Ohlendorf. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+        <h1>The crazy date/time formatting in Go</h1>
+        <div class="tags">
+          <ul>
+            
+              <li><a href="/tags/go">Go</a> </li>
+            
+              <li><a href="/tags/time">Time</a> </li>
+            
+          </ul>
+        </div>
+        <span class="post-date">Tue, Sep 29, 2015 &middot; 2 minute read</span>
+          <p>Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax <a href="http://www.unicode.org/reports/tr35/#Date_Format_Patterns">UTS #35</a>. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes. A typical format string in Java for an english date would be</p>
+
+<pre><code>    EEE, MM/dd hh:mm:ssa yyyy ZZZ
+</code></pre>
+
+<p>Fairly simple, but you have to remember that the month part is always upper case, the minute part is always lower case, 12-hour time is the lower case <code>hh</code>, <code>a</code> is the am/pm marker, etc. There a several more pattern letters if you want to get more detailed on the time format.</p>
+
+<p>Go takes a completely new road to date/time formatting. Instead of codes it uses a standard time for describing the desired date/time format. The same date format as above written in Go is:</p>
+
+<pre><code>    Mon, 01/02 03:04:05PM 2006 -0700
+</code></pre>
+
+<p>As you can see this is a special time counting from one for the month part to six for the year part and seven for the time zone (which is MST). So there a only three things to recall: it starts with the month, the hour part is PM (15 o&rsquo;clock in 24-hour time) and the day of the week is Monday - instead of all all those abstract time pattern letters.</p>
+
+<p>Now let&rsquo;s parse and format a simple date string from an english date format to the german date format:</p>
+
+<pre><code class="language-Go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;time&quot;
+)
+
+func main() {
+    // my birthday
+    value := &quot;04/19/1979&quot;
+    // the format of the value
+    parseFormat := &quot;01/02/2006&quot;
+
+    // parse the string into a time object
+    time, _ := time.Parse(parseFormat, value)
+
+    // the german output format
+    printFormat := &quot;02.01.2006&quot;
+
+    // and print it with the desired format
+    fmt.Println(time.Format(printFormat))
+}
+
+// =&gt; &quot;19.04.1979&quot;
+</code></pre>
+
+<p>I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.</p>
+
+      </div>
+      
+				<h2>Comments</h2>
+				<div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'manuelohlendorf'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+			
+
+    </div>
+
+  </body>
+</html>
