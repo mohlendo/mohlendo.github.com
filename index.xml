@@ -19,7 +19,7 @@
       <description>
 
 &lt;p&gt;I don&amp;rsquo;t like password managers. I don&amp;rsquo;t trust them. But when you work in a small team and use a lot of different servers and technologies you sometimes have to securely store and share a secret with them.
-There are a lot of password managers out there that can do that but I want a very simple command line tool that just uses standard technologies and, &lt;em&gt;Tata&lt;/em&gt;, &lt;a href=&#34;http://www.passwordstore.org/&#34;&gt;Pass, the standard unix password manager&lt;/a&gt; hits the spot.&lt;/p&gt;
+There are a lot of password managers out there that can do that but I want a very simple command line tool that just uses standard technologies and —  &lt;em&gt;Tata&lt;/em&gt; — &lt;a href=&#34;http://www.passwordstore.org/&#34;&gt;Pass, the standard unix password manager&lt;/a&gt; hits the spot.&lt;/p&gt;
 
 &lt;p&gt;The documentation is quite good and there are some helpful blogpost on how to setup &lt;code&gt;pass&lt;/code&gt;. But what I am missing is how to share the stored and encrypted passwords.&lt;/p&gt;
 
