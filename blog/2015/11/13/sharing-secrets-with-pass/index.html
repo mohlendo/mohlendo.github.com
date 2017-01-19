@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="theme-color" content="#515151">
 
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.18.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -66,7 +66,7 @@
     <a href="https://github.com/mohlendo"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;
     <a href="https://www.xing.com/profile/Manuel_Ohlendorf"><i class="fa fa-xing"></i></a>&nbsp;&nbsp;
 
-    <p class="footnote">&copy; 2015 Manuel Ohlendorf. All rights reserved.</p>
+    <p class="footnote">&copy; 2017 Manuel Ohlendorf. All rights reserved.</p>
   </div>
 </div>
 
@@ -91,7 +91,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 <p>The documentation is quite good and there are some helpful blogpost on how to setup <code>pass</code>. But what I am missing is how to share the stored and encrypted passwords.</p>
 
-<h3 id="setup:c2d430fd8596cdac46bdaea6a142197e">Setup</h3>
+<h3 id="setup">Setup</h3>
 
 <p>To setup <code>pass</code>, you need a GnuPG key which <code>pass</code> uses to encrypt all your secrets. Run the command and follow the instructions:</p>
 
@@ -124,7 +124,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 <p>Since <code>pass</code> just uses <code>git</code> you don&rsquo;t have to use <code>pass</code> for managing the repository. You can also just use the bare <code>git</code> command for that. The default path for the password store is <code>~/.password-store/</code>.</p>
 
-<h3 id="sharing:c2d430fd8596cdac46bdaea6a142197e">Sharing</h3>
+<h3 id="sharing">Sharing</h3>
 
 <p>Now that you have a running <code>pass</code> setup you can share that with others. For decrypting the secrets you have to export and share the public <em>and private</em> GnuPG key that you just created.</p>
 
@@ -160,7 +160,7 @@ The final step is to clone the <code>git</code> repository:</p>
 
 <p>Your colleague is now able to decrypt all passwords and add new ones.</p>
 
-<h3 id="security-considerations:c2d430fd8596cdac46bdaea6a142197e">Security Considerations</h3>
+<h3 id="security-considerations">Security Considerations</h3>
 
 <p>Sharing the <code>pass</code> password store has some security issues that you should be aware of:</p>
 
@@ -173,22 +173,6 @@ The final step is to clone the <code>git</code> repository:</p>
 
       </div>
       
-				<h2>Comments</h2>
-				<div id="disqus_thread"></div>
-<script type="text/javascript">
-     
-    var disqus_shortname = 'manuelohlendorf'; 
-
-     
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-			
 
     </div>
 

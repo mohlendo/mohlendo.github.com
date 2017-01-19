@@ -3,10 +3,10 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/</link>
+    <link>http://manuel-ohlendorf.de/index.xml</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
-    
+    <copyright>2015 Manuel Ohlendorf</copyright>
     <updated>Fri, 13 Nov 2015 20:11:00 &#43;0200</updated>
     
     
@@ -23,7 +23,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 &lt;p&gt;The documentation is quite good and there are some helpful blogpost on how to setup &lt;code&gt;pass&lt;/code&gt;. But what I am missing is how to share the stored and encrypted passwords.&lt;/p&gt;
 
-&lt;h3 id=&#34;setup:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Setup&lt;/h3&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
 
 &lt;p&gt;To setup &lt;code&gt;pass&lt;/code&gt;, you need a GnuPG key which &lt;code&gt;pass&lt;/code&gt; uses to encrypt all your secrets. Run the command and follow the instructions:&lt;/p&gt;
 
@@ -56,7 +56,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 &lt;p&gt;Since &lt;code&gt;pass&lt;/code&gt; just uses &lt;code&gt;git&lt;/code&gt; you don&amp;rsquo;t have to use &lt;code&gt;pass&lt;/code&gt; for managing the repository. You can also just use the bare &lt;code&gt;git&lt;/code&gt; command for that. The default path for the password store is &lt;code&gt;~/.password-store/&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;sharing:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Sharing&lt;/h3&gt;
+&lt;h3 id=&#34;sharing&#34;&gt;Sharing&lt;/h3&gt;
 
 &lt;p&gt;Now that you have a running &lt;code&gt;pass&lt;/code&gt; setup you can share that with others. For decrypting the secrets you have to export and share the public &lt;em&gt;and private&lt;/em&gt; GnuPG key that you just created.&lt;/p&gt;
 
@@ -92,7 +92,7 @@ The final step is to clone the &lt;code&gt;git&lt;/code&gt; repository:&lt;/p&gt
 
 &lt;p&gt;Your colleague is now able to decrypt all passwords and add new ones.&lt;/p&gt;
 
-&lt;h3 id=&#34;security-considerations:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Security Considerations&lt;/h3&gt;
+&lt;h3 id=&#34;security-considerations&#34;&gt;Security Considerations&lt;/h3&gt;
 
 &lt;p&gt;Sharing the &lt;code&gt;pass&lt;/code&gt; password store has some security issues that you should be aware of:&lt;/p&gt;
 
@@ -113,7 +113,8 @@ The final step is to clone the &lt;code&gt;git&lt;/code&gt; repository:&lt;/p&gt
       <pubDate>Tue, 29 Sep 2015 09:34:00 CEST</pubDate>
       <author>Manuel Ohlendorf</author>
       <guid>http://manuel-ohlendorf.de/blog/2015/09/29/the-crazy-date/time-formatting-in-go/</guid>
-      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.&lt;/p&gt;
+      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.
+&lt;/p&gt;
 
 &lt;p&gt;A typical format string in Java for an english date would be&lt;/p&gt;
 
@@ -157,8 +158,7 @@ func main() {
 // =&amp;gt; &amp;quot;19.04.1979&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&amp;rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.&lt;/p&gt;
-</description>
+&lt;p&gt;I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&amp;rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.&lt;/p&gt;</description>
     </item>
     
     
@@ -169,7 +169,8 @@ func main() {
       <pubDate>Thu, 03 Sep 2015 10:21:06 CEST</pubDate>
       <author>Manuel Ohlendorf</author>
       <guid>http://manuel-ohlendorf.de/blog/2015/09/03/material-design-buttons-with-appcompat/</guid>
-      <description>&lt;p&gt;With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop devices.&lt;/p&gt;
+      <description>&lt;p&gt;With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop devices.
+&lt;/p&gt;
 
 &lt;p&gt;If you just want to define the color of all Buttons you can set a special theme property called &lt;code&gt;colorButtonNormal&lt;/code&gt;:&lt;/p&gt;
 
@@ -203,8 +204,7 @@ But what if you have different Button types with different colors? No problem! J
 
 &lt;p&gt;As you can see, the style is not used as a style but as a theme. This is because the attributes &lt;code&gt;colorButtonNormal&lt;/code&gt; and &lt;code&gt;android:textColorPrimary&lt;/code&gt; are not properties of the Button. Instead they are applied by the &lt;em&gt;magic&lt;/em&gt; theme mechanism from Android. I am not entirely sure how it works but it seems to work&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;For more information on styling and &lt;em&gt;not&lt;/em&gt; on theming you should read &lt;a href=&#34;http://blog.danlew.net/2014/11/19/styles-on-android/&#34;&gt;Styling Views on Android (Without Going Crazy)&lt;/a&gt;.&lt;/p&gt;
-</description>
+&lt;p&gt;For more information on styling and &lt;em&gt;not&lt;/em&gt; on theming you should read &lt;a href=&#34;http://blog.danlew.net/2014/11/19/styles-on-android/&#34;&gt;Styling Views on Android (Without Going Crazy)&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     
@@ -321,7 +321,7 @@ italienisch, es liegt aber ein Zettel mit den wichtigsten Übersetzungen bei - s
 lernt man auch gleich noch etwas Fremdsprache, z.B. &lt;em&gt;non Incollare&lt;/em&gt; - nicht
 festkleben ;-)&lt;/p&gt;
 
-&lt;h3 id=&#34;das-deck:3226d2f44ae028109dcc977bcfbb32c2&#34;&gt;Das Deck&lt;/h3&gt;
+&lt;h3 id=&#34;das-deck&#34;&gt;Das Deck&lt;/h3&gt;
 
 &lt;p&gt;Der erste Schritt ist, das Deck - ein lasergeschnittenes Holzteil - auf den
 Resinrumpf zu kleben. Natürlich ist davor etwas Schleifarbeit nötig, das
@@ -368,7 +368,7 @@ Pages&lt;/a&gt; a very simple way of publishing content to the
 web. So why not using &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; for serving your blogofile
 website.&lt;/p&gt;
 
-&lt;h3 id=&#34;github-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Github setup&lt;/h3&gt;
+&lt;h3 id=&#34;github-setup&#34;&gt;Github setup&lt;/h3&gt;
 
 &lt;p&gt;You need 2 public repositories for that, the source code repository and the
 website repository that contains the compiled pages. My two repos are:&lt;/p&gt;
@@ -381,7 +381,7 @@ website repository that contains the compiled pages. My two repos are:&lt;/p&gt;
 &lt;p&gt;The later one is a special repository for user pages published with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub
 Pages&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;git-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Git setup&lt;/h3&gt;
+&lt;h3 id=&#34;git-setup&#34;&gt;Git setup&lt;/h3&gt;
 
 &lt;p&gt;The whole source code of your website with the Mako templates etc. will be
 pushed to the source code repository. The command &lt;code&gt;blogofile build&lt;/code&gt; compiles the
@@ -399,7 +399,7 @@ can commit and push the changes to the website repository and github will
 automatically publish them - in my case to
 &lt;a href=&#34;http://mohlendo.github.com&#34;&gt;http://mohlendo.github.com&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;config-py-changes:1e5a439a674e6273b2b26fe741d14769&#34;&gt;_config.py changes&lt;/h3&gt;
+&lt;h3 id=&#34;config-py-changes&#34;&gt;_config.py changes&lt;/h3&gt;
 
 &lt;p&gt;Every time blogofile recreates the website it completely clears the &lt;code&gt;_site&lt;/code&gt;
 directory and therefor also the &lt;code&gt;.git&lt;/code&gt; directory of the submodule. This leads to
@@ -408,7 +408,7 @@ a confusion of git and it cannot track changes on the compiled website anymore.&
 &lt;p&gt;I wrote some small custom &lt;code&gt;pre_build()&lt;/code&gt; and &lt;code&gt;post_build()&lt;/code&gt; hooks that moves the
 &lt;code&gt;.git&lt;/code&gt; directory to a temp folder and restores it after a successful build.&lt;/p&gt;
 
-&lt;h3 id=&#34;pre-post-build-hooks:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Pre/Post build hooks:&lt;/h3&gt;
+&lt;h3 id=&#34;pre-post-build-hooks&#34;&gt;Pre/Post build hooks:&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def pre_build():
     if not os.path.isdir(&amp;quot;_tmp&amp;quot;):
@@ -432,7 +432,7 @@ fine. When you have an error in your templates blogofile only invokes the
 it on GitHub! Just delete the &lt;code&gt;_site&lt;/code&gt; folder and update the submodule with &lt;code&gt;git
 submodule update&lt;/code&gt; in the root folder of your blogofile project.&lt;/p&gt;
 
-&lt;h3 id=&#34;that-s-it:1e5a439a674e6273b2b26fe741d14769&#34;&gt;That&amp;rsquo;s it!&lt;/h3&gt;
+&lt;h3 id=&#34;that-s-it&#34;&gt;That&amp;rsquo;s it!&lt;/h3&gt;
 
 &lt;p&gt;Quite cool, I think, because you don&amp;rsquo;t need any webserver or webspace and still
 have quite a nice blog! As a start you can also fork my two github repos.&lt;/p&gt;

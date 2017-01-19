@@ -3,11 +3,11 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/tags/pass/</link>
+    <link>http://manuel-ohlendorf.de/tags/pass/index.xml</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
-    
-    <updated>Fri, 13 Nov 2015 20:11:00 &#43;0200</updated>
+    <copyright>0001 Manuel Ohlendorf</copyright>
+    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
     
     
     <item>
@@ -23,7 +23,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 &lt;p&gt;The documentation is quite good and there are some helpful blogpost on how to setup &lt;code&gt;pass&lt;/code&gt;. But what I am missing is how to share the stored and encrypted passwords.&lt;/p&gt;
 
-&lt;h3 id=&#34;setup:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Setup&lt;/h3&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
 
 &lt;p&gt;To setup &lt;code&gt;pass&lt;/code&gt;, you need a GnuPG key which &lt;code&gt;pass&lt;/code&gt; uses to encrypt all your secrets. Run the command and follow the instructions:&lt;/p&gt;
 
@@ -56,7 +56,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 &lt;p&gt;Since &lt;code&gt;pass&lt;/code&gt; just uses &lt;code&gt;git&lt;/code&gt; you don&amp;rsquo;t have to use &lt;code&gt;pass&lt;/code&gt; for managing the repository. You can also just use the bare &lt;code&gt;git&lt;/code&gt; command for that. The default path for the password store is &lt;code&gt;~/.password-store/&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;sharing:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Sharing&lt;/h3&gt;
+&lt;h3 id=&#34;sharing&#34;&gt;Sharing&lt;/h3&gt;
 
 &lt;p&gt;Now that you have a running &lt;code&gt;pass&lt;/code&gt; setup you can share that with others. For decrypting the secrets you have to export and share the public &lt;em&gt;and private&lt;/em&gt; GnuPG key that you just created.&lt;/p&gt;
 
@@ -92,7 +92,7 @@ The final step is to clone the &lt;code&gt;git&lt;/code&gt; repository:&lt;/p&gt
 
 &lt;p&gt;Your colleague is now able to decrypt all passwords and add new ones.&lt;/p&gt;
 
-&lt;h3 id=&#34;security-considerations:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Security Considerations&lt;/h3&gt;
+&lt;h3 id=&#34;security-considerations&#34;&gt;Security Considerations&lt;/h3&gt;
 
 &lt;p&gt;Sharing the &lt;code&gt;pass&lt;/code&gt; password store has some security issues that you should be aware of:&lt;/p&gt;
 

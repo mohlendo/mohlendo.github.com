@@ -3,11 +3,11 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/archive/2015/</link>
+    <link>http://manuel-ohlendorf.de/archive/2015/index.xml</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
-    
-    <updated>Fri, 13 Nov 2015 20:11:00 &#43;0200</updated>
+    <copyright>0001 Manuel Ohlendorf</copyright>
+    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
     
     
     <item>
@@ -23,7 +23,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 &lt;p&gt;The documentation is quite good and there are some helpful blogpost on how to setup &lt;code&gt;pass&lt;/code&gt;. But what I am missing is how to share the stored and encrypted passwords.&lt;/p&gt;
 
-&lt;h3 id=&#34;setup:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Setup&lt;/h3&gt;
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
 
 &lt;p&gt;To setup &lt;code&gt;pass&lt;/code&gt;, you need a GnuPG key which &lt;code&gt;pass&lt;/code&gt; uses to encrypt all your secrets. Run the command and follow the instructions:&lt;/p&gt;
 
@@ -56,7 +56,7 @@ There are a lot of password managers out there that can do that but I want a ver
 
 &lt;p&gt;Since &lt;code&gt;pass&lt;/code&gt; just uses &lt;code&gt;git&lt;/code&gt; you don&amp;rsquo;t have to use &lt;code&gt;pass&lt;/code&gt; for managing the repository. You can also just use the bare &lt;code&gt;git&lt;/code&gt; command for that. The default path for the password store is &lt;code&gt;~/.password-store/&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;sharing:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Sharing&lt;/h3&gt;
+&lt;h3 id=&#34;sharing&#34;&gt;Sharing&lt;/h3&gt;
 
 &lt;p&gt;Now that you have a running &lt;code&gt;pass&lt;/code&gt; setup you can share that with others. For decrypting the secrets you have to export and share the public &lt;em&gt;and private&lt;/em&gt; GnuPG key that you just created.&lt;/p&gt;
 
@@ -92,7 +92,7 @@ The final step is to clone the &lt;code&gt;git&lt;/code&gt; repository:&lt;/p&gt
 
 &lt;p&gt;Your colleague is now able to decrypt all passwords and add new ones.&lt;/p&gt;
 
-&lt;h3 id=&#34;security-considerations:c2d430fd8596cdac46bdaea6a142197e&#34;&gt;Security Considerations&lt;/h3&gt;
+&lt;h3 id=&#34;security-considerations&#34;&gt;Security Considerations&lt;/h3&gt;
 
 &lt;p&gt;Sharing the &lt;code&gt;pass&lt;/code&gt; password store has some security issues that you should be aware of:&lt;/p&gt;
 
@@ -113,7 +113,8 @@ The final step is to clone the &lt;code&gt;git&lt;/code&gt; repository:&lt;/p&gt
       <pubDate>Tue, 29 Sep 2015 09:34:00 CEST</pubDate>
       <author>Manuel Ohlendorf</author>
       <guid>http://manuel-ohlendorf.de/blog/2015/09/29/the-crazy-date/time-formatting-in-go/</guid>
-      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.&lt;/p&gt;
+      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.
+&lt;/p&gt;
 
 &lt;p&gt;A typical format string in Java for an english date would be&lt;/p&gt;
 
@@ -157,8 +158,7 @@ func main() {
 // =&amp;gt; &amp;quot;19.04.1979&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&amp;rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.&lt;/p&gt;
-</description>
+&lt;p&gt;I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&amp;rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.&lt;/p&gt;</description>
     </item>
     
     
@@ -169,7 +169,8 @@ func main() {
       <pubDate>Thu, 03 Sep 2015 10:21:06 CEST</pubDate>
       <author>Manuel Ohlendorf</author>
       <guid>http://manuel-ohlendorf.de/blog/2015/09/03/material-design-buttons-with-appcompat/</guid>
-      <description>&lt;p&gt;With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop devices.&lt;/p&gt;
+      <description>&lt;p&gt;With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop devices.
+&lt;/p&gt;
 
 &lt;p&gt;If you just want to define the color of all Buttons you can set a special theme property called &lt;code&gt;colorButtonNormal&lt;/code&gt;:&lt;/p&gt;
 
@@ -203,8 +204,7 @@ But what if you have different Button types with different colors? No problem! J
 
 &lt;p&gt;As you can see, the style is not used as a style but as a theme. This is because the attributes &lt;code&gt;colorButtonNormal&lt;/code&gt; and &lt;code&gt;android:textColorPrimary&lt;/code&gt; are not properties of the Button. Instead they are applied by the &lt;em&gt;magic&lt;/em&gt; theme mechanism from Android. I am not entirely sure how it works but it seems to work&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;For more information on styling and &lt;em&gt;not&lt;/em&gt; on theming you should read &lt;a href=&#34;http://blog.danlew.net/2014/11/19/styles-on-android/&#34;&gt;Styling Views on Android (Without Going Crazy)&lt;/a&gt;.&lt;/p&gt;
-</description>
+&lt;p&gt;For more information on styling and &lt;em&gt;not&lt;/em&gt; on theming you should read &lt;a href=&#34;http://blog.danlew.net/2014/11/19/styles-on-android/&#34;&gt;Styling Views on Android (Without Going Crazy)&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     

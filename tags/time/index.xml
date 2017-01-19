@@ -3,11 +3,11 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/tags/time/</link>
+    <link>http://manuel-ohlendorf.de/tags/time/index.xml</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
-    
-    <updated>Tue, 29 Sep 2015 09:34:00 CEST</updated>
+    <copyright>0001 Manuel Ohlendorf</copyright>
+    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
     
     
     <item>
@@ -16,7 +16,8 @@
       <pubDate>Tue, 29 Sep 2015 09:34:00 CEST</pubDate>
       <author>Manuel Ohlendorf</author>
       <guid>http://manuel-ohlendorf.de/blog/2015/09/29/the-crazy-date/time-formatting-in-go/</guid>
-      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.&lt;/p&gt;
+      <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.
+&lt;/p&gt;
 
 &lt;p&gt;A typical format string in Java for an english date would be&lt;/p&gt;
 
@@ -60,8 +61,7 @@ func main() {
 // =&amp;gt; &amp;quot;19.04.1979&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&amp;rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.&lt;/p&gt;
-</description>
+&lt;p&gt;I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&amp;rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.&lt;/p&gt;</description>
     </item>
     
     

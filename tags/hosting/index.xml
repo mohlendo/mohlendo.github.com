@@ -3,11 +3,11 @@
   <channel>
       <title>Manuel Ohlendorf</title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/tags/hosting/</link>
+    <link>http://manuel-ohlendorf.de/tags/hosting/index.xml</link>
     <language>en-us</language>
     <author>Manuel Ohlendorf</author>
-    
-    <updated>Thu, 23 Dec 2010 13:09:03 UTC</updated>
+    <copyright>0001 Manuel Ohlendorf</copyright>
+    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
     
     
     <item>
@@ -34,7 +34,7 @@ Pages&lt;/a&gt; a very simple way of publishing content to the
 web. So why not using &lt;a href=&#34;http://www.github.com&#34;&gt;GitHub&lt;/a&gt; for serving your blogofile
 website.&lt;/p&gt;
 
-&lt;h3 id=&#34;github-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Github setup&lt;/h3&gt;
+&lt;h3 id=&#34;github-setup&#34;&gt;Github setup&lt;/h3&gt;
 
 &lt;p&gt;You need 2 public repositories for that, the source code repository and the
 website repository that contains the compiled pages. My two repos are:&lt;/p&gt;
@@ -47,7 +47,7 @@ website repository that contains the compiled pages. My two repos are:&lt;/p&gt;
 &lt;p&gt;The later one is a special repository for user pages published with &lt;a href=&#34;http://pages.github.com/&#34;&gt;GitHub
 Pages&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;git-setup:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Git setup&lt;/h3&gt;
+&lt;h3 id=&#34;git-setup&#34;&gt;Git setup&lt;/h3&gt;
 
 &lt;p&gt;The whole source code of your website with the Mako templates etc. will be
 pushed to the source code repository. The command &lt;code&gt;blogofile build&lt;/code&gt; compiles the
@@ -65,7 +65,7 @@ can commit and push the changes to the website repository and github will
 automatically publish them - in my case to
 &lt;a href=&#34;http://mohlendo.github.com&#34;&gt;http://mohlendo.github.com&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;config-py-changes:1e5a439a674e6273b2b26fe741d14769&#34;&gt;_config.py changes&lt;/h3&gt;
+&lt;h3 id=&#34;config-py-changes&#34;&gt;_config.py changes&lt;/h3&gt;
 
 &lt;p&gt;Every time blogofile recreates the website it completely clears the &lt;code&gt;_site&lt;/code&gt;
 directory and therefor also the &lt;code&gt;.git&lt;/code&gt; directory of the submodule. This leads to
@@ -74,7 +74,7 @@ a confusion of git and it cannot track changes on the compiled website anymore.&
 &lt;p&gt;I wrote some small custom &lt;code&gt;pre_build()&lt;/code&gt; and &lt;code&gt;post_build()&lt;/code&gt; hooks that moves the
 &lt;code&gt;.git&lt;/code&gt; directory to a temp folder and restores it after a successful build.&lt;/p&gt;
 
-&lt;h3 id=&#34;pre-post-build-hooks:1e5a439a674e6273b2b26fe741d14769&#34;&gt;Pre/Post build hooks:&lt;/h3&gt;
+&lt;h3 id=&#34;pre-post-build-hooks&#34;&gt;Pre/Post build hooks:&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def pre_build():
     if not os.path.isdir(&amp;quot;_tmp&amp;quot;):
@@ -98,7 +98,7 @@ fine. When you have an error in your templates blogofile only invokes the
 it on GitHub! Just delete the &lt;code&gt;_site&lt;/code&gt; folder and update the submodule with &lt;code&gt;git
 submodule update&lt;/code&gt; in the root folder of your blogofile project.&lt;/p&gt;
 
-&lt;h3 id=&#34;that-s-it:1e5a439a674e6273b2b26fe741d14769&#34;&gt;That&amp;rsquo;s it!&lt;/h3&gt;
+&lt;h3 id=&#34;that-s-it&#34;&gt;That&amp;rsquo;s it!&lt;/h3&gt;
 
 &lt;p&gt;Quite cool, I think, because you don&amp;rsquo;t need any webserver or webspace and still
 have quite a nice blog! As a start you can also fork my two github repos.&lt;/p&gt;
