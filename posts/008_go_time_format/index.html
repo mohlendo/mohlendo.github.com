@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>The crazy date/time formatting in Go - Manuel Ohlendorf</title><link rel="icon" type="image/png" href=icons/8-bit-me.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="The crazy date/time formatting in Go" />
+<meta property="og:description" content="How to format and parse date/time in Go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://manuel-ohlendorf.de/posts/008_go_time_format/" />
+<meta property="article:published_time" content="2015-09-29T09:34:00+02:00" />
+<meta property="article:modified_time" content="2015-09-29T09:34:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The crazy date/time formatting in Go"/>
+<meta name="twitter:description" content="How to format and parse date/time in Go"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://manuel-ohlendorf.de/css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/main.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/abc.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://manuel-ohlendorf.de/">Manuel Ohlendorf</a></h1>
+	<div class="site-description"><h2>Things from and about me</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/mohlendo" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/mohlendo" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/cv">CV</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">The crazy date/time formatting in Go</h1>
+			<div class="meta">Posted at &mdash; Sep 29, 2015</div>
+		</div>
+
+		<div class="markdown">
+			<p>Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax <a href="http://www.unicode.org/reports/tr35/#Date_Format_Patterns">UTS #35</a>. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.</p>
+<p>A typical format string in Java for an english date would be</p>
+<pre><code>    EEE, MM/dd hh:mm:ssa yyyy ZZZ
+</code></pre>
+<p>Fairly simple, but you have to remember that the month part is always upper case, the minute part is always lower case, 12-hour time is the lower case <code>hh</code>, <code>a</code> is the am/pm marker, etc. There a several more pattern letters if you want to get more detailed on the time format.</p>
+<p>Go takes a completely new road to date/time formatting. Instead of codes it uses a standard time for describing the desired date/time format. The same date format as above written in Go is:</p>
+<pre><code>    Mon, 01/02 03:04:05PM 2006 -0700
+</code></pre>
+<p>As you can see this is a special time counting from one for the month part to six for the year part and seven for the time zone (which is MST). So there a only three things to recall: it starts with the month, the hour part is PM (15 o&rsquo;clock in 24-hour time) and the day of the week is Monday - instead of all all those abstract time pattern letters.</p>
+<p>Now let&rsquo;s parse and format a simple date string from an english date format to the german date format:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Go" data-lang="Go"><span style="color:#719e07">package</span> main
+
+<span style="color:#719e07">import</span> (
+	<span style="color:#2aa198">&#34;fmt&#34;</span>
+	<span style="color:#2aa198">&#34;time&#34;</span>
+)
+
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">main</span>() {
+    <span style="color:#586e75">// my birthday
+</span><span style="color:#586e75"></span>    value <span style="color:#719e07">:=</span> <span style="color:#2aa198">&#34;04/19/1979&#34;</span>
+    <span style="color:#586e75">// the format of the value
+</span><span style="color:#586e75"></span>    parseFormat <span style="color:#719e07">:=</span> <span style="color:#2aa198">&#34;01/02/2006&#34;</span>
+
+    <span style="color:#586e75">// parse the string into a time object
+</span><span style="color:#586e75"></span>    time, _ <span style="color:#719e07">:=</span> time.<span style="color:#268bd2">Parse</span>(parseFormat, value)
+
+    <span style="color:#586e75">// the german output format
+</span><span style="color:#586e75"></span>    printFormat <span style="color:#719e07">:=</span> <span style="color:#2aa198">&#34;02.01.2006&#34;</span>
+
+    <span style="color:#586e75">// and print it with the desired format
+</span><span style="color:#586e75"></span>    fmt.<span style="color:#268bd2">Println</span>(time.<span style="color:#268bd2">Format</span>(printFormat))
+}
+
+<span style="color:#586e75">// =&gt; &#34;19.04.1979&#34;
+</span></code></pre></div><p>I like this new approach of Go. Writing the standard time down the way yours looks may be strange in the first place, but it&rsquo;s easy to recall, and it also happens to match the form of your time string, syntactically.</p>
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/go">Go</a></li>
+								
+								<li><a href="/tags/time">Time</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'manuelohlendorf';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © 2017 Manuel Ohlendorf. All rights reserved. |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1937462-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

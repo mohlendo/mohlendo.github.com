@@ -1,23 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://manuel-ohlendorf.de/blog/2015/11/13/sharing-secrets-with-pass/</loc>
+    <loc>http://manuel-ohlendorf.de/</loc>
     <lastmod>2015-11-13T20:11:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://manuel-ohlendorf.de/blog/2015/09/29/the-crazy-date/time-formatting-in-go/</loc>
+    <loc>http://manuel-ohlendorf.de/tags/pass/</loc>
+    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/posts/</loc>
+    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/security/</loc>
+    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/</loc>
+    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/</loc>
+    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/go/</loc>
     <lastmod>2015-09-29T09:34:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://manuel-ohlendorf.de/blog/2015/09/03/material-design-buttons-with-appcompat/</loc>
+    <loc>http://manuel-ohlendorf.de/posts/008_go_time_format/</loc>
+    <lastmod>2015-09-29T09:34:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/time/</loc>
+    <lastmod>2015-09-29T09:34:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/android/</loc>
     <lastmod>2015-09-03T10:21:06+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://manuel-ohlendorf.de/blog/2015/02/17/using-hugo-as-the-new-static-site-generator/</loc>
+    <loc>http://manuel-ohlendorf.de/tags/material-design/</loc>
+    <lastmod>2015-09-03T10:21:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/posts/007_material_design_buttons/</loc>
+    <lastmod>2015-09-03T10:21:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/github/</loc>
+    <lastmod>2015-02-17T08:45:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/hugo/</loc>
+    <lastmod>2015-02-17T08:45:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/static-site-generator/</loc>
+    <lastmod>2015-02-17T08:45:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/posts/005_new_generator/</loc>
     <lastmod>2015-02-17T08:45:58+01:00</lastmod>
   </url>
   
@@ -27,189 +88,68 @@
   </url>
   
   <url>
-    <loc>http://manuel-ohlendorf.de/blog/2011/03/14/l-system-parser-with-jangaroo/</loc>
-    <lastmod>2011-03-14T16:44:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</loc>
-    <lastmod>2011-01-14T20:09:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/</loc>
-    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/archive/2010/</loc>
-    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/archive/2011/</loc>
-    <lastmod>2011-03-14T16:44:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/archive/2015/</loc>
-    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://manuel-ohlendorf.de/tags/actionscript/</loc>
     <lastmod>2011-03-14T16:44:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/android/</loc>
-    <lastmod>2015-09-03T10:21:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/archive/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/blogofile/</loc>
-    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/blog/</loc>
-    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/categories/development/</loc>
-    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/git/</loc>
-    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/github/</loc>
-    <lastmod>2015-02-17T08:45:58+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/go/</loc>
-    <lastmod>2015-09-29T09:34:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/hosting/</loc>
-    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/hugo/</loc>
-    <lastmod>2015-02-17T08:45:58+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://manuel-ohlendorf.de/tags/jangaroo/</loc>
     <lastmod>2011-03-14T16:44:03+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://manuel-ohlendorf.de/tags/javascript/</loc>
     <lastmod>2011-03-14T16:44:03+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://manuel-ohlendorf.de/</loc>
-    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
-    <priority>0</priority>
+    <loc>http://manuel-ohlendorf.de/posts/004_lsystem_parser_with_jangaroo/</loc>
+    <lastmod>2011-03-14T16:44:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://manuel-ohlendorf.de/tags/material-design/</loc>
-    <lastmod>2015-09-03T10:21:06+02:00</lastmod>
-    <priority>0</priority>
+    <loc>http://manuel-ohlendorf.de/posts/003_shamrock_tag_1/</loc>
+    <lastmod>2011-01-14T20:09:03+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://manuel-ohlendorf.de/tags/modellbau/</loc>
     <lastmod>2011-01-14T20:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/categories/modellbau/</loc>
-    <lastmod>2011-01-14T20:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/pass/</loc>
-    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/python/</loc>
-    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/security/</loc>
-    <lastmod>2015-11-13T20:11:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://manuel-ohlendorf.de/tags/shamrock/</loc>
     <lastmod>2011-01-14T20:09:03+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://manuel-ohlendorf.de/tags/static-site-generator/</loc>
-    <lastmod>2015-02-17T08:45:58+01:00</lastmod>
-    <priority>0</priority>
+    <loc>http://manuel-ohlendorf.de/tags/blogofile/</loc>
+    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/git/</loc>
+    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/hosting/</loc>
+    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/posts/001_blogofile_on_github/</loc>
+    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://manuel-ohlendorf.de/tags/python/</loc>
+    <lastmod>2010-12-23T13:09:03+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://manuel-ohlendorf.de/tags/submodules/</loc>
     <lastmod>2010-12-23T13:09:03+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://manuel-ohlendorf.de/tags/time/</loc>
-    <lastmod>2015-09-29T09:34:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

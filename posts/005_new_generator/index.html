@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Using Hugo as the new static site generator - Manuel Ohlendorf</title><link rel="icon" type="image/png" href=icons/8-bit-me.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Using Hugo as the new static site generator" />
+<meta property="og:description" content="Four years since my last post" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://manuel-ohlendorf.de/posts/005_new_generator/" />
+<meta property="article:published_time" content="2015-02-17T08:45:58+01:00" />
+<meta property="article:modified_time" content="2015-02-17T08:45:58+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Hugo as the new static site generator"/>
+<meta name="twitter:description" content="Four years since my last post"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://manuel-ohlendorf.de/css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/main.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/abc.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://manuel-ohlendorf.de/">Manuel Ohlendorf</a></h1>
+	<div class="site-description"><h2>Things from and about me</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/mohlendo" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/mohlendo" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/cv">CV</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Using Hugo as the new static site generator</h1>
+			<div class="meta">Posted at &mdash; Feb 17, 2015</div>
+		</div>
+
+		<div class="markdown">
+			<p>Four years since my last
+<a href="/blog/2011/03/14/l-system-parser-with-jangaroo/">blogpost</a> and a very crappy
+old style of the site, I have decided completely revamp it.</p>
+<p>My first thoughts were: You need a new static site generator and it has to be
+written in your favourite programming language (for now, this is JavaScript).
+After some googling and tinkering I came to a very different conclusion: Not the
+programming language or the features of the generator are important to me, but
+the available themes!</p>
+<p>So more googling was necessary to come up with <a href="http://gohugo.io">Hugo</a> and the
+theme <a href="https://github.com/spf13/hyde">Hyde</a> and not 10 minutes later the new
+site was online - yes, it was that fast!</p>
+<p><a href="http://gohugo.io">Hugo</a> has every feature you would expect from a static site
+generator: sitemap generation, RSS generation, serving and life-reloading during
+development and a good documentation.</p>
+<p>But the most important feature for me is the very good theming mechanism that
+allows you to use a theme as a git submodule in your project, without changing
+any code in it. It is always possible to update the theme to the latest version
+or even change it to a different one. Every style specific changes that you want
+to make happen in your own templates.</p>
+<p>Another property of <a href="http://gohugo.io">Hugo</a> that convinced me, is its
+performance - Hugo is <em>blazing</em> fast! Generating this site takes about 25
+milliseconds.</p>
+<p>One thing, that bothered me was, that the Hugo&rsquo;s documentation describes a very
+complicated way of hosting the blog on <a href="http://github.com">Github</a>. Therefor I
+have chosen my submodule-way, again.</p>
+<p><a href="http://gohugo.io">Hugo</a> generates the final site into the <code>public</code> folder. That
+is where you want to init the
+<a href="http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html">submodule</a>
+into:</p>
+<pre><code>$ git submodule add http://github.com/mohlendo/mohlendo.github.com public
+</code></pre>
+<p>Now every time the site is rebuild, you can commit and push the changes to the
+website repository and github will automatically publish them - in my case to
+<a href="http://mohlendo.github.com">http://mohlendo.github.com</a>.</p>
+<p>That&rsquo;s it again - a new site generator and a new blogpost! Probably the last,
+though, until I change the site generator again&hellip;</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/hugo">hugo</a></li>
+								
+								<li><a href="/tags/static-site-generator">static-site-generator</a></li>
+								
+								<li><a href="/tags/github">github</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'manuelohlendorf';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © 2017 Manuel Ohlendorf. All rights reserved. |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1937462-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

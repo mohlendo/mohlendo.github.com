@@ -1,53 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Manuel Ohlendorf</title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/tags/modellbau/index.xml</link>
+    <title>modellbau on Manuel Ohlendorf</title>
+    <link>http://manuel-ohlendorf.de/tags/modellbau/</link>
+    <description>Recent content in modellbau on Manuel Ohlendorf</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Manuel Ohlendorf</author>
-    <copyright>0001 Manuel Ohlendorf</copyright>
-    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
+    <copyright>© 2017 Manuel Ohlendorf. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 14 Jan 2011 20:09:03 +0000</lastBuildDate>
+    
+	<atom:link href="http://manuel-ohlendorf.de/tags/modellbau/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Baubericht Amati Shamrock - Tag 1</title>
-      <link>http://manuel-ohlendorf.de/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</link>
-      <pubDate>Fri, 14 Jan 2011 20:09:03 UTC</pubDate>
-      <author>Manuel Ohlendorf</author>
-      <guid>http://manuel-ohlendorf.de/blog/2011/01/14/baubericht-amati-shamrock---tag-1/</guid>
-      <description>
-
-&lt;p&gt;Dies ist der erste Teil eines Bauberichts des Bausatzes
-&lt;a href=&#34;http://de.wikipedia.org/wiki/Shamrock_V&#34;&gt;Shamrock&lt;/a&gt; von Amati im Maßstab von
-1:80. Da ich ein blutiger Anfänger bin, was Schiffsmodellbau angeht, ist dieser
-Bausatz genau das Richtige, denn der Rumpf ist ein vorgefertigtes Resinteil. So
-fängt das echte Modellbauen erst bei dem Deck an. Der Bausatz ist eigentlich auf
-italienisch, es liegt aber ein Zettel mit den wichtigsten Übersetzungen bei - so
-lernt man auch gleich noch etwas Fremdsprache, z.B. &lt;em&gt;non Incollare&lt;/em&gt; - nicht
-festkleben ;-)&lt;/p&gt;
-
-&lt;h3 id=&#34;das-deck&#34;&gt;Das Deck&lt;/h3&gt;
-
-&lt;p&gt;Der erste Schritt ist, das Deck - ein lasergeschnittenes Holzteil - auf den
-Resinrumpf zu kleben. Natürlich ist davor etwas Schleifarbeit nötig, das
-Decksholzteil ist nämlich etwas zu lang und breit, was bedeutet, dass das Modell
-nach dem Schleifen leider nicht mehr maßstabsgetreu ist. Egal.
-&lt;a href=&#34;http://www.flickr.com/photos/mohlendo/5355083592/&#34;&gt;&lt;img src=&#34;http://farm6.static.flickr.com/5127/5355083592_9bb04e3809.jpg&#34; alt=&#34;Deck - Schritt 1&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Als nächstes werden die 4mm starken Decksplanken aufgeleimt. Die Leisten müssen
-gebogen werden, weil sie sonst brechen würden. Ich habe das einfach in einem mit
-heißem Wasser gefüllten Waschbecken gemacht: Die Leiste für ein paar Minuten im
-Wasser baden und dann immer stärker biegen. Das Ergebnis sieht so aus:
-&lt;a href=&#34;http://www.flickr.com/photos/mohlendo/5355091696/&#34;&gt;&lt;img src=&#34;http://farm6.static.flickr.com/5164/5355091696_f547170430.jpg&#34; alt=&#34;Decksplanken&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Ich bin bisher doch ziemlich überrascht, dass alles ohne große Probleme geklappt
-hat. Hier gibt noch weitere
-&lt;a href=&#34;http://www.flickr.com/photos/mohlendo/sets/72157625822875866/&#34;&gt;Bilder&lt;/a&gt; des
-ersten Tages. Fortsetzung folgt!&lt;/p&gt;
-</description>
+      <link>http://manuel-ohlendorf.de/posts/003_shamrock_tag_1/</link>
+      <pubDate>Fri, 14 Jan 2011 20:09:03 +0000</pubDate>
+      
+      <guid>http://manuel-ohlendorf.de/posts/003_shamrock_tag_1/</guid>
+      <description>Dies ist der erste Teil eines Bauberichts des Bausatzes Shamrock von Amati im Maßstab von 1:80. Da ich ein blutiger Anfänger bin, was Schiffsmodellbau angeht, ist dieser Bausatz genau das Richtige, denn der Rumpf ist ein vorgefertigtes Resinteil. So fängt das echte Modellbauen erst bei dem Deck an. Der Bausatz ist eigentlich auf italienisch, es liegt aber ein Zettel mit den wichtigsten Übersetzungen bei - so lernt man auch gleich noch etwas Fremdsprache, z.</description>
     </item>
-    
     
   </channel>
 </rss>

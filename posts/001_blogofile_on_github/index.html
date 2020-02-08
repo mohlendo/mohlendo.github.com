@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Hosting a Blogofile Blog on GitHub with GitHub Pages - Manuel Ohlendorf</title><link rel="icon" type="image/png" href=icons/8-bit-me.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Hosting a Blogofile Blog on GitHub with GitHub Pages" />
+<meta property="og:description" content="Using Blogofile" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://manuel-ohlendorf.de/posts/001_blogofile_on_github/" />
+<meta property="article:published_time" content="2010-12-23T13:09:03+00:00" />
+<meta property="article:modified_time" content="2010-12-23T13:09:03+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hosting a Blogofile Blog on GitHub with GitHub Pages"/>
+<meta name="twitter:description" content="Using Blogofile"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://manuel-ohlendorf.de/css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/main.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/abc.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://manuel-ohlendorf.de/">Manuel Ohlendorf</a></h1>
+	<div class="site-description"><h2>Things from and about me</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/mohlendo" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/mohlendo" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/cv">CV</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Hosting a Blogofile Blog on GitHub with GitHub Pages</h1>
+			<div class="meta">Posted at &mdash; Dec 23, 2010</div>
+		</div>
+
+		<div class="markdown">
+			<p>So, in my first blog post I will describe howto use
+<a href="http://www.github.com">GitHub</a> to serve a <a href="http://www.blogofile.com">Blogofile</a>
+Blog, which I have done with this blog. ### First, what is
+<a href="http://www.blogofile.com">Blogofile</a>? Blogofile is a framework for static
+websites. You don&rsquo;t need a webserver and no database, only webspace. Blogofile
+provides templates, controllers and filters, almost like any other dynamic web
+frameworks and compiles them to a static website. Right now it is more or less a
+blogging engine but you can actually create any website you want. Have a look at
+the website for details.</p>
+<p>And there comes <a href="http://www.github.com">GitHub</a> into the play.
+<a href="http://www.github.com">GitHub</a> provides with <a href="http://pages.github.com/">GitHub
+Pages</a> a very simple way of publishing content to the
+web. So why not using <a href="http://www.github.com">GitHub</a> for serving your blogofile
+website.</p>
+<h3 id="github-setup">Github setup</h3>
+<p>You need 2 public repositories for that, the source code repository and the
+website repository that contains the compiled pages. My two repos are:</p>
+<ul>
+<li><a href="http://github.com/mohlendo/manuel-ohlendorf.de">manuel-ohlendorf.de</a> with the source code</li>
+<li><a href="http://github.com/mohlendo/mohlendo.github.com">mohlendo.github.com</a> with the compiled HTML files</li>
+</ul>
+<p>The later one is a special repository for user pages published with <a href="http://pages.github.com/">GitHub
+Pages</a>.</p>
+<h3 id="git-setup">Git setup</h3>
+<p>The whole source code of your website with the Mako templates etc. will be
+pushed to the source code repository. The command <code>blogofile build</code> compiles the
+website into the sub-folder <code>_site</code>. The contents of this directory is what we
+want to push to the website repository which GitHub will publish to the web. In
+order to do that we need to create a git
+<a href="http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html">submodule</a>
+with the command:</p>
+<pre><code>git submodule add http://github.com/mohlendo/mohlendo.github.com _site
+</code></pre>
+<p>That creates a new submodule <code>_site</code>. Now every time the site is rebuild, you
+can commit and push the changes to the website repository and github will
+automatically publish them - in my case to
+<a href="http://mohlendo.github.com">http://mohlendo.github.com</a></p>
+<h3 id="_configpy-changes">_config.py changes</h3>
+<p>Every time blogofile recreates the website it completely clears the <code>_site</code>
+directory and therefor also the <code>.git</code> directory of the submodule. This leads to
+a confusion of git and it cannot track changes on the compiled website anymore.</p>
+<p>I wrote some small custom <code>pre_build()</code> and <code>post_build()</code> hooks that moves the
+<code>.git</code> directory to a temp folder and restores it after a successful build.</p>
+<h3 id="prepost-build-hooks">Pre/Post build hooks:</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">def</span> <span style="color:#268bd2">pre_build</span>():
+    <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>):
+        os<span style="color:#719e07">.</span>mkdir(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#719e07">else</span>:
+        shutil<span style="color:#719e07">.</span>rmtree(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
+        os<span style="color:#719e07">.</span>mkdir(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#719e07">if</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_site</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>)):
+        shutil<span style="color:#719e07">.</span>move(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_site</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>),<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#586e75">#Do whatever you want before the _site is built</span>
+    <span style="color:#719e07">pass</span>
+<span style="color:#719e07">def</span> <span style="color:#268bd2">post_build</span>():
+    <span style="color:#719e07">if</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>)):
+        shutil<span style="color:#719e07">.</span>move(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>),<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_site</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#586e75">#Do whatever you want after the _site is built</span>
+</code></pre></div><p>Sadly, blogofile only invokes the <code>post_build()</code> hook when everything works
+fine. When you have an error in your templates blogofile only invokes the
+<code>pre_build()</code> hook. But destroying your submodule is no problem since you have
+it on GitHub! Just delete the <code>_site</code> folder and update the submodule with <code>git submodule update</code> in the root folder of your blogofile project.</p>
+<h3 id="thats-it">That&rsquo;s it!</h3>
+<p>Quite cool, I think, because you don&rsquo;t need any webserver or webspace and still
+have quite a nice blog! As a start you can also fork my two github repos.</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/python">python</a></li>
+								
+								<li><a href="/tags/blogofile">blogofile</a></li>
+								
+								<li><a href="/tags/git">git</a></li>
+								
+								<li><a href="/tags/github">github</a></li>
+								
+								<li><a href="/tags/hosting">hosting</a></li>
+								
+								<li><a href="/tags/submodules">submodules</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'manuelohlendorf';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © 2017 Manuel Ohlendorf. All rights reserved. |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1937462-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

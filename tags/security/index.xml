@@ -1,110 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Manuel Ohlendorf</title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://manuel-ohlendorf.de/tags/security/index.xml</link>
+    <title>Security on Manuel Ohlendorf</title>
+    <link>http://manuel-ohlendorf.de/tags/security/</link>
+    <description>Recent content in Security on Manuel Ohlendorf</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Manuel Ohlendorf</author>
-    <copyright>0001 Manuel Ohlendorf</copyright>
-    <updated>Mon, 01 Jan 0001 00:00:00 UTC</updated>
+    <copyright>© 2017 Manuel Ohlendorf. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 13 Nov 2015 20:11:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://manuel-ohlendorf.de/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sharing secrets with pass</title>
-      <link>http://manuel-ohlendorf.de/blog/2015/11/13/sharing-secrets-with-pass/</link>
-      <pubDate>Fri, 13 Nov 2015 20:11:00 &#43;0200</pubDate>
-      <author>Manuel Ohlendorf</author>
-      <guid>http://manuel-ohlendorf.de/blog/2015/11/13/sharing-secrets-with-pass/</guid>
-      <description>
-
-&lt;p&gt;I don&amp;rsquo;t like password managers. I don&amp;rsquo;t trust them. But when you work in a small team and use a lot of different servers and technologies you sometimes have to securely store and share a secret with them.
-There are a lot of password managers out there that can do that but I want a very simple command line tool that just uses standard technologies and —  &lt;em&gt;Tata&lt;/em&gt; — &lt;a href=&#34;http://www.passwordstore.org/&#34;&gt;Pass, the standard unix password manager&lt;/a&gt; hits the spot.&lt;/p&gt;
-
-&lt;p&gt;The documentation is quite good and there are some helpful blogpost on how to setup &lt;code&gt;pass&lt;/code&gt;. But what I am missing is how to share the stored and encrypted passwords.&lt;/p&gt;
-
-&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
-
-&lt;p&gt;To setup &lt;code&gt;pass&lt;/code&gt;, you need a GnuPG key which &lt;code&gt;pass&lt;/code&gt; uses to encrypt all your secrets. Run the command and follow the instructions:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gpg --gen-key
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You should stick to the defaults recommended by GnuPG. Only for the key length I would choose 4096 bits instead of just 2048 bits because you can and bigger is better :-)&lt;/p&gt;
-
-&lt;p&gt;After GnuPG has generated the key it prints the details to the key. One line should look something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pub   4096R/11223344 2009-07-17
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You need to remember (copy into clipboard) the 8 character key id of the public key. Here it is &lt;code&gt;11223344&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now you can initialize your &lt;code&gt;pass&lt;/code&gt; password store with it:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pass init 11223344
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;With &lt;code&gt;pass&lt;/code&gt; you can use &lt;code&gt;git&lt;/code&gt; to track changes made to the password store and if you have a remote repository, you can also share the store with others. Let&amp;rsquo;s initialize the git repository with &lt;code&gt;pass&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pass git init
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And add the remote URL:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pass git remote add origin kexec.com:pass-store
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Since &lt;code&gt;pass&lt;/code&gt; just uses &lt;code&gt;git&lt;/code&gt; you don&amp;rsquo;t have to use &lt;code&gt;pass&lt;/code&gt; for managing the repository. You can also just use the bare &lt;code&gt;git&lt;/code&gt; command for that. The default path for the password store is &lt;code&gt;~/.password-store/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;sharing&#34;&gt;Sharing&lt;/h3&gt;
-
-&lt;p&gt;Now that you have a running &lt;code&gt;pass&lt;/code&gt; setup you can share that with others. For decrypting the secrets you have to export and share the public &lt;em&gt;and private&lt;/em&gt; GnuPG key that you just created.&lt;/p&gt;
-
-&lt;p&gt;Keep in mind that anyone who has access to the key and knows the password of the key is able to decrypt all your passwords.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gpg -a --output gpg-secret-key.asc --export-secret-keys 11223344
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you want to provide a team member access to the password store she needs the exported key in the file &lt;code&gt;gpg-secret-key.asc&lt;/code&gt;, access to the &lt;code&gt;git&lt;/code&gt; remote repository holding the store and the password of the GnuPG key, of course.&lt;/p&gt;
-
-&lt;p&gt;This is what the colleague has to do after installing &lt;code&gt;pass&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;Import the key into her GnuPG installation:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gpg --import gpg-secret-key.asc
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Increase the trust-level to maximum with the GnuPG editor:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gpg --edit-key 11223344
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, that you are in the interactive editor you have to enter the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gpg&amp;gt; trust
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and type &lt;code&gt;5&lt;/code&gt; for ultimate trust, then confirm with &lt;code&gt;y&lt;/code&gt; and enter &lt;code&gt;quit&lt;/code&gt; to exit.
-The final step is to clone the &lt;code&gt;git&lt;/code&gt; repository:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git clone kexec.com:pass-store ~/.password-store/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Your colleague is now able to decrypt all passwords and add new ones.&lt;/p&gt;
-
-&lt;h3 id=&#34;security-considerations&#34;&gt;Security Considerations&lt;/h3&gt;
-
-&lt;p&gt;Sharing the &lt;code&gt;pass&lt;/code&gt; password store has some security issues that you should be aware of:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;be careful when giving the public/private GnuPG key and password away. In the wrong hands, everything is lost. You shouldn&amp;rsquo;t use E-Mail for that. A USB-Drive that is securely wiped clear after sharing the key should do the trick.&lt;/li&gt;
-&lt;li&gt;you should also keep the &lt;code&gt;git&lt;/code&gt; repository hidden and secure. Pass uses simple files to store the encrypted passwords and the filenames are clear. An attacker with access to the &lt;code&gt;git&lt;/code&gt; repository is able to see the clear names of your encrypted passwords and might drew some dangerous conclusions from that.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Please keep that in mind and don&amp;rsquo;t blame me later ;-)&lt;/p&gt;
-</description>
+      <link>http://manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/</link>
+      <pubDate>Fri, 13 Nov 2015 20:11:00 +0200</pubDate>
+      
+      <guid>http://manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/</guid>
+      <description>I don&amp;rsquo;t like password managers. I don&amp;rsquo;t trust them. But when you work in a small team and use a lot of different servers and technologies you sometimes have to securely store and share a secret with them. There are a lot of password managers out there that can do that but I want a very simple command line tool that just uses standard technologies and — Tata — Pass, the standard unix password manager hits the spot.</description>
     </item>
-    
     
   </channel>
 </rss>

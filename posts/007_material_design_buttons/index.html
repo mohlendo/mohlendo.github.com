@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Material Design Buttons with AppCompat - Manuel Ohlendorf</title><link rel="icon" type="image/png" href=icons/8-bit-me.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Material Design Buttons with AppCompat" />
+<meta property="og:description" content="How to style Buttons in Android" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://manuel-ohlendorf.de/posts/007_material_design_buttons/" />
+<meta property="article:published_time" content="2015-09-03T10:21:06+02:00" />
+<meta property="article:modified_time" content="2015-09-03T10:21:06+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Material Design Buttons with AppCompat"/>
+<meta name="twitter:description" content="How to style Buttons in Android"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://manuel-ohlendorf.de/css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/main.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/abc.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://manuel-ohlendorf.de/">Manuel Ohlendorf</a></h1>
+	<div class="site-description"><h2>Things from and about me</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/mohlendo" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/mohlendo" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/cv">CV</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Material Design Buttons with AppCompat</h1>
+			<div class="meta">Posted at &mdash; Sep 3, 2015</div>
+		</div>
+
+		<div class="markdown">
+			<p>With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop devices.</p>
+<p>If you just want to define the color of all Buttons you can set a special theme property called <code>colorButtonNormal</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#268bd2">&lt;style</span> name=<span style="color:#2aa198">&#34;AppTheme&#34;</span> parent=<span style="color:#2aa198">&#34;Theme.AppCompat.Light&#34;</span><span style="color:#268bd2">&gt;</span>
+  <span style="color:#268bd2">&lt;item</span> name=<span style="color:#2aa198">&#34;android:windowBackground&#34;</span><span style="color:#268bd2">&gt;</span>@android:color/white<span style="color:#268bd2">&lt;/item&gt;</span>
+  <span style="color:#268bd2">&lt;item</span> name=<span style="color:#2aa198">&#34;colorPrimary&#34;</span><span style="color:#268bd2">&gt;</span>@color/primary<span style="color:#268bd2">&lt;/item&gt;</span>
+  <span style="color:#268bd2">&lt;item</span> name=<span style="color:#2aa198">&#34;colorPrimaryDark&#34;</span><span style="color:#268bd2">&gt;</span>@color/primary_dark<span style="color:#268bd2">&lt;/item&gt;</span>
+  <span style="color:#268bd2">&lt;item</span> name=<span style="color:#2aa198">&#34;colorAccent&#34;</span><span style="color:#268bd2">&gt;</span>@color/accent<span style="color:#268bd2">&lt;/item&gt;</span>
+  <span style="color:#268bd2">&lt;item</span> name=<span style="color:#2aa198">&#34;colorButtonNormal&#34;</span><span style="color:#268bd2">&gt;</span>@color/button_normal<span style="color:#268bd2">&lt;/item&gt;</span>
+<span style="color:#268bd2">&lt;/style&gt;</span>
+</code></pre></div><p>Now every Button has the color <code>@color/button_normal</code> and looks like a nice Material Design Button.
+But what if you have different Button types with different colors? No problem! Just define a new style for your special button:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#268bd2">&lt;style</span> name=<span style="color:#2aa198">&#34;SpecialButton&#34;</span> parent=<span style="color:#2aa198">&#34;Widget.AppCompat.Button.Colored&#34;</span><span style="color:#268bd2">&gt;</span>
+  <span style="color:#268bd2">&lt;item</span> name=<span style="color:#2aa198">&#34;colorButtonNormal&#34;</span><span style="color:#268bd2">&gt;</span>#555<span style="color:#268bd2">&lt;/item&gt;</span>
+  <span style="color:#268bd2">&lt;item</span> name=<span style="color:#2aa198">&#34;android:textColorPrimary&#34;</span><span style="color:#268bd2">&gt;</span>#fff<span style="color:#268bd2">&lt;/item&gt;</span>
+<span style="color:#268bd2">&lt;/style&gt;</span>
+</code></pre></div><p>You can use this style on a Button element like that:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#268bd2">&lt;Button</span>
+  android:theme=<span style="color:#2aa198">&#34;@style/SpecialButton&#34;</span>
+  android:id=<span style="color:#2aa198">&#34;@+id/special&#34;</span>
+  android:layout_width=<span style="color:#2aa198">&#34;wrap_content&#34;</span>
+  android:layout_height=<span style="color:#2aa198">&#34;wrap_content&#34;</span>
+  android:text=<span style="color:#2aa198">&#34;@string/special&#34;</span> <span style="color:#268bd2">/&gt;</span>
+</code></pre></div><p>As you can see, the style is not used as a style but as a theme. This is because the attributes <code>colorButtonNormal</code> and <code>android:textColorPrimary</code> are not properties of the Button. Instead they are applied by the <em>magic</em> theme mechanism from Android. I am not entirely sure how it works but it seems to work&hellip;</p>
+<p>For more information on styling and <em>not</em> on theming you should read <a href="http://blog.danlew.net/2014/11/19/styles-on-android/">Styling Views on Android (Without Going Crazy)</a>.</p>
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/android">Android</a></li>
+								
+								<li><a href="/tags/material-design">Material Design</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'manuelohlendorf';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © 2017 Manuel Ohlendorf. All rights reserved. |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1937462-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

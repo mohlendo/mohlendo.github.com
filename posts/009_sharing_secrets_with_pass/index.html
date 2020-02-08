@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Sharing secrets with pass - Manuel Ohlendorf</title><link rel="icon" type="image/png" href=icons/8-bit-me.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Sharing secrets with pass" />
+<meta property="og:description" content="How to share secrets with Pass, the standard unix password manager" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/" />
+<meta property="article:published_time" content="2015-11-13T20:11:00+02:00" />
+<meta property="article:modified_time" content="2015-11-13T20:11:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sharing secrets with pass"/>
+<meta name="twitter:description" content="How to share secrets with Pass, the standard unix password manager"/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://manuel-ohlendorf.de/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://manuel-ohlendorf.de/css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/main.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/abc.js"></script>
+	<script src="http://manuel-ohlendorf.de/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://manuel-ohlendorf.de/">Manuel Ohlendorf</a></h1>
+	<div class="site-description"><h2>Things from and about me</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/mohlendo" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/mohlendo" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/cv">CV</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Sharing secrets with pass</h1>
+			<div class="meta">Posted at &mdash; Nov 13, 2015</div>
+		</div>
+
+		<div class="markdown">
+			<p>I don&rsquo;t like password managers. I don&rsquo;t trust them. But when you work in a small team and use a lot of different servers and technologies you sometimes have to securely store and share a secret with them.
+There are a lot of password managers out there that can do that but I want a very simple command line tool that just uses standard technologies and —  <em>Tata</em> — <a href="http://www.passwordstore.org/">Pass, the standard unix password manager</a> hits the spot.</p>
+<p>The documentation is quite good and there are some helpful blogpost on how to setup <code>pass</code>. But what I am missing is how to share the stored and encrypted passwords.</p>
+<h3 id="setup">Setup</h3>
+<p>To setup <code>pass</code>, you need a GnuPG key which <code>pass</code> uses to encrypt all your secrets. Run the command and follow the instructions:</p>
+<pre><code>$ gpg --gen-key
+</code></pre>
+<p>You should stick to the defaults recommended by GnuPG. Only for the key length I would choose 4096 bits instead of just 2048 bits because you can and bigger is better :-)</p>
+<p>After GnuPG has generated the key it prints the details to the key. One line should look something like:</p>
+<pre><code>pub   4096R/11223344 2009-07-17
+</code></pre>
+<p>You need to remember (copy into clipboard) the 8 character key id of the public key. Here it is <code>11223344</code>.</p>
+<p>Now you can initialize your <code>pass</code> password store with it:</p>
+<pre><code>$ pass init 11223344
+</code></pre>
+<p>With <code>pass</code> you can use <code>git</code> to track changes made to the password store and if you have a remote repository, you can also share the store with others. Let&rsquo;s initialize the git repository with <code>pass</code>:</p>
+<pre><code>$ pass git init
+</code></pre>
+<p>And add the remote URL:</p>
+<pre><code>$ pass git remote add origin kexec.com:pass-store
+</code></pre>
+<p>Since <code>pass</code> just uses <code>git</code> you don&rsquo;t have to use <code>pass</code> for managing the repository. You can also just use the bare <code>git</code> command for that. The default path for the password store is <code>~/.password-store/</code>.</p>
+<h3 id="sharing">Sharing</h3>
+<p>Now that you have a running <code>pass</code> setup you can share that with others. For decrypting the secrets you have to export and share the public <em>and private</em> GnuPG key that you just created.</p>
+<p>Keep in mind that anyone who has access to the key and knows the password of the key is able to decrypt all your passwords.</p>
+<pre><code>$ gpg -a --output gpg-secret-key.asc --export-secret-keys 11223344
+</code></pre>
+<p>If you want to provide a team member access to the password store she needs the exported key in the file <code>gpg-secret-key.asc</code>, access to the <code>git</code> remote repository holding the store and the password of the GnuPG key, of course.</p>
+<p>This is what the colleague has to do after installing <code>pass</code>:</p>
+<p>Import the key into her GnuPG installation:</p>
+<pre><code>$ gpg --import gpg-secret-key.asc
+</code></pre>
+<p>Increase the trust-level to maximum with the GnuPG editor:</p>
+<pre><code>$ gpg --edit-key 11223344
+</code></pre>
+<p>Now, that you are in the interactive editor you have to enter the following:</p>
+<pre><code>gpg&gt; trust
+</code></pre>
+<p>and type <code>5</code> for ultimate trust, then confirm with <code>y</code> and enter <code>quit</code> to exit.
+The final step is to clone the <code>git</code> repository:</p>
+<pre><code>$ git clone kexec.com:pass-store ~/.password-store/
+</code></pre>
+<p>Your colleague is now able to decrypt all passwords and add new ones.</p>
+<h3 id="security-considerations">Security Considerations</h3>
+<p>Sharing the <code>pass</code> password store has some security issues that you should be aware of:</p>
+<ul>
+<li>be careful when giving the public/private GnuPG key and password away. In the wrong hands, everything is lost. You shouldn&rsquo;t use E-Mail for that. A USB-Drive that is securely wiped clear after sharing the key should do the trick.</li>
+<li>you should also keep the <code>git</code> repository hidden and secure. Pass uses simple files to store the encrypted passwords and the filenames are clear. An attacker with access to the <code>git</code> repository is able to see the clear names of your encrypted passwords and might drew some dangerous conclusions from that.</li>
+</ul>
+<p>Please keep that in mind and don&rsquo;t blame me later ;-)</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/pass">pass</a></li>
+								
+								<li><a href="/tags/security">Security</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'manuelohlendorf';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © 2017 Manuel Ohlendorf. All rights reserved. |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1937462-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>
