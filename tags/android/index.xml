@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Manuel Ohlendorf</title>
-    <link>http://manuel-ohlendorf.de/tags/android/</link>
+    <link>manuel-ohlendorf.de/tags/android/</link>
     <description>Recent content in Android on Manuel Ohlendorf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2017 Manuel Ohlendorf. All rights reserved.</copyright>
     <lastBuildDate>Thu, 03 Sep 2015 10:21:06 +0200</lastBuildDate>
     
-	<atom:link href="http://manuel-ohlendorf.de/tags/android/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="manuel-ohlendorf.de/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Material Design Buttons with AppCompat</title>
-      <link>http://manuel-ohlendorf.de/posts/007_material_design_buttons/</link>
+      <link>manuel-ohlendorf.de/posts/007_material_design_buttons/</link>
       <pubDate>Thu, 03 Sep 2015 10:21:06 +0200</pubDate>
       
-      <guid>http://manuel-ohlendorf.de/posts/007_material_design_buttons/</guid>
+      <guid>manuel-ohlendorf.de/posts/007_material_design_buttons/</guid>
       <description>&lt;p&gt;With the new release v23.0.0 of the AppCompat library it is now possible to create Material Design Buttons for Lollipop and Pre-Lollipop devices.&lt;/p&gt;</description>
     </item>
     

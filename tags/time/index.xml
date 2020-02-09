@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Time on Manuel Ohlendorf</title>
-    <link>http://manuel-ohlendorf.de/tags/time/</link>
+    <link>manuel-ohlendorf.de/tags/time/</link>
     <description>Recent content in Time on Manuel Ohlendorf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2017 Manuel Ohlendorf. All rights reserved.</copyright>
     <lastBuildDate>Tue, 29 Sep 2015 09:34:00 +0200</lastBuildDate>
     
-	<atom:link href="http://manuel-ohlendorf.de/tags/time/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="manuel-ohlendorf.de/tags/time/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The crazy date/time formatting in Go</title>
-      <link>http://manuel-ohlendorf.de/posts/008_go_time_format/</link>
+      <link>manuel-ohlendorf.de/posts/008_go_time_format/</link>
       <pubDate>Tue, 29 Sep 2015 09:34:00 +0200</pubDate>
       
-      <guid>http://manuel-ohlendorf.de/posts/008_go_time_format/</guid>
+      <guid>manuel-ohlendorf.de/posts/008_go_time_format/</guid>
       <description>&lt;p&gt;Formatting and parsing date/time strings is a very common use-case in programming. A lot of the programming languages I worked with take the same approach for that: Using the Unicode time pattern syntax &lt;a href=&#34;http://www.unicode.org/reports/tr35/#Date_Format_Patterns&#34;&gt;UTS #35&lt;/a&gt;. For me it is always hard to remember the details, especially when it comes to the upper and lower case codes.&lt;/p&gt;</description>
     </item>
     
