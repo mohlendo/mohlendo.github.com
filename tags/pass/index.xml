@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pass on Manuel Ohlendorf</title>
-    <link>///manuel-ohlendorf.de/tags/pass/</link>
+    <link>https://manuel-ohlendorf.de/tags/pass/</link>
     <description>Recent content in pass on Manuel Ohlendorf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2017 Manuel Ohlendorf. All rights reserved.</copyright>
     <lastBuildDate>Fri, 13 Nov 2015 20:11:00 +0200</lastBuildDate>
     
-	<atom:link href="///manuel-ohlendorf.de/tags/pass/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://manuel-ohlendorf.de/tags/pass/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sharing secrets with pass</title>
-      <link>///manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/</link>
+      <link>https://manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/</link>
       <pubDate>Fri, 13 Nov 2015 20:11:00 +0200</pubDate>
       
-      <guid>///manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/</guid>
+      <guid>https://manuel-ohlendorf.de/posts/009_sharing_secrets_with_pass/</guid>
       <description>I don&amp;rsquo;t like password managers. I don&amp;rsquo;t trust them. But when you work in a small team and use a lot of different servers and technologies you sometimes have to securely store and share a secret with them. There are a lot of password managers out there that can do that but I want a very simple command line tool that just uses standard technologies and — Tata — Pass, the standard unix password manager hits the spot.</description>
     </item>
     
