@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on Manuel Ohlendorf</title>
-    <link>manuel-ohlendorf.de/tags/javascript/</link>
+    <link>///manuel-ohlendorf.de/tags/javascript/</link>
     <description>Recent content in javascript on Manuel Ohlendorf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2017 Manuel Ohlendorf. All rights reserved.</copyright>
     <lastBuildDate>Mon, 14 Mar 2011 16:44:03 +0000</lastBuildDate>
     
-	<atom:link href="manuel-ohlendorf.de/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="///manuel-ohlendorf.de/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>L-System parser with Jangaroo</title>
-      <link>manuel-ohlendorf.de/posts/004_lsystem_parser_with_jangaroo/</link>
+      <link>///manuel-ohlendorf.de/posts/004_lsystem_parser_with_jangaroo/</link>
       <pubDate>Mon, 14 Mar 2011 16:44:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/posts/004_lsystem_parser_with_jangaroo/</guid>
+      <guid>///manuel-ohlendorf.de/posts/004_lsystem_parser_with_jangaroo/</guid>
       <description>Have you ever heard of Jangaroo? It is an ActionScript&amp;reg;-to-Javascript compiler. It&#39;s an open-source project with an implementation of the Flash&amp;reg; API and the whole toolchain every programmer likes: Maven dependency management, good IDE support, TDD with JooUnit (a port of FlexUnit) and a lot more. It even comes with a declarative UI language EXML (well, it is quite similar to MXML), that can be used to generate ExtJS applications. For about a year I am now also helping to evolve Jangaroo and its toolchain.</description>
     </item>
     

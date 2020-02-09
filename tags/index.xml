@@ -2,184 +2,184 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Manuel Ohlendorf</title>
-    <link>manuel-ohlendorf.de/tags/</link>
+    <link>///manuel-ohlendorf.de/tags/</link>
     <description>Recent content in Tags on Manuel Ohlendorf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2017 Manuel Ohlendorf. All rights reserved.</copyright>
     <lastBuildDate>Fri, 13 Nov 2015 20:11:00 +0200</lastBuildDate>
     
-	<atom:link href="manuel-ohlendorf.de/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="///manuel-ohlendorf.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>pass</title>
-      <link>manuel-ohlendorf.de/tags/pass/</link>
+      <link>///manuel-ohlendorf.de/tags/pass/</link>
       <pubDate>Fri, 13 Nov 2015 20:11:00 +0200</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/pass/</guid>
+      <guid>///manuel-ohlendorf.de/tags/pass/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Security</title>
-      <link>manuel-ohlendorf.de/tags/security/</link>
+      <link>///manuel-ohlendorf.de/tags/security/</link>
       <pubDate>Fri, 13 Nov 2015 20:11:00 +0200</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/security/</guid>
+      <guid>///manuel-ohlendorf.de/tags/security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>manuel-ohlendorf.de/tags/go/</link>
+      <link>///manuel-ohlendorf.de/tags/go/</link>
       <pubDate>Tue, 29 Sep 2015 09:34:00 +0200</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/go/</guid>
+      <guid>///manuel-ohlendorf.de/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Time</title>
-      <link>manuel-ohlendorf.de/tags/time/</link>
+      <link>///manuel-ohlendorf.de/tags/time/</link>
       <pubDate>Tue, 29 Sep 2015 09:34:00 +0200</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/time/</guid>
+      <guid>///manuel-ohlendorf.de/tags/time/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android</title>
-      <link>manuel-ohlendorf.de/tags/android/</link>
+      <link>///manuel-ohlendorf.de/tags/android/</link>
       <pubDate>Thu, 03 Sep 2015 10:21:06 +0200</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/android/</guid>
+      <guid>///manuel-ohlendorf.de/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Material Design</title>
-      <link>manuel-ohlendorf.de/tags/material-design/</link>
+      <link>///manuel-ohlendorf.de/tags/material-design/</link>
       <pubDate>Thu, 03 Sep 2015 10:21:06 +0200</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/material-design/</guid>
+      <guid>///manuel-ohlendorf.de/tags/material-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>manuel-ohlendorf.de/tags/github/</link>
+      <link>///manuel-ohlendorf.de/tags/github/</link>
       <pubDate>Tue, 17 Feb 2015 08:45:58 +0100</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/github/</guid>
+      <guid>///manuel-ohlendorf.de/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>manuel-ohlendorf.de/tags/hugo/</link>
+      <link>///manuel-ohlendorf.de/tags/hugo/</link>
       <pubDate>Tue, 17 Feb 2015 08:45:58 +0100</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/hugo/</guid>
+      <guid>///manuel-ohlendorf.de/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>static-site-generator</title>
-      <link>manuel-ohlendorf.de/tags/static-site-generator/</link>
+      <link>///manuel-ohlendorf.de/tags/static-site-generator/</link>
       <pubDate>Tue, 17 Feb 2015 08:45:58 +0100</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/static-site-generator/</guid>
+      <guid>///manuel-ohlendorf.de/tags/static-site-generator/</guid>
       <description></description>
     </item>
     
     <item>
       <title>actionscript</title>
-      <link>manuel-ohlendorf.de/tags/actionscript/</link>
+      <link>///manuel-ohlendorf.de/tags/actionscript/</link>
       <pubDate>Mon, 14 Mar 2011 16:44:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/actionscript/</guid>
+      <guid>///manuel-ohlendorf.de/tags/actionscript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jangaroo</title>
-      <link>manuel-ohlendorf.de/tags/jangaroo/</link>
+      <link>///manuel-ohlendorf.de/tags/jangaroo/</link>
       <pubDate>Mon, 14 Mar 2011 16:44:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/jangaroo/</guid>
+      <guid>///manuel-ohlendorf.de/tags/jangaroo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>manuel-ohlendorf.de/tags/javascript/</link>
+      <link>///manuel-ohlendorf.de/tags/javascript/</link>
       <pubDate>Mon, 14 Mar 2011 16:44:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/javascript/</guid>
+      <guid>///manuel-ohlendorf.de/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>modellbau</title>
-      <link>manuel-ohlendorf.de/tags/modellbau/</link>
+      <link>///manuel-ohlendorf.de/tags/modellbau/</link>
       <pubDate>Fri, 14 Jan 2011 20:09:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/modellbau/</guid>
+      <guid>///manuel-ohlendorf.de/tags/modellbau/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shamrock</title>
-      <link>manuel-ohlendorf.de/tags/shamrock/</link>
+      <link>///manuel-ohlendorf.de/tags/shamrock/</link>
       <pubDate>Fri, 14 Jan 2011 20:09:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/shamrock/</guid>
+      <guid>///manuel-ohlendorf.de/tags/shamrock/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blogofile</title>
-      <link>manuel-ohlendorf.de/tags/blogofile/</link>
+      <link>///manuel-ohlendorf.de/tags/blogofile/</link>
       <pubDate>Thu, 23 Dec 2010 13:09:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/blogofile/</guid>
+      <guid>///manuel-ohlendorf.de/tags/blogofile/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>manuel-ohlendorf.de/tags/git/</link>
+      <link>///manuel-ohlendorf.de/tags/git/</link>
       <pubDate>Thu, 23 Dec 2010 13:09:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/git/</guid>
+      <guid>///manuel-ohlendorf.de/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hosting</title>
-      <link>manuel-ohlendorf.de/tags/hosting/</link>
+      <link>///manuel-ohlendorf.de/tags/hosting/</link>
       <pubDate>Thu, 23 Dec 2010 13:09:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/hosting/</guid>
+      <guid>///manuel-ohlendorf.de/tags/hosting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>manuel-ohlendorf.de/tags/python/</link>
+      <link>///manuel-ohlendorf.de/tags/python/</link>
       <pubDate>Thu, 23 Dec 2010 13:09:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/python/</guid>
+      <guid>///manuel-ohlendorf.de/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>submodules</title>
-      <link>manuel-ohlendorf.de/tags/submodules/</link>
+      <link>///manuel-ohlendorf.de/tags/submodules/</link>
       <pubDate>Thu, 23 Dec 2010 13:09:03 +0000</pubDate>
       
-      <guid>manuel-ohlendorf.de/tags/submodules/</guid>
+      <guid>///manuel-ohlendorf.de/tags/submodules/</guid>
       <description></description>
     </item>
     
