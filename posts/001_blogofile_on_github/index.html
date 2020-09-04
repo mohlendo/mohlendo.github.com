@@ -26,6 +26,7 @@
 <body>
 	<div class="container wrapper post">
 		<div class="header">
+	<base href="https://manuel-ohlendorf.de/">
 	<h1 class="site-title"><a href="https://manuel-ohlendorf.de/">Manuel Ohlendorf</a></h1>
 	<div class="site-description"><h2>Things from and about me</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/mohlendo" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/mohlendo" title="Twitter"><i data-feather="twitter"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
@@ -107,18 +108,18 @@ a confusion of git and it cannot track changes on the compiled website anymore.<
 <code>.git</code> directory to a temp folder and restores it after a successful build.</p>
 <h3 id="prepost-build-hooks">Pre/Post build hooks:</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">def</span> <span style="color:#268bd2">pre_build</span>():
-    <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>):
-        os<span style="color:#719e07">.</span>mkdir(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(<span style="color:#2aa198">&#34;_tmp&#34;</span>):
+        os<span style="color:#719e07">.</span>mkdir(<span style="color:#2aa198">&#34;_tmp&#34;</span>)
     <span style="color:#719e07">else</span>:
-        shutil<span style="color:#719e07">.</span>rmtree(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
-        os<span style="color:#719e07">.</span>mkdir(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
-    <span style="color:#719e07">if</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_site</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>)):
-        shutil<span style="color:#719e07">.</span>move(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_site</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>),<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>)
+        shutil<span style="color:#719e07">.</span>rmtree(<span style="color:#2aa198">&#34;_tmp&#34;</span>)
+        os<span style="color:#719e07">.</span>mkdir(<span style="color:#2aa198">&#34;_tmp&#34;</span>)
+    <span style="color:#719e07">if</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;_site&#34;</span>,<span style="color:#2aa198">&#34;.git&#34;</span>)):
+        shutil<span style="color:#719e07">.</span>move(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;_site&#34;</span>,<span style="color:#2aa198">&#34;.git&#34;</span>),<span style="color:#2aa198">&#34;_tmp&#34;</span>)
     <span style="color:#586e75">#Do whatever you want before the _site is built</span>
     <span style="color:#719e07">pass</span>
 <span style="color:#719e07">def</span> <span style="color:#268bd2">post_build</span>():
-    <span style="color:#719e07">if</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>)):
-        shutil<span style="color:#719e07">.</span>move(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_tmp</span><span style="color:#2aa198">&#34;</span>,<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">.git</span><span style="color:#2aa198">&#34;</span>),<span style="color:#2aa198"></span><span style="color:#2aa198">&#34;</span><span style="color:#2aa198">_site</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#719e07">if</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;_tmp&#34;</span>,<span style="color:#2aa198">&#34;.git&#34;</span>)):
+        shutil<span style="color:#719e07">.</span>move(os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;_tmp&#34;</span>,<span style="color:#2aa198">&#34;.git&#34;</span>),<span style="color:#2aa198">&#34;_site&#34;</span>)
     <span style="color:#586e75">#Do whatever you want after the _site is built</span>
 </code></pre></div><p>Sadly, blogofile only invokes the <code>post_build()</code> hook when everything works
 fine. When you have an error in your templates blogofile only invokes the
