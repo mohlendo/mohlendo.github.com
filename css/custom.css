@@ -1,7 +1,15 @@
+/* Theme lädt Ubuntu nur in 300/400 – Fett (700) für Hervorhebungen nachladen */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
 a, a:hover {
   color: #268bd2;
   text-decoration: none;
 }
 a:hover {
   opacity: .8;
+}
+/* Theme stellt <strong> grau dar – im CV sollen Hervorhebungen gut lesbar sein */
+strong {
+  color: inherit;
+  font-weight: 700;
 }
